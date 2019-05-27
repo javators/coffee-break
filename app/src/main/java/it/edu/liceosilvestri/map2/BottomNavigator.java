@@ -3,6 +3,7 @@ package it.edu.liceosilvestri.map2;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ public class BottomNavigator {
     private final Activity mCurrentActivity;
     private final String mCurrentActivityName;
 
-    public BottomNavigator (Activity a) {
+    public BottomNavigator(Activity a) {
         this.mCurrentActivity = a;
         this.mCurrentActivityName = a.getLocalClassName();
     }
@@ -32,7 +33,7 @@ public class BottomNavigator {
 
 
         View.OnClickListener ocl = item -> {
-             switch(item.getId()) {
+             switch (item.getId()) {
                  case R.id.imgBtnNavHome:
                      if (!mCurrentActivityName.equals("HomeActivity")) {
                          Intent intentHome = new Intent(mCurrentActivity, HomeActivity.class);
@@ -60,45 +61,45 @@ public class BottomNavigator {
                 default:
                     //none
             }
-          };
-
+            mCurrentActivity.overridePendingTransition(0, 0);
+        };
 
         ibnHome.setOnClickListener(ocl);
         ibnPaths.setOnClickListener(ocl);
         ibnPois.setOnClickListener(ocl);
         ibnCredits.setOnClickListener(ocl);
-
-
     }
 
     private void fillItem() {
         switch(mCurrentActivityName){
             case "HomeActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavHome), mCurrentActivity.findViewById(R.id.txtNavHome));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavHome), mCurrentActivity.findViewById(R.id.txtNavHome));
                 break;
             case "PathsActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPaths), mCurrentActivity.findViewById(R.id.txtNavPaths));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPaths), mCurrentActivity.findViewById(R.id.txtNavPaths));
                 break;
             case "PathActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPaths), mCurrentActivity.findViewById(R.id.txtNavPaths));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPaths), mCurrentActivity.findViewById(R.id.txtNavPaths));
                 break;
             case "PoisActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPois), mCurrentActivity.findViewById(R.id.txtNavPois));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPois), mCurrentActivity.findViewById(R.id.txtNavPois));
                 break;
             case "PoiActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPois), mCurrentActivity.findViewById(R.id.txtNavPois));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavPois), mCurrentActivity.findViewById(R.id.txtNavPois));
                 break;
             case "CreditsActivity":
-                markNavSelected(mCurrentActivity.findViewById(R.id.imgBtnNavCredits), mCurrentActivity.findViewById(R.id.txtNavCredits));
+                markItemSelected(mCurrentActivity.findViewById(R.id.imgBtnNavCredits), mCurrentActivity.findViewById(R.id.txtNavCredits));
                 break;
         }
 
     }
 
-    private void markNavSelected(ImageButton imgBtn, TextView textView) {
+    private void markItemSelected(ImageButton imgBtn, TextView textView) {
+        int color = ContextCompat.getColor(mCurrentActivity, R.color.colorHighlighting);
+
+        imgBtn.setColorFilter(color);
+        textView.setTextColor(color);
         textView.setTypeface(null, Typeface.BOLD);
-
     }
-
 
 }
