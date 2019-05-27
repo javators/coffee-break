@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Map2</string>
+    <string name="title_activity_prova_buttons">ProvaButtonsActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_pois">Luoghi</string>
+    <string name="title_paths">Itinerari</string>
+    <string name="title_credits">Crediti</string>
+    <string name="title_activity_paths_temp">PathsActivityTemp</string>
+    <string name="title_activity_paths">PathsActivity</string>
+    <string name="title_activity_pois">PoisActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+    <string name="txt_nav_home">Home</string>
+    <string name="txt_nav_paths">Itinerari</string>
+    <string name="txt_nav_pois">Luoghi</string>
+    <string name="txt_nav_credits">Crediti</string>
+</resources>
