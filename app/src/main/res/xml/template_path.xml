@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<path id="percorsoid">
+    <name>Nome percorso</name>
+    <description>Descrizione percorso che compare in ActivityPaths</description>
+    <description_long>Descriozione percorso che compare in ActivityPath</description_long>
+    <duration>Durata del percorso a piedi, es: 1-5h</duration>
+    <length>Lunghezza del percorso a piedi, es: 1,2km</length>
+    <suitable_for>Tipologia di utenti a cui è adatto il percorso, es: famiglie, gruppi</suitable_for>
+
+    <segment>
+        <type>Codice che identifica il tipo di segmento da disegnare, es: Standard</type>
+        <start_coord>Coordinate del punto di partenza, es: 40.819638, 14.331037</start_coord>
+        <end_coord>Coordinate del punto di partenza, es: 40.810192, 14.336756</end_coord>
+    </segment>
+    <segment>
+        <type>Codice che identifica il tipo di segmento da disegnare, es: Standard</type>
+        <start_coord>Coordinate del punto di partenza, es: 40.777777, 77.331037</start_coord>
+        <end_coord>Coordinate del punto di partenza, es: 77.810192, 14.777777</end_coord>
+    </segment>
+    <poi id="puntoid1" />
+    <poi id="puntoid2" />
+</path>
