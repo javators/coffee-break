@@ -6,7 +6,7 @@
     <duration>Durata del percorso a piedi, es: 1-5h</duration>
     <length>Lunghezza del percorso a piedi, es: 1,2km</length>
     <suitable_for>Tipologia di utenti a cui è adatto il percorso, es: famiglie, gruppi</suitable_for>
-    <color>colore rgb della linea sulla mappa</color>
+    <color>Colore rgb della linea sulla mappa</color>
     <segment>
         <type>Codice che identifica il tipo di segmento da disegnare, es: Standard</type>
         <start_coord>Coordinate del punto di partenza, es: 40.819638, 14.331037</start_coord>
