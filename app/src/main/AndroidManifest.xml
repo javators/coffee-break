@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".PoiActivity"></activity>
         <activity
             android:name=".CreditsActivity"
-            android:label="@string/title_activity_credits"></activity>
+            android:label="@string/title_activity_credits" />
         <activity
             android:name=".PoisActivity"
             android:label="@string/title_activity_pois" />
