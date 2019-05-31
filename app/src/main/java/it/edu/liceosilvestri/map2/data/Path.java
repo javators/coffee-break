@@ -72,8 +72,6 @@ public class Path {
 
 
     private void load(Context ctx) {
-        int i;
-        String files[];
 
         AssetManager am = ctx.getAssets();
         try {
@@ -125,7 +123,7 @@ public class Path {
                 mSegmentArray = new Path.Segment[nList.getLength()];
                 k = 0;
 
-                for (i = 0; i < nList.getLength(); i++) {
+                for (int i = 0; i < nList.getLength(); i++) {
                     Node node = nList.item(i);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
@@ -150,7 +148,7 @@ public class Path {
                 mPoiIdArray = new String[nList2.getLength()];
                 k = 0;
 
-                for (i = 0; i < nList2.getLength(); i++) {
+                for (int i = 0; i < nList2.getLength(); i++) {
                     Node node = nList2.item(i);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
