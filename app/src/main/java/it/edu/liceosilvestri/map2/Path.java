@@ -20,5 +20,45 @@ public class Path {
         float startCoordX, startCoordY, endCoordX, endCoord;
         String type;
 
+        public Segment(){
+
+        }
+
+    }
+
+    public String getName() {
+        return mName;
+    }
+
+    public String getDescription() {
+        return mDescription;
+    }
+
+    public String getDescriptionLong() {
+        return mDescriptionLong;
+    }
+
+    public String getDuration() {
+        return mDuration;
+    }
+
+    public String getLength() {
+        return mLength;
+    }
+
+    public String[] getSuitableFor() {
+        return mSuitableFor;
+    }
+
+    public String[] getPois() {
+        return mPois;
+    }
+
+    public Segment[] getSegments() {
+        return mSegments;
+    }
+
+    public String getId() {
+        return id;
     }
 }
