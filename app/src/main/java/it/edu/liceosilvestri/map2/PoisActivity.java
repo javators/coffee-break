@@ -115,7 +115,8 @@ public class PoisActivity extends AppCompatActivity {
                 rowView = inflater.inflate(R.layout.item_poi, parent, false);
             }
 
-            //TODO Aggiungere layout e inflating corrispondente
+            TextView tvName = rowView.findViewById(R.id.txtPoiItemName);
+            tvName.setText(getChild(groupPosition, childPosition));
 
             return rowView;
         }
