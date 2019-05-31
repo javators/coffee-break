@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="puntoid">
     <name>Nome breve che appare sulle mappe</name>
-    <name_long>Nome lungo che appare in ActivityPoi</name_long>
+    <name_long>Nome lungo che appare in PoiActivity</name_long>
     <description>Descrizione breve che compare sulle mappe</description>
     <suitable_for>Tipologia di utenti a cui è adatto il percorso, es: famiglie, gruppi</suitable_for>
     <coord>Coordinate del POI, es: 40.811397, 14.342874</coord>

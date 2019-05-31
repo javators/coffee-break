@@ -3,10 +3,14 @@ package it.edu.liceosilvestri.map2;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -69,28 +73,51 @@ public class PoisActivity extends AppCompatActivity {
         }
 
         @Override
+        //TODO
         public long getGroupId(int groupPosition) {
             return 0;
         }
 
         @Override
+        //TODO
         public long getChildId(int groupPosition, int childPosition) {
             return 0;
         }
 
         @Override
+        //TODO Dopo aver implementato i due metodi sopra, questo dovrà restituire true
         public boolean hasStableIds() {
             return false;
         }
 
         @Override
-        public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-            return null;
+        public View getGroupView(int groupPosition, boolean isExpanded, View rowView, ViewGroup parent) {
+            if (rowView == null) {
+                LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                rowView = inflater.inflate(R.layout.item_category, parent, false);
+            }
+
+            TextView tvCategory  = rowView.findViewById(R.id.txtPoiCategory);
+            Switch switchVisible = rowView.findViewById(R.id.switchPoiCategoryVisible);
+
+            tvCategory.setText(getGroup(groupPosition));
+            switchVisible.setOnCheckedChangeListener((CompoundButton cButton, boolean b) -> {
+                //TODO Cambiare visibilità del marker
+            });
+
+            return rowView;
         }
 
         @Override
-        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-            return null;
+        public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View rowView, ViewGroup parent) {
+            if (rowView == null) {
+                LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                rowView = inflater.inflate(R.layout.item_poi, parent, false);
+            }
+
+            //TODO Aggiungere layout e inflating corrispondente
+
+            return rowView;
         }
 
         @Override
