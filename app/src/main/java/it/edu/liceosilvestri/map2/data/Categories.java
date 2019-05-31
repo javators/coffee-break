@@ -24,9 +24,7 @@ public class Categories implements Iterable<Category> {
     private Category mCategoryArray[];
 
 
-    private Categories(Context ctx){
-
-    }
+    private Categories(Context ctx) {}
 
     private void load(Context ctx) {
 
@@ -98,6 +96,21 @@ public class Categories implements Iterable<Category> {
 
     }
 
+    public static Categories get(Context ctx) {
+        if (__categories == null) {
+            __categories = new Categories(ctx);
+            __categories.load(ctx);
+        }
+
+        return __categories;
+    }
+
+    public Category getCategoryAt(int index) {
+        if (mCategoryArray != null && (index >= 0 && index < mCategoryArray.length-1))
+            return mCategoryArray[index];
+        else
+            return null;
+    }
 
     public int getLength(){
         return mCategoryArray==null ? 0 : mCategoryArray.length;

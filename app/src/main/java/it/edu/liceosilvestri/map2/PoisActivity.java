@@ -12,9 +12,9 @@ import android.widget.ExpandableListView;
 import android.widget.Switch;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import it.edu.liceosilvestri.map2.data.Categories;
+import it.edu.liceosilvestri.map2.data.Category;
+import it.edu.liceosilvestri.map2.data.Poi;
 
 public class PoisActivity extends AppCompatActivity {
 
@@ -25,9 +25,7 @@ public class PoisActivity extends AppCompatActivity {
 
         ExpandableListView listView = findViewById(R.id.expListViewPois);
 
-        //TODO Prendere i dati dall'XML dei POIs
-
-        PoisAdapter adapter = new PoisAdapter(getApplicationContext(), new ArrayList<>(), new HashMap<>());
+        PoisAdapter adapter = new PoisAdapter(getApplicationContext());
         listView.setAdapter(adapter);
     }
 
@@ -41,51 +39,44 @@ public class PoisActivity extends AppCompatActivity {
 
     private class PoisAdapter extends BaseExpandableListAdapter {
         private Context mContext;
-        private List<String> mCategories;
-        private HashMap<String, List<String>> mMap;
+        private Categories mCategories;
 
-        //TODO Sostituire String con Poi
-        public PoisAdapter(Context ctx, List<String> categories, HashMap<String, List<String>> map) {
+        public PoisAdapter(Context ctx) {
             this.mContext = ctx;
-            this.mCategories = categories;
-            this.mMap = map;
+            this.mCategories = Categories.get(ctx);
         }
 
         @Override
         public int getGroupCount() {
-            return mCategories.size();
+            return mCategories.getLength();
         }
 
         @Override
         public int getChildrenCount(int groupPosition) {
-            return mMap.get(mCategories.get(groupPosition)).size();
+            return mCategories.getCategoryAt(groupPosition).getPois().size();
         }
 
         @Override
-        public String getGroup(int groupPosition) {
-            return null;
+        public Category getGroup(int groupPosition) {
+            return mCategories.getCategoryAt(groupPosition);
         }
 
         @Override
-        //TODO Dovrebbe essere Poi
-        public String getChild(int groupPosition, int childPosition) {
-            return mMap.get(mCategories.get(groupPosition)).get(childPosition);
+        public Poi getChild(int groupPosition, int childPosition) {
+            return mCategories.getCategoryAt(groupPosition).getPois().get(childPosition);
         }
 
         @Override
-        //TODO
         public long getGroupId(int groupPosition) {
             return 0;
         }
 
         @Override
-        //TODO
         public long getChildId(int groupPosition, int childPosition) {
             return 0;
         }
 
         @Override
-        //TODO Dopo aver implementato i due metodi sopra, questo dovrà restituire true
         public boolean hasStableIds() {
             return false;
         }
@@ -100,7 +91,7 @@ public class PoisActivity extends AppCompatActivity {
             TextView tvCategory  = rowView.findViewById(R.id.txtPoiCategory);
             Switch switchVisible = rowView.findViewById(R.id.switchPoiCategoryVisible);
 
-            tvCategory.setText(getGroup(groupPosition));
+            tvCategory.setText(getGroup(groupPosition).getName());
             switchVisible.setOnCheckedChangeListener((CompoundButton cButton, boolean b) -> {
                 //TODO Cambiare visibilità del marker
             });
@@ -116,7 +107,7 @@ public class PoisActivity extends AppCompatActivity {
             }
 
             TextView tvName = rowView.findViewById(R.id.txtPoiItemName);
-            tvName.setText(getChild(groupPosition, childPosition));
+            tvName.setText(getChild(groupPosition, childPosition).getName());
 
             return rowView;
         }
