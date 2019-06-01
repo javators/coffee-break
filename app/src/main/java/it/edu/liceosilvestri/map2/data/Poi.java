@@ -2,6 +2,11 @@ package it.edu.liceosilvestri.map2.data;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.view.View;
+
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -28,7 +33,10 @@ public class Poi {
     private String mCategoryId;
     private String mCoord;
     private String mSuitableFor;
-    private String[] mPathIdArray;
+    private Path[] mPathArray;
+    private String mAddress;
+    private Extra mExtra;
+    private MarkerOptions mMop;
 
 
     Poi(String id, Context ctx){
@@ -57,16 +65,28 @@ public class Poi {
         return mCategoryId;
     }
 
-    public String getCoord() {
-        return mCoord;
+    public double getCoordLat() {
+        return Double.parseDouble(mCoord.split(", ")[0]);
+    }
+
+    public double getCoordLng() {
+        return Double.parseDouble(mCoord.split(", ")[1]);
     }
 
     public String getSuitableFor() {
         return mSuitableFor;
     }
 
-    public String[] getPoiIdArray() {
-        return mPathIdArray;
+    public Path[] getPathArray() {
+        return mPathArray;
+    }
+
+    public String getAddress() {
+        return mAddress;
+    }
+
+    public Extra getExtra() {
+        return mExtra;
     }
 
     private void load(Context ctx) {
@@ -103,27 +123,53 @@ public class Poi {
             mNameLong = root.getElementsByTagName("name_long").item(0).getTextContent();
             mCategoryId = root.getElementsByTagName("category").item(0).getTextContent();
             mCoord = root.getElementsByTagName("coord").item(0).getTextContent();
+            mAddress = root.getElementsByTagName("address").item(0).getTextContent();
             mSuitableFor = root.getElementsByTagName("suitable_for").item(0).getTextContent();
 
-            NodeList nList2 = document.getElementsByTagName("pois");
+
+            NodeList nList = document.getElementsByTagName("path");
             int k=0;
 
-            if (nList2.getLength() > 0) {
+            if (nList.getLength() > 0) {
 
-                mPathIdArray = new String[nList2.getLength()];
+                mPathArray = new Path[nList.getLength()];
                 k = 0;
 
-                for (i = 0; i < nList2.getLength(); i++) {
-                    Node node = nList2.item(i);
+                for (i = 0; i < nList.getLength(); i++) {
+                    Node node = nList.item(i);
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
                         Element eElement = (Element) node;
-                        String poiId = root.getAttribute("id");
+                        String pathId = root.getAttribute("id");
 
-                        mPathIdArray[k++] = poiId;
+
+                        mPathArray[k++] = Paths.get(ctx).getPathBy(pathId);
+
                     }
                 }
             }
+
+            Node extraNode = root.getElementsByTagName("extra").item(0);
+
+            Category c = Categories.get(ctx).getCategoryBy(mCategoryId);
+            String className = c.getManagedBy();
+
+            try {
+
+                mExtra = (Extra) Class.forName(className).newInstance();
+
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+
+
+            mExtra.setPoi(this);
+            mExtra.loadFromXml(extraNode);
+
 
 
         } catch (IOException e) {
@@ -134,6 +180,29 @@ public class Poi {
             e.printStackTrace();
         }
 
+
+    }
+
+
+    /* view methods */
+    public MarkerOptions getGoogleMarker() {
+        if (mMop == null) {
+            LatLng lalo = new LatLng(getCoordLat(), getCoordLng());
+
+            mMop = new MarkerOptions()
+                    .position(lalo)
+                    .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE))
+                    .alpha(0.5f)
+                    .snippet(mDescription)
+                    .title(mName);
+        }
+        return mMop;
+    }
+
+    public interface Extra {
+        public void setPoi(Poi p);
+        public void loadFromXml(Node extraNode);
+        public void inflateView(View v);
 
     }
 

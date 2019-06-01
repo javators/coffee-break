@@ -112,6 +112,14 @@ public class Categories implements Iterable<Category> {
             return null;
     }
 
+    public Category getCategoryBy(String id) {
+        for (Category c : mCategoryArray) {
+            if (c.getId().equals(id))
+                return c;
+        }
+        return null;
+    }
+
     public int getLength(){
         return mCategoryArray==null ? 0 : mCategoryArray.length;
     }
@@ -122,7 +130,6 @@ public class Categories implements Iterable<Category> {
     public Iterator<Category> iterator() {
         return new Categories.CategoryIterator();
     }
-
 
     public class CategoryIterator implements Iterator<Category> {
 

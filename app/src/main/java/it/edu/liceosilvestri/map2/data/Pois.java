@@ -5,12 +5,14 @@ import android.content.res.AssetManager;
 import android.support.annotation.NonNull;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 
 public class Pois implements Iterable<Poi> {
 
     private static Pois __pois;
     private Poi mPoiArray[];
+    private HashMap<String, Poi> mPoiMap;
 
 
     private Pois(Context ctx){
@@ -29,13 +31,16 @@ public class Pois implements Iterable<Poi> {
             files = am.list("data/pois");
             if (files.length > 0) {
                 mPoiArray = new Poi[files.length];
+                mPoiMap = new HashMap<>(files.length);
                 i=0;
 
                 for (String s : files) {
                     int pos = s.indexOf(".");
                     if (pos > 0) {
                         String poiid = s.substring(0, pos);
-                        mPoiArray[i++] = new Poi(poiid, ctx);
+                        Poi p = new Poi(poiid, ctx);
+                        mPoiArray[i++] = p;
+                        mPoiMap.put(poiid, p);
                     }
                 }
             }
@@ -61,6 +66,16 @@ public class Pois implements Iterable<Poi> {
         return mPoiArray==null ? 0 : mPoiArray.length;
     }
 
+    public Poi getPoiAt(int index) {
+        if (mPoiArray != null && (index >= 0 && index < mPoiArray.length-1))
+            return mPoiArray[index];
+        else
+            return null;
+    }
+
+    public Poi getPoiBy(String poiid) {
+        return mPoiMap.get(poiid);
+    }
 
     @NonNull
     @Override

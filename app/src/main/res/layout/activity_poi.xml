@@ -66,7 +66,7 @@
                 app:layout_constraintGuide_percent="0.79" />
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/layoutPoiPaths"
                 android:layout_width="70dp"
                 android:layout_height="142dp"
                 android:layout_marginStart="8dp"
@@ -101,7 +101,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/poiCategoryData"
+                android:id="@+id/layoutExtra"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginStart="8dp"

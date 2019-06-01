@@ -57,6 +57,21 @@ public class Paths implements Iterable<Path> {
         return __paths;
     }
 
+    public Path getPathAt(int index) {
+        if (mPathArray != null && (index >= 0 && index < mPathArray.length-1))
+            return mPathArray[index];
+        else
+            return null;
+    }
+
+    public Path getPathBy(String id) {
+        for (Path p : mPathArray) {
+            if (p.getId().equals(id))
+                return p;
+        }
+        return null;
+    }
+
 
     public int getLength(){
         return mPathArray==null ? 0 : mPathArray.length;
