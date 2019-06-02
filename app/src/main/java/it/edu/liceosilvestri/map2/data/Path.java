@@ -27,7 +27,8 @@ public class Path {
     private String mDuration;
     private String mLength;
     private String mSuitableFor;
-    private Path.Segment[] mSegmentArray;
+    private String mColor;
+    private Point[] mPointArray;
     private String[] mPoiIdArray;
 
 
@@ -62,8 +63,12 @@ public class Path {
         return mSuitableFor;
     }
 
-    public Segment[] getSegmentArray() {
-        return mSegmentArray;
+    public String getColor() {
+        return mColor;
+    }
+
+    public Point[] getPointArray() {
+        return mPointArray;
     }
 
     public String[] getPoiIdArray() {
@@ -114,13 +119,14 @@ public class Path {
             mDuration = root.getElementsByTagName("duration").item(0).getTextContent();
             mLength = root.getElementsByTagName("length").item(0).getTextContent();
             mSuitableFor = root.getElementsByTagName("suitable_for").item(0).getTextContent();
+            mColor = root.getElementsByTagName("color").item(0).getTextContent();
 
-            NodeList nList = document.getElementsByTagName("segment");
+            NodeList nList = document.getElementsByTagName("point");
             int k;
 
             if (nList.getLength() > 0) {
 
-                mSegmentArray = new Path.Segment[nList.getLength()];
+                mPointArray = new Point[nList.getLength()];
                 k = 0;
 
                 for (int i = 0; i < nList.getLength(); i++) {
@@ -128,13 +134,11 @@ public class Path {
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
                         Element eElement = (Element) node;
-                        String type = eElement.getAttribute("type");
-                        String start = eElement.getAttribute("start_coord");
-                        String end = eElement.getAttribute("end_coord");
+                        String coord = eElement.getElementsByTagName("coord").item(0).getTextContent();
 
-                        Segment seg = new Segment(type, start, end);
+                        Point seg = new Point(coord);
 
-                        mSegmentArray[k++] = seg;
+                        mPointArray[k++] = seg;
                     }
                 }
             }
@@ -153,7 +157,7 @@ public class Path {
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
                         Element eElement = (Element) node;
-                        String poiId = root.getAttribute("id");
+                        String poiId = eElement.getAttribute("id");
 
                         mPoiIdArray[k++] = poiId;
                     }
@@ -173,16 +177,20 @@ public class Path {
     }
 
 
-    public static class Segment {
+    public static class Point {
 
-        private final String mType;
-        private final String mStartCoord;
-        private final String mEndCoord;
+        private final String mCoord;
 
-        private Segment(String type, String start, String end) {
-            this.mType = type;
-            this.mStartCoord = start;
-            this.mEndCoord = end;
+        private Point(String coord) {
+            this.mCoord = coord;
+        }
+
+        public double getCoordLat() {
+            return Double.parseDouble(mCoord.split(", ")[0]);
+        }
+
+        public double getCoordLng() {
+            return Double.parseDouble(mCoord.split(", ")[1]);
         }
     }
 

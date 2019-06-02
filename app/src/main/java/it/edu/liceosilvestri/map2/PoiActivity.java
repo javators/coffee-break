@@ -38,14 +38,14 @@ public class PoiActivity extends AppCompatActivity {
         Poi poi = Pois.get(getApplicationContext()).getPoiBy(id);
 
         if (poi == null) {
-            //TODO manage
+            ((TextView) findViewById(R.id.txtName)).setText("Punto [" + id + "] non trovato");
         }
         else {
 
             ((TextView) findViewById(R.id.txtName)).setText(poi.getNameLong());
             ((TextView) findViewById(R.id.txtAddress)).setText(poi.getAddress());
 
-            ImageView iv = findViewById(R.id.imgCategoryIcon);
+            ImageView iv = findViewById(R.id.imgPathIcon);
             iv.setImageResource(poi.getCategory().getIconResourceId());
 
             LinearLayout linla = findViewById(R.id.layoutPoiPaths);
@@ -85,10 +85,21 @@ public class PoiActivity extends AppCompatActivity {
                 mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 14));
                 Marker m = mGmap.addMarker(mop);
 
+                 /*
 
-                //TODO: disabilitare infowindow
+                 //per disabilitare il click
+                mGmap.setOnMarkerClickListener((marker)->{
+                    return false; //true: evento consumato -> non mostra titolo e snippet
+                });
 
-                //gmap.setOnInfoWindowClickListener(marker -> marker.hideInfoWindow());
+                //per disabilitare infowindow
+
+                mGmap.setOnInfoWindowClickListener(marker -> marker.hideInfoWindow());
+
+                */
+
+
+
 
             });
 
@@ -131,6 +142,9 @@ public class PoiActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         mMapView.onStart();
+
+        BottomNavigator bnav = new BottomNavigator(this);
+        bnav.startWorking();
     }
 
     @Override

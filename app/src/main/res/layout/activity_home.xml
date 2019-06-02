@@ -36,4 +36,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/editTextPathId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="reggia-granatello"
+        app:layout_constraintStart_toStartOf="@+id/editTextPoiId"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPoiId" />
+
+    <Button
+        android:id="@+id/btnOpenPath"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:text="APRI PATH"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editTextPathId"
+        app:layout_constraintStart_toEndOf="@+id/editTextPathId" />
+
 </android.support.constraint.ConstraintLayout>
