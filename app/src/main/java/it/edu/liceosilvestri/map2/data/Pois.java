@@ -67,7 +67,7 @@ public class Pois implements Iterable<Poi> {
     }
 
     public Poi getPoiAt(int index) {
-        if (mPoiArray != null && (index >= 0 && index < mPoiArray.length-1))
+        if (mPoiArray != null && (index >= 0 && index < mPoiArray.length))
             return mPoiArray[index];
         else
             return null;

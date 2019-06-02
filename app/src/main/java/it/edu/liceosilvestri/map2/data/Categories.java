@@ -106,7 +106,7 @@ public class Categories implements Iterable<Category> {
     }
 
     public Category getCategoryAt(int index) {
-        if (mCategoryArray != null && (index >= 0 && index < mCategoryArray.length-1))
+        if (mCategoryArray != null && (index >= 0 && index < mCategoryArray.length))
             return mCategoryArray[index];
         else
             return null;

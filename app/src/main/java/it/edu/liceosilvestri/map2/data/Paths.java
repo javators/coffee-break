@@ -60,7 +60,7 @@ public class Paths implements Iterable<Path> {
     }
 
     public Path getPathAt(int index) {
-        if (mPathArray != null && (index >= 0 && index < mPathArray.length-1))
+        if (mPathArray != null && (index >= 0 && index < mPathArray.length))
             return mPathArray[index];
         else
             return null;
