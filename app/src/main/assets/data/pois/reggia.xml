@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="reggia">
+    <name>Reggia di Portici</name>
+    <name_long>Reggia di Portici</name_long>
+    <description>Reggia di Portici</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.812397, 14.342474</coord>
+    <address>Via qualcosa, 5</address>
+    <category id="monument"/>
+    <path id="reggia-granatello" />
+    <extra>
+        <!-- monument -->
+        <description_long>La reggia di blla blbal albl blablbab blb lablab lab la blab lab la</description_long>
+        <opening_times>Lun-sab 10:00-18:00</opening_times>
+        <website>http://reggia.it/</website>
+        <image>img/reggia.jpg</image>
+    </extra>
+</poi>

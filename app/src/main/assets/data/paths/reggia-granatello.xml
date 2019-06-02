@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<path id="reggia-granatello">
+    <name>Reggia di Portici</name>
+    <description>Reggia, Molo Borbonico, Piazza San Ciro</description>
+    <description_long>Il percorso part, si snoda, blablalalb </description_long>
+    <duration>1-5 h</duration>
+    <length>1,2km</length>
+    <suitable_for>Famiglie, gruppi</suitable_for>
+    <color>#00FF0000</color>
+    <segment>
+        <type>standard</type>
+        <start_coord>40.819638, 14.331037</start_coord>
+        <end_coord>40.810192, 14.336756</end_coord>
+    </segment>
+    <segment>
+        <type>standard</type>
+        <start_coord>40.810192, 14.336756</start_coord>
+        <end_coord>40.810192, 14.336756</end_coord>
+    </segment>
+    <poi id="sanciro" />
+    <poi id="reggia" />
+</path>

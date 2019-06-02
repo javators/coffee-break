@@ -72,10 +72,10 @@ public class Categories implements Iterable<Category> {
 
                         Element eElement = (Element) node;
                         String id = eElement.getAttribute("id");
-                        String name = eElement.getAttribute("name");
-                        String nameSingular = eElement.getAttribute("name_singular");
-                        String icon = eElement.getAttribute("icon");
-                        String managedBy = eElement.getAttribute("managedBy");
+                        String name = eElement.getElementsByTagName("name").item(0).getTextContent();
+                        String nameSingular = eElement.getElementsByTagName("name_singular").item(0).getTextContent();
+                        String icon = eElement.getElementsByTagName("icon").item(0).getTextContent();
+                        String managedBy = eElement.getElementsByTagName("managed_by").item(0).getTextContent();
 
 
 

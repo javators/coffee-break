@@ -2,7 +2,7 @@ package it.edu.liceosilvestri.map2.data;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.view.View;
+import android.view.ViewGroup;
 
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
@@ -31,6 +31,7 @@ public class Poi {
     private String mDescription;
     private String  mNameLong;
     private String mCategoryId;
+    private Category mCategory;
     private String mCoord;
     private String mSuitableFor;
     private Path[] mPathArray;
@@ -41,8 +42,8 @@ public class Poi {
 
     Poi(String id, Context ctx){
         this.mId = id;
+        load(ctx);
     }
-
 
 
     public String getId() {
@@ -63,6 +64,10 @@ public class Poi {
 
     public String getCategoryId() {
         return mCategoryId;
+    }
+
+    public Category getCategory() {
+        return mCategory;
     }
 
     public double getCoordLat() {
@@ -95,7 +100,7 @@ public class Poi {
 
         AssetManager am = ctx.getAssets();
         try {
-            InputStream is = am.open("data/poi/" + mId + ".xml");
+            InputStream is = am.open("data/pois/" + mId + ".xml");
 
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
@@ -105,10 +110,10 @@ public class Poi {
                     <name>Nome breve che appare sulle mappe</name>
                     <name_long>Nome lungo che appare in ActivityPoi</name_long>
                     <description>Descrizione breve che compare sulle mappe</description>
-                    <category>Categoria di appartenenza del POI, es: Bar, Museo, Stazione, Parco, Parcheggio</category>
+                    <category id="monument">Categoria di appartenenza del POI, es: Bar, Museo, Stazione, Parco, Parcheggio</category>
                     <suitable_for>Tipologia di utenti a cui è adatto il percorso, es: famiglie, gruppi</suitable_for>
                     <coord>Coordinate del POI, es: 40.811397, 14.342874</coord>
-                    <address>Indirzzo del POI se presente, es: via Università, 100</address>
+                        <address>Indirzzo del POI se presente, es: via Università, 100</address>
 
                     <path id="percorsoid1" />
                     <path id="percorsoid2" />
@@ -121,11 +126,12 @@ public class Poi {
             mName = root.getElementsByTagName("name").item(0).getTextContent();
             mDescription = root.getElementsByTagName("description").item(0).getTextContent();
             mNameLong = root.getElementsByTagName("name_long").item(0).getTextContent();
-            mCategoryId = root.getElementsByTagName("category").item(0).getTextContent();
             mCoord = root.getElementsByTagName("coord").item(0).getTextContent();
             mAddress = root.getElementsByTagName("address").item(0).getTextContent();
             mSuitableFor = root.getElementsByTagName("suitable_for").item(0).getTextContent();
 
+            Element cat = (Element) root.getElementsByTagName("category").item(0);
+            mCategoryId = cat.getAttribute("id");
 
             NodeList nList = document.getElementsByTagName("path");
             int k=0;
@@ -140,7 +146,7 @@ public class Poi {
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
                         Element eElement = (Element) node;
-                        String pathId = root.getAttribute("id");
+                        String pathId = eElement.getAttribute("id");
 
 
                         mPathArray[k++] = Paths.get(ctx).getPathBy(pathId);
@@ -149,10 +155,10 @@ public class Poi {
                 }
             }
 
-            Node extraNode = root.getElementsByTagName("extra").item(0);
+            Element extraNode = (Element) root.getElementsByTagName("extra").item(0);
 
-            Category c = Categories.get(ctx).getCategoryBy(mCategoryId);
-            String className = c.getManagedBy();
+            mCategory = Categories.get(ctx).getCategoryBy(mCategoryId);
+            String className = mCategory.getManagedBy();
 
             try {
 
@@ -168,7 +174,7 @@ public class Poi {
 
 
             mExtra.setPoi(this);
-            mExtra.loadFromXml(extraNode);
+            mExtra.loadFromXml((Element) extraNode);
 
 
 
@@ -201,8 +207,8 @@ public class Poi {
 
     public interface Extra {
         public void setPoi(Poi p);
-        public void loadFromXml(Node extraNode);
-        public void inflateView(View v);
+        public void loadFromXml(Element node);
+        public void inflateView(ViewGroup vg);
 
     }
 

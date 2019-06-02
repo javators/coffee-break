@@ -13,6 +13,7 @@ public class Category {
     private String mName;
     private String mNameSingular;
     private String mIcon;
+    private int mIconResourceId;
     private String mManagedBy;
     private ArrayList<Poi> mPoiArray;
 
@@ -22,6 +23,9 @@ public class Category {
         this.mName = name;
         this.mNameSingular = nameSingular;
         this.mIcon = icon;
+
+        this.mIconResourceId = ctx.getResources().getIdentifier(icon, "drawable", ctx.getPackageName());
+
         this.mManagedBy = managedBy;
         this.mCtx = ctx;
     }
@@ -40,6 +44,10 @@ public class Category {
 
     public String getIcon() {
         return mIcon;
+    }
+
+    public int getIconResourceId() {
+        return mIconResourceId;
     }
 
     public String getManagedBy() {

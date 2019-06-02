@@ -71,7 +71,7 @@ public class Path {
     }
 
 
-    private void load(Context ctx) {
+    void load(Context ctx) {
 
         AssetManager am = ctx.getAssets();
         try {

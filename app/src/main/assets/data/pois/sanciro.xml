@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="sanciro">
+    <name>San Ciro</name>
+    <name_long>Chiesa di San Ciro</name_long>
+    <description>Chiesa di San Ciro</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.811397, 14.342874</coord>
+    <address>Piazza San Ciro, 1</address>
+    <category id="monument"/>
+    <path id="reggia-granatello" />
+    <extra>
+        <!-- monument -->
+        <description_long>La chiesa di Ciro bla blbal albl blablbab blb lablab lab la blab lab la</description_long>
+        <opening_times>Tutti i giorni 8:00-20:00</opening_times>
+        <website>http://sanciro.it/</website>
+        <image>img/sanciro.jpg</image>
+        <image>img/sanciro2.jpg</image>
+    </extra>
+</poi>

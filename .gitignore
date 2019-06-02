@@ -12,3 +12,4 @@
 /captures
 .externalNativeBuild
 *private_data.xml
+*google_maps_api.xml

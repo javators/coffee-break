@@ -35,7 +35,9 @@ public class Paths implements Iterable<Path> {
                     int pos = s.indexOf(".");
                     if (pos > 0) {
                         String pathid = s.substring(0, pos);
-                        mPathArray[i++] = new Path(pathid, ctx);
+                        Path p = new Path(pathid, ctx);
+                        p.load(ctx);
+                        mPathArray[i++] = p;
                     }
                 }
             }

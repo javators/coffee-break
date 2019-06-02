@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -18,6 +20,12 @@ import it.edu.liceosilvestri.map2.data.Pois;
 
 public class PoiActivity extends AppCompatActivity {
 
+    private MapView mMapView;
+    private GoogleMap mGmap;
+
+    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,37 +35,56 @@ public class PoiActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
 
-        Poi p = Pois.get(getApplicationContext()).getPoiBy(id);
+        Poi poi = Pois.get(getApplicationContext()).getPoiBy(id);
 
-        if (p == null) {
+        if (poi == null) {
             //TODO manage
         }
         else {
 
-            ((TextView) findViewById(R.id.txtName)).setText(p.getNameLong());
-            ((TextView) findViewById(R.id.txtAddress)).setText(p.getAddress());
+            ((TextView) findViewById(R.id.txtName)).setText(poi.getNameLong());
+            ((TextView) findViewById(R.id.txtAddress)).setText(poi.getAddress());
+
+            ImageView iv = findViewById(R.id.imgCategoryIcon);
+            iv.setImageResource(poi.getCategory().getIconResourceId());
 
             LinearLayout linla = findViewById(R.id.layoutPoiPaths);
-            Path[] paths = p.getPathArray();
+            Path[] paths = poi.getPathArray();
             if (paths != null && paths.length > 0) {
                 for (Path ftpu : paths) {
                     Button but = new Button(getApplicationContext());
                     but.setText(ftpu.getName());
                     but.setOnClickListener(vi -> {
                         String pathid = ftpu.getId();
-
+                        Intent i = new Intent(this, PathActivity.class);
+                        i.putExtra("id", pathid);
+                        startActivity(i);
                     });
 
                     linla.addView(but);
                 }
             }
 
-            MapView mv = findViewById(R.id.mapView);
-            mv.getMapAsync(gmap -> {
 
-                MarkerOptions mop = p.getGoogleMarker();
-                gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 14));
-                Marker m = gmap.addMarker(mop);
+
+
+            Bundle mapViewBundle = null;
+            if (savedInstanceState != null) {
+                mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
+            }
+
+            mMapView = findViewById(R.id.mapView);
+            mMapView.onCreate(mapViewBundle);
+
+
+            mMapView.getMapAsync(gmap -> {
+
+                mGmap = gmap;
+
+                MarkerOptions mop = poi.getGoogleMarker();
+                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 14));
+                Marker m = mGmap.addMarker(mop);
+
 
                 //TODO: disabilitare infowindow
 
@@ -65,7 +92,7 @@ public class PoiActivity extends AppCompatActivity {
 
             });
 
-            p.getExtra().inflateView(findViewById(R.id.layoutExtra));
+            poi.getExtra().inflateView(findViewById(R.id.layoutExtra));
 
         }
 
@@ -83,10 +110,49 @@ public class PoiActivity extends AppCompatActivity {
 
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        Bundle mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY);
+        if (mapViewBundle == null) {
+            mapViewBundle = new Bundle();
+            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle);
+        }
+
+        mMapView.onSaveInstanceState(mapViewBundle);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
-
-
-
+        mMapView.onStart();
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mMapView.onStop();
+    }
+    @Override
+    protected void onPause() {
+        mMapView.onPause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        mMapView.onDestroy();
+        super.onDestroy();
+    }
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
+
+
 }
