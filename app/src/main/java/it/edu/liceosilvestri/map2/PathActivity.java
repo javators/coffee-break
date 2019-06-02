@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -88,11 +89,13 @@ public class PathActivity extends AppCompatActivity {
                 Polyline pl = mGmap.addPolyline(poly);
 
 
-                for (String poiid : mPath.getPoiIdArray()) {
+                for (int i=0; i< mPath.getPoiIdArray().length; i++) {
+                    String poiid = mPath.getPoiIdArray()[i];
                     Poi p =Pois.get(this).getPoiBy(poiid);
                     if (p != null) {
                         MarkerOptions mop = p.getGoogleMarker();
                         Marker m = mGmap.addMarker(mop);
+                        m.setTitle("" + (i+1) + ". " + m.getTitle());
                         m.setTag(poiid);
                     }
                 }
@@ -210,11 +213,18 @@ public class PathActivity extends AppCompatActivity {
                 String poiid = mPath.getPoiIdArray()[position];
                 Poi p = Pois.get(PathActivity.this).getPoiBy(poiid);
 
-                ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
-                p.getCategory().getIconResourceId();
+                ((TextView) view.findViewById(R.id.txtName)).setText("" + (position+1) + ". " + p.getNameLong());
 
-                ImageView iv = view.findViewById(R.id.imgCategoryIcon);
+                ImageView iv = view.findViewById(R.id.imgIcon);
                 iv.setImageResource(p.getCategory().getIconResourceId());
+
+                Button btn = view.findViewById(R.id.btnOpen);
+                btn.setOnClickListener( v -> {
+                        Intent i = new Intent(PathActivity.this, PoiActivity.class);
+                        i.putExtra("id", poiid);
+                        PathActivity.this.startActivity(i);
+                    }
+                );
 
             }
             return view;
