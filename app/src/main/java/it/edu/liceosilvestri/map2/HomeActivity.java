@@ -21,6 +21,14 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(i);
         });
 
+        Button btn2 = findViewById(R.id.btnOpenPath);
+        btn2.setOnClickListener(v -> {
+            String id = ((EditText) findViewById(R.id.editTextPathId)).getText().toString();
+            Intent i = new Intent(this, PathActivity.class);
+            i.putExtra("id", id);
+            startActivity(i);
+        });
+
     }
 
     @Override

@@ -198,6 +198,7 @@ public class Poi {
             mMop = new MarkerOptions()
                     .position(lalo)
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                    .alpha(0.7f)
                     .snippet(mDescription)
                     .title(mName);
         }
