@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -123,6 +122,13 @@ public class PathActivity extends AppCompatActivity {
             ListView lv = findViewById(R.id.listViewPois);
             lv.setAdapter(this.new PoiAdapter());
 
+            lv.setOnItemClickListener((adapterView, view, position, longid) -> {
+                String poiid = mPath.getPoiIdArray()[position];
+
+                Intent i = new Intent(getApplicationContext(), PoiActivity.class);
+                i.putExtra("id", poiid);
+                PathActivity.this.startActivity(i);
+            });
         }
 
     }
@@ -217,15 +223,6 @@ public class PathActivity extends AppCompatActivity {
 
                 ImageView iv = view.findViewById(R.id.imgIcon);
                 iv.setImageResource(p.getCategory().getIconResourceId());
-
-                Button btn = view.findViewById(R.id.btnOpen);
-                btn.setOnClickListener( v -> {
-                        Intent i = new Intent(PathActivity.this, PoiActivity.class);
-                        i.putExtra("id", poiid);
-                        PathActivity.this.startActivity(i);
-                    }
-                );
-
             }
             return view;
 

@@ -7,20 +7,12 @@
     <coord>40.82177, 14.32133</coord>
     <address>Via Pietrarsa, 80146 Napoli NA</address>
     <category id="monument"/>
-    <path id="itinerario_a" />
+    <path id="reggia-granatello" />
     <extra>
-        <description_long>Museo della prima ferrovia italiana, inaugurata il 3 ottobre 1839. Era lunga 7.411 metri
-            e congiungeva Napoli a Portici, sulla stessa direttrice della linea Napoli-Salerno, che oggi costeggia
-            l’area del Museo. Il tragitto fu percorso in 11 minuti da due convogli progettati dall’ingegnere Armand
-            Bayard de la Vingtrie, su prototipo dell’inglese George Stephenson. Il Museo permette
-            di intraprendere un affascinante viaggio nel tempo tra le locomotive e i treni che hanno unito l’Italia
-            dal 1839 ai nostri giorni, in 180 anni di storia delle Ferrovie italiane: dal periodo del Regno dei
-            Borboni, attraverso il Regno d’Italia e fino alla Repubblica.</description_long>
-        <opening_times>Lunedì, martedì, mercoledì su prenotazione per grandi gruppi
-            Giovedì 14:00-20:00
-            Venerdì 9:00-16:30
-            Sabato, domenica e festivi dalle ore 9:30 alle 19:30</opening_times>l
+        <description_long>Museo della prima ferrovia italiana, inaugurata il 3 ottobre 1839. Era lunga 7.411 metri e congiungeva Napoli a Portici, sulla stessa direttrice della linea Napoli-Salerno, che oggi costeggia l’area del Museo. Il tragitto fu percorso in 11 minuti da due convogli progettati dall’ingegnere Armand Bayard de la Vingtrie, su prototipo dell’inglese George Stephenson. Il Museo permette di intraprendere un affascinante viaggio nel tempo tra le locomotive e i treni che hanno unito l’Italia dal 1839 ai nostri giorni, in 180 anni di storia delle Ferrovie italiane: dal periodo del Regno dei Borboni, attraverso il Regno d’Italia e fino alla Repubblica.</description_long>
+        <opening_times>Lunedì, Martedì, Mercoledì su prenotazione per grandi gruppi&#13;&#10;Giovedì 14:00-20:00&#13;&#10;Venerdì 9:00-16:30&#13;&#10;Sabato, Domenica e festivi dalle ore 9:30 alle 19:30</opening_times>
         <website>http://www.museopietrarsa.it/</website>
-        <image>img/museum.jpg</image>
+        <image>img/museo_pietrarsa.jpg</image>
+        <image>img/museo_pietrarsa2.jpg</image>
     </extra>
 </poi>

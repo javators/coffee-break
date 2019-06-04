@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btn = findViewById(R.id.btnOpen);
         btn.setOnClickListener(v -> {
             String id = ((EditText) findViewById(R.id.editTextPoiId)).getText().toString();
-            Intent i = new Intent(this, PoiActivity.class);
+            Intent i = new Intent(getApplicationContext(), PoiActivity.class);
             i.putExtra("id", id);
             startActivity(i);
         });
@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btn2 = findViewById(R.id.btnOpenPath);
         btn2.setOnClickListener(v -> {
             String id = ((EditText) findViewById(R.id.editTextPathId)).getText().toString();
-            Intent i = new Intent(this, PathActivity.class);
+            Intent i = new Intent(getApplicationContext(), PathActivity.class);
             i.putExtra("id", id);
             startActivity(i);
         });
@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         mPathsFound = new ArrayList<>();
         mPoisFound = new ArrayList<>();
 
-        ListView lv = HomeActivity.this.findViewById(R.id.listViewResults);
+        ListView lv = findViewById(R.id.listViewResults);
         lv.setAdapter(this.new ResultAdapter());
 
 
@@ -69,7 +69,6 @@ public class HomeActivity extends AppCompatActivity {
                 if (p.getNameLong().toUpperCase().contains(txt) || p.getDescription().toUpperCase().contains(txt))
                     mPoisFound.add(p);
 
-            //ListView lv = HomeActivity.this.findViewById(R.id.listViewResults);
             ResultAdapter ad = (ResultAdapter) lv.getAdapter();
 
             ad.notifyDataSetChanged();
@@ -84,6 +83,25 @@ public class HomeActivity extends AppCompatActivity {
 
         });
 
+        lv.setOnItemClickListener((adapterView, view, position, id) -> {
+
+            if (position < mPathsFound.size()) {
+                Path ph = mPathsFound.get(position);
+                String pathid = ph.getId();
+
+                Intent i = new Intent(HomeActivity.this, PathActivity.class);
+                i.putExtra("id", pathid);
+                HomeActivity.this.startActivity(i);
+            }
+            else {
+                Poi p = mPoisFound.get(position-mPathsFound.size());
+                String poiid = p.getId();
+
+                Intent i = new Intent(HomeActivity.this, PoiActivity.class);
+                i.putExtra("id", poiid);
+                HomeActivity.this.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -129,7 +147,7 @@ public class HomeActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = convertView;
 
-            if(view==null) {
+            if(view == null) {
                 view = inflater.inflate(R.layout.item_search_result , parent, false);
 
                 if (position<mPathsFound.size()) {
@@ -140,16 +158,6 @@ public class HomeActivity extends AppCompatActivity {
 
                     ImageView iv = view.findViewById(R.id.imgIcon);
                     iv.setImageResource(R.drawable.ic_timeline_black_24dp);
-
-                    String pathid = ph.getId();
-                    Button btn = view.findViewById(R.id.btnOpen);
-                    btn.setOnClickListener( v -> {
-                                Intent i = new Intent(HomeActivity.this, PathActivity.class);
-                                i.putExtra("id", pathid);
-                                HomeActivity.this.startActivity(i);
-                            }
-                    );
-
                 }
                 else {
                     Poi p = mPoisFound.get(position-mPathsFound.size());
@@ -159,16 +167,6 @@ public class HomeActivity extends AppCompatActivity {
 
                     ImageView iv = view.findViewById(R.id.imgIcon);
                     iv.setImageResource(p.getCategory().getIconResourceId());
-
-                    String poiid = p.getId();
-                    Button btn = view.findViewById(R.id.btnOpen);
-                    btn.setOnClickListener( v -> {
-                                Intent i = new Intent(HomeActivity.this, PoiActivity.class);
-                                i.putExtra("id", poiid);
-                        HomeActivity.this.startActivity(i);
-                            }
-                    );
-
                 }
 
             }

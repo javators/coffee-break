@@ -25,7 +25,7 @@
         android:textAlignment="viewStart"
         android:textSize="14sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toStartOf="@+id/btnOpen"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,16 +40,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtName" />
-
-    <Button
-        android:id="@+id/btnOpen"
-        android:layout_width="50dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/cardview_shadow_start_color"
-        android:padding="0dp"
-        android:text="Apri"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txtName"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
