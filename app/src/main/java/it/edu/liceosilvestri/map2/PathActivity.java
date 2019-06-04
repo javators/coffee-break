@@ -2,7 +2,6 @@ package it.edu.liceosilvestri.map2;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -59,7 +58,7 @@ public class PathActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.txtSuitableFor)).setText(mPath.getSuitableFor());
 
             ImageView iv = findViewById(R.id.imgPathIcon);
-            iv.setColorFilter(Color.parseColor(mPath.getColor()));
+            iv.setColorFilter(mPath.getColor());
 
 
 
@@ -82,8 +81,7 @@ public class PathActivity extends AppCompatActivity {
                     poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
 
                 poly.clickable(false);
-                int colorint = Color.parseColor(mPath.getColor());
-                poly.color(colorint);
+                poly.color(mPath.getColor());
 
                 Polyline pl = mGmap.addPolyline(poly);
 

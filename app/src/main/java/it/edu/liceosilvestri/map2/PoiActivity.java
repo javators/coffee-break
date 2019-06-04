@@ -1,7 +1,6 @@
 package it.edu.liceosilvestri.map2;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
@@ -54,7 +53,7 @@ public class PoiActivity extends AppCompatActivity {
                 for (Path ftpu : paths) {
                     ImageView ivi = new ImageView(getApplicationContext());
                     ivi.setImageResource(R.drawable.ic_timeline_black_24dp);
-                    ivi.setColorFilter(Color.parseColor(ftpu.getColor()));
+                    ivi.setColorFilter(ftpu.getColor());
                     ivi.setOnClickListener(vi -> {
                         String pathid = ftpu.getId();
                         Intent i = new Intent(this, PathActivity.class);

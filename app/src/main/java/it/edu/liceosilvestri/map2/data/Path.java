@@ -2,6 +2,7 @@ package it.edu.liceosilvestri.map2.data;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -63,8 +64,13 @@ public class Path {
         return mSuitableFor;
     }
 
-    public String getColor() {
-        return mColor;
+    public int getColor() {
+        try {
+            return Color.parseColor(mColor);
+        }
+        catch (Exception e) {
+            return Color.BLACK;
+        }
     }
 
     public Point[] getPointArray() {
