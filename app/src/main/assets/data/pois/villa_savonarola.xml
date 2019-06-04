@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="villa_savonarola">
+    <name>Villa Savonarola</name>
+    <name_long>Villa Savonarola</name_long>
+    <description>Villa di proprietà comunale attualmente adibita a biblioteca</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81884, 14.32991</coord>
+    <address>Corso Giuseppe Garibaldi, 80055 Portici NA</address>
+    <category id="park"/>
+    <path id="itinerario_a" />
+    <extra>
+        <description_long> Villa costruita nel 1850 da Luigi Corsi, fondatore e primo direttore dell’officina di Pietrarsa. Essa divenne, in seguito, prima, proprietà di Clementina Cafaro e, dopo, dell'Istituto Biblico Evangelico d'Italia che attribuì l'attuale denominazione. Passata nelle mani della famiglia Fiore, è stata, infine, acquistata dal Comune che l'ha adibita a Biblioteca Comunale.</description_long>
+        <opening_times>Luned-Giovedi 08:30 - 17:00; Venerdi	08:30 - 14:00; Sabato-Domenica	chiuso</opening_times>
+        <image>img/villa_savonarola.jpg</image>
+    </extra>
+</poi>

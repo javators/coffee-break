@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="sanciro">
-    <name>San Ciro</name>
-    <name_long>Chiesa di San Ciro</name_long>
-    <description>Chiesa di San Ciro</description>
+    <name>Chiesa di San Ciro</name>
+    <name_long>Basilica di Santa Maria della Natività e San Ciro</name_long>
+    <description>Chiesa di stile Barocco siutuata in Piazza S. Ciro</description>
     <suitable_for>Tutti</suitable_for>
-    <coord>40.811397, 14.342874</coord>
-    <address>Piazza San Ciro, 1</address>
+    <coord>40.81439, 14.33895</coord>
+    <address> Piazza S. Ciro, 12, 80055 Portici NA</address>
     <category id="monument"/>
-    <path id="reggia-granatello" />
+    <path id="itinerario_b" />
+    <path id="itinerario_c" />
     <extra>
-        <!-- monument -->
-        <description_long>La chiesa di Ciro bla blbal albl blablbab blb lablab lab la blab lab la</description_long>
-        <opening_times>Tutti i giorni 8:00-20:00</opening_times>
-        <website>http://sanciro.it/</website>
+        <description_long>Distrutta la primigenia parrocchia dalla terribile eruzione del 16/17 dicembre del 1631, l'Università di Portici decise di erigerne una nuova impiantandola su un suolo già in suo possesso denominato lo Petruso. La nuova chiesa viene dunque inaugurata il 9 maggio 1642, dopo ben 10 anni d lavori. Essa è stata protagonista di numerosi restauri con conseguenti trasformazioni di cui l'ultimo effetuato nel 2012. L'odierna Chiesa di San Ciro, così chiamata in onore del Santo Patrono della citta, presenta una facciata in stile bizantino affiancata da due torri campanarie entrambe dotate di orologio. L'interno è diviso in tre navate che conducono all'altare maggiore sul quale spicca la Natività di Maria di Luca Giordano; nell'altare secondario situato sulla destra si trova la Concezione, di Giuseppe Bonito e nella cappella a sinistra dell'altare maggiore troviamo la statua di San Ciro di Ferdinando Sperandeo. Altri lavori di Giordano e Bonito sono esposti nella sagrestia.</description_long>
+        <opening_times>Lunedi, Martedi, Mercoledi, Giovedi, Venerdì e Sabato 09:45-12:00/17:00-19:00; Domenica 09:15-12:00</opening_times>
+        <website>http://www.santuariosanciro.it/il-santuario/contatti.html</website>
         <image>img/sanciro.jpg</image>
         <image>img/sanciro2.jpg</image>
+        <image>img/sanciro3.jpg</image>
     </extra>
 </poi>

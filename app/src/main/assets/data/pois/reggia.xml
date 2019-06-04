@@ -4,15 +4,16 @@
     <name_long>Reggia di Portici</name_long>
     <description>Reggia di Portici</description>
     <suitable_for>Tutti</suitable_for>
-    <coord>40.812397, 14.342474</coord>
-    <address>Via qualcosa, 5</address>
+    <coord> 40.81117, 14.3428</coord>
+    <address>Via Università, 100, 80055 Portici NA</address>
     <category id="monument"/>
-    <path id="reggia-granatello" />
+    <path id="itinerario_c" />
     <extra>
-        <!-- monument -->
-        <description_long>La reggia di blla blbal albl blablbab blb lablab lab la blab lab la</description_long>
-        <opening_times>Lun-sab 10:00-18:00</opening_times>
-        <website>http://reggia.it/</website>
+        <description_long> La reggia di Portici è una dimora storica fatta costruire dal sovrano Carlo di Borbone nel 1738 come residenza estiva per la dinastia dei Borbone di Napoli, prima della costruzione della più imponente reggia di Caserta. È situata all'interno di un ampio parco dotato di un giardino all'inglese e di un anfiteatro e possiede ancora oggi un ampio bosco superiore che era adibito alla caccia ed uno ornamentale a valle. Lavorarono alla sua realizzazione ingegneri, architetti e decoratori, da Giovanni Antonio Medrano ad Antonio Canevari, da Luigi Vanvitelli a Ferdinando Fuga;</description_long>
+        <opening_times>Giovedì 15:00-18:30; Venerdì-Domenica 9:30-18:30.</opening_times>
+        <website>http://www.centromusa.it/it/real-sito-di-portici.html</website>
         <image>img/reggia.jpg</image>
+        <image>img/reggia_portici2.jpg</image>
+        <image>img/reggia_portici_alto.jpg</image>
     </extra>
 </poi>
