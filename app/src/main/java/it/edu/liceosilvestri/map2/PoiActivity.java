@@ -3,7 +3,6 @@ package it.edu.liceosilvestri.map2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,8 +51,19 @@ public class PoiActivity extends AppCompatActivity {
             Path[] paths = poi.getPathArray();
             if (paths != null && paths.length > 0) {
                 for (Path ftpu : paths) {
+                    ImageView ivi = new ImageView(getApplicationContext());
+                    ivi.setImageResource(R.drawable.ic_timeline_black_24dp);
+                    ivi.setColorFilter(ftpu.getColor());
+                    ivi.setOnClickListener(vi -> {
+                        String pathid = ftpu.getId();
+                        Intent i = new Intent(this, PathActivity.class);
+                        i.putExtra("id", pathid);
+                        startActivity(i);
+                    });
+                    /*
                     Button but = new Button(getApplicationContext());
                     but.setText(ftpu.getName());
+
                     but.setOnClickListener(vi -> {
                         String pathid = ftpu.getId();
                         Intent i = new Intent(this, PathActivity.class);
@@ -62,6 +72,8 @@ public class PoiActivity extends AppCompatActivity {
                     });
 
                     linla.addView(but);
+                    */
+                    linla.addView(ivi);
                 }
             }
 

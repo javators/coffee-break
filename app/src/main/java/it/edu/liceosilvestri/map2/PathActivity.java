@@ -2,7 +2,6 @@ package it.edu.liceosilvestri.map2;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -59,7 +58,7 @@ public class PathActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.txtSuitableFor)).setText(mPath.getSuitableFor());
 
             ImageView iv = findViewById(R.id.imgPathIcon);
-            iv.setColorFilter(Color.parseColor(mPath.getColor()));
+            iv.setColorFilter(mPath.getColor());
 
 
 
@@ -82,17 +81,18 @@ public class PathActivity extends AppCompatActivity {
                     poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
 
                 poly.clickable(false);
-                int colorint = Color.parseColor(mPath.getColor());
-                poly.color(colorint);
+                poly.color(mPath.getColor());
 
                 Polyline pl = mGmap.addPolyline(poly);
 
 
-                for (String poiid : mPath.getPoiIdArray()) {
+                for (int i=0; i< mPath.getPoiIdArray().length; i++) {
+                    String poiid = mPath.getPoiIdArray()[i];
                     Poi p =Pois.get(this).getPoiBy(poiid);
                     if (p != null) {
                         MarkerOptions mop = p.getGoogleMarker();
                         Marker m = mGmap.addMarker(mop);
+                        m.setTitle("" + (i+1) + ". " + m.getTitle());
                         m.setTag(poiid);
                     }
                 }
@@ -120,6 +120,13 @@ public class PathActivity extends AppCompatActivity {
             ListView lv = findViewById(R.id.listViewPois);
             lv.setAdapter(this.new PoiAdapter());
 
+            lv.setOnItemClickListener((adapterView, view, position, longid) -> {
+                String poiid = mPath.getPoiIdArray()[position];
+
+                Intent i = new Intent(getApplicationContext(), PoiActivity.class);
+                i.putExtra("id", poiid);
+                PathActivity.this.startActivity(i);
+            });
         }
 
     }
@@ -210,12 +217,10 @@ public class PathActivity extends AppCompatActivity {
                 String poiid = mPath.getPoiIdArray()[position];
                 Poi p = Pois.get(PathActivity.this).getPoiBy(poiid);
 
-                ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
-                p.getCategory().getIconResourceId();
+                ((TextView) view.findViewById(R.id.txtName)).setText("" + (position+1) + ". " + p.getNameLong());
 
-                ImageView iv = view.findViewById(R.id.imgCategoryIcon);
+                ImageView iv = view.findViewById(R.id.imgIcon);
                 iv.setImageResource(p.getCategory().getIconResourceId());
-
             }
             return view;
 

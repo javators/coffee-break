@@ -41,13 +41,13 @@ public class Categories implements Iterable<Category> {
                         <name>Monumenti</name>
                         <name_singular>Monumento</name_singular>
                         <icon></icon>
-                        <managedBy>it.edu.liceosilvestri.map2.data.PoiMonument</managedBy>
+                        <managedBy>it.edu.liceosilvestri.map2.extra.PoiMonument</managedBy>
                     </category>
                     <category id="bar">
                         <name>Bar/Locali</name>
                         <name_singular>Bar/Locale</name_singular>
                         <icon></icon>
-                        <managedBy>it.edu.liceosilvestri.map2.data.PoiBar</managedBy>
+                        <managedBy>it.edu.liceosilvestri.map2.data.PoiRestaurant</managedBy>
                     </category>
 
                     <!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
