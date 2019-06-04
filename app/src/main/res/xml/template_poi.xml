@@ -11,55 +11,55 @@
     <path id="percorsoid2" />
     <extra>
         <!-- monument -->
-        <description></description>
+        <description_long></description_long>
         <opening_times></opening_times>
         <website></website>
         <image>img/chiesa1.jpg</image>
         <image>img/chiesa1_bis.jpg</image>
 
         <!-- museum -->
-        <description></description>
+        <description_long></description_long>
         <opening_times></opening_times>
         <website></website>
         <image>img/museum.jpg</image>
 
         <!-- square -->
-        <description></description>
+        <description_long></description_long>
         <image>img/square.jpg</image>
 
         <!-- bar -->
-        <description></description>
+        <description_long></description_long>
         <price_range></price_range>
         <opening_times></opening_times>
         <website></website>
         <image>img/bar.jpg</image>
 
         <!-- restaurant -->
-        <description></description>
+        <description_long></description_long>
         <price_range></price_range>
         <opening_times></opening_times>
         <website></website>
-        <image>img/bar.jpg</image>
+        <image>img/restaurant.jpg</image>
 
         <!-- hotel -->
-        <description></description>
+        <description_long></description_long>
         <price_range></price_range>
         <website></website>
-        <image>img/bar.jpg</image>
+        <image>img/hotel.jpg</image>
 
 
         <!-- station -->
-        <description></description>
+        <description_long></description_long>
         <website></website>
 
         <!-- park -->
-        <description></description>
+        <description_long></description_long>
         <opening_times></opening_times>
         <image>img/park1.jpg</image>
         <image>img/park1_bis.jpg</image>
 
         <!-- parking -->
-        <description></description>
+        <description_long></description_long>
         <opening_times></opening_times>
 
 
