@@ -32,6 +32,11 @@ public class Path {
     private Point[] mPointArray;
     private String[] mPoiIdArray;
 
+    private CoordinateGroup mBounds;
+
+
+    //private LatLngBounds mBounds;
+
 
     Path(String id, Context ctx){
         this.mId = id;
@@ -77,10 +82,14 @@ public class Path {
         return mPointArray;
     }
 
+
     public String[] getPoiIdArray() {
         return mPoiIdArray;
     }
 
+    public CoordinateGroup getBounds() {
+        return mBounds;
+    }
 
     void load(Context ctx) {
 
@@ -130,6 +139,8 @@ public class Path {
             NodeList nList = document.getElementsByTagName("point");
             int k;
 
+            mBounds = new CoordinateGroup();
+
             if (nList.getLength() > 0) {
 
                 mPointArray = new Point[nList.getLength()];
@@ -140,11 +151,20 @@ public class Path {
                     if (node.getNodeType() == Node.ELEMENT_NODE) {
                         //Print each employee's detail
                         Element eElement = (Element) node;
-                        String coord = eElement.getElementsByTagName("coord").item(0).getTextContent();
+                        String coord = eElement.getAttribute("coord");
 
                         Point seg = new Point(coord);
 
                         mPointArray[k++] = seg;
+
+
+                        String[] latlongstr = coord.split(", ");
+                        if (latlongstr.length == 2) {
+                            double lat = Double.parseDouble(latlongstr[0]);
+                            double lng = Double.parseDouble(latlongstr[1]);
+                            mBounds.addPoint(lat, lng);
+                        }
+
                     }
                 }
             }

@@ -18,6 +18,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -31,38 +32,52 @@ import it.edu.liceosilvestri.map2.data.Pois;
 
 public class PoisActivity extends AppCompatActivity {
 
+    private MapView mMapView;
+
+    private GoogleMap mGmap;
+    private boolean mGlobalLayoutReady = false;
+    private boolean mMapReady = false;
+
+    private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pois);
 
         ExpandableListView expListView = findViewById(R.id.expListViewPois);
-        MapView mv = findViewById(R.id.mapView);
+
+
+        Bundle mapViewBundle = null;
+        if (savedInstanceState != null) {
+            mapViewBundle = savedInstanceState.getBundle(MAP_VIEW_BUNDLE_KEY);
+        }
+
+        mMapView = findViewById(R.id.mapView);
+        mMapView.onCreate(mapViewBundle);
+
 
         final Pois pois = Pois.get(getApplicationContext());
         final HashMap<Poi, Marker> map = new HashMap<>();
 
-        mv.getMapAsync((GoogleMap gmap) -> {
-            for (Poi p : pois) {
-                MarkerOptions mop = p.getGoogleMarker();
-                Marker marker = gmap.addMarker(mop);
-                marker.setTag(p.getId());
+        mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
+            if (mMapReady)
+                putDataOnMap(map);
 
-                map.put(p, marker);
-            }
-
-            gmap.setOnInfoWindowClickListener((Marker marker) -> {
-                Intent intent = new Intent(getApplicationContext(), PoiActivity.class);
-                String poiid = marker.getTag() == null ? "" : marker.getTag().toString();
-
-                intent.putExtra("id", poiid);
-                startActivity(intent);
-            });
-
-            gmap.moveCamera(CameraUpdateFactory.newLatLngZoom(getCenter(), 15));
+            mGlobalLayoutReady = true;
         });
-        mv.onCreate(savedInstanceState);
-        mv.onStart();
+
+        mMapView.getMapAsync((GoogleMap gmap) -> {
+
+            mGmap = gmap;
+            if (mGlobalLayoutReady)
+                putDataOnMap(map);
+
+            mMapReady = true;
+
+        });
+
 
         PoisAdapter adapter = new PoisAdapter(getApplicationContext(), map);
         expListView.setAdapter(adapter);
@@ -88,13 +103,32 @@ public class PoisActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+    private void putDataOnMap(HashMap<Poi, Marker> map) {
+        mGmap.getUiSettings().setZoomGesturesEnabled(true);
+        mGmap.getUiSettings().setZoomControlsEnabled(true);
 
-        BottomNavigator bnav = new BottomNavigator(this);
-        bnav.startWorking();
+        MapView mapview = this.findViewById(R.id.mapView);
+
+        LatLngBounds bounds = Pois.get(this).getBounds().getRectangle();
+        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 150));
+
+        for (Poi p : Pois.get(this)) {
+            MarkerOptions mop = p.getGoogleMarker();
+            Marker marker = mGmap.addMarker(mop);
+            marker.setTag(p.getId());
+
+            map.put(p, marker);
+        }
+
+        mGmap.setOnInfoWindowClickListener((Marker marker) -> {
+            Intent intent = new Intent(getApplicationContext(), PoiActivity.class);
+            String poiid = marker.getTag() == null ? "" : marker.getTag().toString();
+
+            intent.putExtra("id", poiid);
+            startActivity(intent);
+        });
     }
+
 
     private LatLng getCenter() {
         double lat = 0, lng = 0;
@@ -110,6 +144,56 @@ public class PoisActivity extends AppCompatActivity {
 
         return new LatLng(lat, lng);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        Bundle mapViewBundle = outState.getBundle(MAP_VIEW_BUNDLE_KEY);
+        if (mapViewBundle == null) {
+            mapViewBundle = new Bundle();
+            outState.putBundle(MAP_VIEW_BUNDLE_KEY, mapViewBundle);
+        }
+
+        mMapView.onSaveInstanceState(mapViewBundle);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        mMapView.onStart();
+
+        BottomNavigator bnav = new BottomNavigator(this);
+        bnav.startWorking();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        mMapView.onStop();
+    }
+    @Override
+    protected void onPause() {
+        mMapView.onPause();
+        super.onPause();
+    }
+    @Override
+    protected void onDestroy() {
+        mMapView.onDestroy();
+        super.onDestroy();
+    }
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
+
+
 
     private class PoisAdapter extends BaseExpandableListAdapter {
         private final Context mContext;
@@ -170,7 +254,8 @@ public class PoisActivity extends AppCompatActivity {
 
             Category category = getGroup(groupPosition);
             String name = category.getName();
-            tvCategory.setText(name);
+            int size = category.getPois().size();
+            tvCategory.setText(name + " ("+size+")");
             iv.setImageResource(category.getIconResourceId());
 
             final String categoryId = getGroup(groupPosition).getId();

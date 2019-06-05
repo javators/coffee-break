@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -25,7 +26,12 @@ import it.edu.liceosilvestri.map2.data.Paths;
 public class PathsActivity extends AppCompatActivity {
 
     private MapView mMapView;
+
     private GoogleMap mGmap;
+    private boolean mGlobalLayoutReady = false;
+    private boolean mMapReady = false;
+
+
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -44,67 +50,22 @@ public class PathsActivity extends AppCompatActivity {
         mMapView.onCreate(mapViewBundle);
 
 
-        mMapView.getMapAsync(gmap -> {
+        mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
+            if (mMapReady)
+                putDataOnMap();
 
-                    mGmap = gmap;
+            mGlobalLayoutReady = true;
+        });
 
-                    for (Path path : Paths.get(PathsActivity.this)) {
+        mMapView.getMapAsync((GoogleMap gmap) -> {
 
-                        PolylineOptions poly = new PolylineOptions();
+            mGmap = gmap;
+            if (mGlobalLayoutReady)
+                putDataOnMap();
 
-                        for (Path.Point pt : path.getPointArray())
-                            poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
+            mMapReady = true;
 
-                        poly.clickable(true);
-                        poly.color(path.getColor());
-
-                        Polyline pl = mGmap.addPolyline(poly);
-                        pl.setTag(path.getId());
-
-                        /*
-
-                        for (int i = 0; i < path.getPoiIdArray().length; i++) {
-                            String poiid = path.getPoiIdArray()[i];
-                            Poi p = Pois.get(this).getPoiBy(poiid);
-                            if (p != null) {
-                                MarkerOptions mop = p.getGoogleMarker();
-                                Marker m = mGmap.addMarker(mop);
-                                m.setTitle("" + (i + 1) + ". " + m.getTitle());
-                                m.setTag(poiid);
-                            }
-                        }
-                        */
-
-                        LatLng erc = new LatLng(40.818, 14.335);
-
-                        mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
-
-                        /*
-                        mGmap.setOnInfoWindowClickListener((mark) -> {
-                            String poiid = (String) mark.getTag();
-                            Intent i = new Intent(PathsActivity.this, PoiActivity.class);
-                            i.putExtra("id", poiid);
-                            PathsActivity.this.startActivity(i);
-                        });
-                        */
-
-                        mGmap.setOnPolylineClickListener( p ->{
-                            String pathid = (String) p.getTag();
-
-                            Intent intent = new Intent(PathsActivity.this, PathActivity.class);
-                            intent.putExtra("id", pathid);
-                            PathsActivity.this.startActivity(intent);
-
-                        });
-
-
-                /*
-                mGmap.setOnMarkerClickListener((mark)->{
-                    return false; //true: evento consumato -> non mostra titolo e snippet
-                });
-                */
-                    }
-                });
+        });
 
 
         ListView lv = findViewById(R.id.listViewPaths);
@@ -121,6 +82,71 @@ public class PathsActivity extends AppCompatActivity {
 
 
 
+    private void putDataOnMap () {
+
+        mGmap.getUiSettings().setZoomGesturesEnabled(true);
+        mGmap.getUiSettings().setZoomControlsEnabled(true);
+
+        Paths paths = Paths.get(PathsActivity.this);
+
+        LatLngBounds bounds = paths.getBounds().getRectangle();
+        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
+
+        for (Path path : paths) {
+
+            PolylineOptions poly = new PolylineOptions();
+
+            for (Path.Point pt : path.getPointArray())
+                poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
+
+            poly.clickable(true);
+            poly.color(path.getColor());
+
+            Polyline pl = mGmap.addPolyline(poly);
+            pl.setTag(path.getId());
+
+                        /*
+
+                        for (int i = 0; i < path.getPoiIdArray().length; i++) {
+                            String poiid = path.getPoiIdArray()[i];
+                            Poi p = Pois.get(this).getPoiBy(poiid);
+                            if (p != null) {
+                                MarkerOptions mop = p.getGoogleMarker();
+                                Marker m = mGmap.addMarker(mop);
+                                m.setTitle("" + (i + 1) + ". " + m.getTitle());
+                                m.setTag(poiid);
+                            }
+                        }
+                        */
+
+
+                        /*
+                        mGmap.setOnInfoWindowClickListener((mark) -> {
+                            String poiid = (String) mark.getTag();
+                            Intent i = new Intent(PathsActivity.this, PoiActivity.class);
+                            i.putExtra("id", poiid);
+                            PathsActivity.this.startActivity(i);
+                        });
+                        */
+
+            mGmap.setOnPolylineClickListener( p ->{
+                String pathid = (String) p.getTag();
+
+                Intent intent = new Intent(PathsActivity.this, PathActivity.class);
+                intent.putExtra("id", pathid);
+                PathsActivity.this.startActivity(intent);
+
+            });
+
+
+                /*
+                mGmap.setOnMarkerClickListener((mark)->{
+                    return false; //true: evento consumato -> non mostra titolo e snippet
+                });
+                */
+        }
+
+    }
 
 
     @Override

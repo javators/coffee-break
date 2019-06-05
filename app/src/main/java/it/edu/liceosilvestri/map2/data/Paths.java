@@ -14,6 +14,7 @@ public class Paths implements Iterable<Path> {
     private static Paths __paths;
     private Path mPathArray[];
 
+    private CoordinateGroup mBounds;
 
     private Paths(Context ctx){
 
@@ -31,6 +32,8 @@ public class Paths implements Iterable<Path> {
             if (files.length > 0) {
                 mPathArray = new Path[files.length];
                 i=0;
+                mBounds = new CoordinateGroup();
+
                 for (String s : files) {
                     int pos = s.indexOf(".");
                     if (pos > 0) {
@@ -38,6 +41,8 @@ public class Paths implements Iterable<Path> {
                         Path p = new Path(pathid, ctx);
                         p.load(ctx);
                         mPathArray[i++] = p;
+                        mBounds.addPoint(p.getBounds().getRectangle().southwest.latitude,  p.getBounds().getRectangle().southwest.longitude);
+                        mBounds.addPoint(p.getBounds().getRectangle().northeast.latitude,  p.getBounds().getRectangle().northeast.longitude);
                     }
                 }
             }
@@ -79,6 +84,9 @@ public class Paths implements Iterable<Path> {
         return mPathArray==null ? 0 : mPathArray.length;
     }
 
+    public CoordinateGroup getBounds() {
+        return mBounds;
+    }
 
     @NonNull
     @Override

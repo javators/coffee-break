@@ -16,6 +16,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
@@ -28,9 +29,12 @@ import it.edu.liceosilvestri.map2.data.Pois;
 
 public class PathActivity extends AppCompatActivity {
 
-
     private MapView mMapView;
+
     private GoogleMap mGmap;
+    private boolean mGlobalLayoutReady = false;
+    private boolean mMapReady = false;
+
 
     private Path mPath;
 
@@ -71,51 +75,24 @@ public class PathActivity extends AppCompatActivity {
             mMapView.onCreate(mapViewBundle);
 
 
-            mMapView.getMapAsync(gmap -> {
+
+            mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
+                if (mMapReady)
+                    putDataOnMap();
+
+                mGlobalLayoutReady = true;
+            });
+
+            mMapView.getMapAsync((GoogleMap gmap) -> {
 
                 mGmap = gmap;
+                if (mGlobalLayoutReady)
+                    putDataOnMap();
 
-                PolylineOptions poly = new PolylineOptions();
+                mMapReady = true;
 
-                for (Path.Point pt : mPath.getPointArray())
-                    poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
-
-                poly.clickable(false);
-                poly.color(mPath.getColor());
-
-                Polyline pl = mGmap.addPolyline(poly);
-
-
-                for (int i=0; i< mPath.getPoiIdArray().length; i++) {
-                    String poiid = mPath.getPoiIdArray()[i];
-                    Poi p =Pois.get(this).getPoiBy(poiid);
-                    if (p != null) {
-                        MarkerOptions mop = p.getGoogleMarker();
-                        Marker m = mGmap.addMarker(mop);
-                        m.setTitle("" + (i+1) + ". " + m.getTitle());
-                        m.setTag(poiid);
-                    }
-                }
-
-
-                LatLng erc = new LatLng(40.818, 14.335);
-
-                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
-
-
-                mGmap.setOnInfoWindowClickListener((mark)->{
-                    String poiid = (String) mark.getTag();
-                    Intent i = new Intent(PathActivity.this, PoiActivity.class);
-                    i.putExtra("id", poiid);
-                    PathActivity.this.startActivity(i);
-                });
-
-                /*
-                mGmap.setOnMarkerClickListener((mark)->{
-                    return false; //true: evento consumato -> non mostra titolo e snippet
-                });
-                */
             });
+
 
             ListView lv = findViewById(R.id.listViewPois);
             lv.setAdapter(this.new PoiAdapter());
@@ -131,7 +108,56 @@ public class PathActivity extends AppCompatActivity {
 
     }
 
+private void putDataOnMap() {
 
+    mGmap.getUiSettings().setZoomGesturesEnabled(true);
+    mGmap.getUiSettings().setZoomControlsEnabled(true);
+
+    LatLngBounds bounds = mPath.getBounds().getRectangle();
+    mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 200));
+
+
+    PolylineOptions poly = new PolylineOptions();
+
+    for (Path.Point pt : mPath.getPointArray())
+        poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
+
+    poly.clickable(false);
+    poly.color(mPath.getColor());
+
+    Polyline pl = mGmap.addPolyline(poly);
+
+
+    for (int i=0; i< mPath.getPoiIdArray().length; i++) {
+        String poiid = mPath.getPoiIdArray()[i];
+        Poi p =Pois.get(this).getPoiBy(poiid);
+        if (p != null) {
+            MarkerOptions mop = p.getGoogleMarker();
+            Marker m = mGmap.addMarker(mop);
+            m.setTitle("" + (i+1) + ". " + m.getTitle());
+            m.setTag(poiid);
+        }
+    }
+
+
+    //LatLng erc = new LatLng(40.818, 14.335);
+    //mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
+
+
+    mGmap.setOnInfoWindowClickListener((mark)->{
+        String poiid = (String) mark.getTag();
+        Intent i = new Intent(PathActivity.this, PoiActivity.class);
+        i.putExtra("id", poiid);
+        PathActivity.this.startActivity(i);
+    });
+
+    /*
+    mGmap.setOnMarkerClickListener((mark)->{
+        return false; //true: evento consumato -> non mostra titolo e snippet
+    });
+    */
+
+}
 
     @Override
     public void onSaveInstanceState(Bundle outState) {

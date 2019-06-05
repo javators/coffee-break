@@ -13,6 +13,7 @@ public class Pois implements Iterable<Poi> {
     private static Pois __pois;
     private Poi mPoiArray[];
     private HashMap<String, Poi> mPoiMap;
+    private CoordinateGroup mBounds;
 
 
     private Pois(Context ctx){
@@ -34,6 +35,8 @@ public class Pois implements Iterable<Poi> {
                 mPoiMap = new HashMap<>(files.length);
                 i=0;
 
+                mBounds = new CoordinateGroup();
+
                 for (String s : files) {
                     int pos = s.indexOf(".");
                     if (pos > 0) {
@@ -41,6 +44,7 @@ public class Pois implements Iterable<Poi> {
                         Poi p = new Poi(poiid, ctx);
                         mPoiArray[i++] = p;
                         mPoiMap.put(poiid, p);
+                        mBounds.addPoint(p.getCoordLat(), p.getCoordLng());
                     }
                 }
             }
@@ -75,6 +79,10 @@ public class Pois implements Iterable<Poi> {
 
     public Poi getPoiBy(String poiid) {
         return mPoiMap.get(poiid);
+    }
+
+    public CoordinateGroup getBounds() {
+        return mBounds;
     }
 
     @NonNull
