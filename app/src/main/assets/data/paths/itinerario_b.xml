@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <path id="itinerario_b">
-    <name>itinerario B</name>
-    <description>Dalla circumvesuviana al mare</description>
+    <name>Itinerario B</name>
+    <description>Dalla circumvesuviana di Via Libertà al mare</description>
     <description_long>Questo percorso è comodo per chi decide di arrivare a Portici con i mezzi pubblici arrivando alla stazione di Via Libertà e vuole raggiungere il mare dopo una camminata tra i negozi</description_long>
-    <duration>1-3h</duration>
+    <duration>2-4h</duration>
     <length>1,7 km</length>
     <suitable_for>Famiglie, regazzi</suitable_for>
     <color>#E53935</color>

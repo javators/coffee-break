@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <path id="itinerario_c">
-    <name>itinerario C</name>
+    <name>Itinerario C</name>
     <description>Dalla mare alla Reggia di Portici</description>
     <description_long>Questo percorso permette una passeggiata tra il verde e la storia di Portici partendo dal mare</description_long>
-    <duration>2-4h</duration>
+    <duration>3-5h</duration>
     <length>1,2 km</length>
     <suitable_for>Famiglie, regazzi</suitable_for>
     <color>#4CAF50</color>
