@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="teatro_comunale_de_filippo">
+    <name>Teatro De Filippo</name>
+    <name_long>Teatro Comunale De Filippo</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81217, 14.33779</coord>
+    <address>Corso Umberto 80055 Portici NA</address>
+    <category id="Svago"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+        <description_long></description_long>
+        <opening_times>-</opening_times>
+        <website>-</website>
+        <image></image>
+
+
+
+    </extra>
+</poi>

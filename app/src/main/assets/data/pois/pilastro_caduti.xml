@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="puntoid">
+    <name>Pilastro Caduti</name>
+    <name_long>
+        Pilastro delle vittime dell'eruzione del Vesuvio</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81457, 14.33576</coord>
+    <address>-</address>
+    <category id="monument"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+
+        <description_long></description_long>
+        <opening_times>-</opening_times>
+        <website>-</website>
+        <image>img/.jpg</image>
+
+
+
+
+
+
+
+    </extra>
+</poi>

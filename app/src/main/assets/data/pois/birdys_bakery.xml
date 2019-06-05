@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="birdys_bakery">
+    <name>Birdy's Bakery</name>
+    <name_long>Birdy's Bakery</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81729, 14.34499</coord>
+    <address>Via della Libertà, 195, 80055 Portici NA</address>
+    <category id="restaurant"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+
+        <description_long></description_long>
+        <price_range>Alto</price_range>
+        <opening_times>lunedì 07–00; martedì 07–00; mercoledì 07–00; giovedì 07–00; venerdì 07–02; sabato 07–02; domenica 08–01;
+            </opening_times>
+        <website>http://www.birdysbakery.com/</website>
+        <image>img/birdysbakery.jpg</image>
+
+
+
+
+    </extra>
+</poi>
