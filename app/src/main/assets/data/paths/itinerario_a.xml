@@ -7,39 +7,17 @@
     <length>2,4 km</length>
     <suitable_for>Famiglie, gruppi</suitable_for>
     <color>#FF1976D2</color>
-    <point>
-        <coord>40.822058, 14.343807</coord>
-    </point>
-    <point>
-        <coord>40.820182, 14.344409</coord>
-    </point>
-    <point>
-        <coord>40.819605, 14.336864</coord>
-    </point>
-    <point>
-        <coord>40.818561, 14.332112</coord>
-    </point>
-    <point>
-        <coord>40.818092, 14.330709</coord>
-    </point>
-    <point>
-        <coord>40.819190, 14.328778</coord>
-    </point>
-    <point>
-        <coord>40.820812, 14.326858</coord>
-    </point>
-    <point>
-        <coord>40.821071, 14.326440</coord>
-    </point>
-    <point>
-        <coord>40.821912, 14.324582</coord>
-    </point>
-    <point>
-        <coord>40.822787, 14.322979</coord>
-    </point>
-    <point>
-        <coord>40.821827, 14.321670</coord>
-    </point>
+    <point coord="40.822058, 14.343807" />
+    <point coord="40.820182, 14.344409" />
+    <point coord="40.819605, 14.336864" />
+    <point coord="40.818561, 14.332112" />
+    <point coord="40.818092, 14.330709" />
+    <point coord="40.819190, 14.328778" />
+    <point coord="40.820812, 14.326858" />
+    <point coord="40.821071, 14.326440" />
+    <point coord="40.821912, 14.324582" />
+    <point coord="40.822787, 14.322979" />
+    <point coord="40.821827, 14.321670" />
 
     <!--<poi id="la_terrazza" />-->
     <poi id="villa_consiglio" />

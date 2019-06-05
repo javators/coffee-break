@@ -7,30 +7,14 @@
     <length>1,2 km</length>
     <suitable_for>Famiglie, regazzi</suitable_for>
     <color>#4CAF50</color>
-    <point>
-        <coord>40.811483, 14.342699</coord>
-    </point>
-    <point>
-        <coord>40.812404, 14.340906</coord>
-    </point>
-    <point>
-        <coord>40.813021, 14.340084</coord>
-    </point>
-    <point>
-        <coord>40.813973, 14.339462</coord>
-    </point>
-    <point>
-        <coord>40.813824, 14.338841</coord>
-    </point>
-    <point>
-        <coord>40.810184, 14.336669</coord>
-    </point>
-    <point>
-        <coord>40.810206, 14.336395</coord>
-    </point>
-    <point>
-        <coord>40.810206, 14.336395</coord>
-    </point>
+    <point coord="40.811483, 14.342699" />
+    <point coord="40.812404, 14.340906" />
+    <point coord="40.813021, 14.340084" />
+    <point coord="40.813973, 14.339462" />
+    <point coord="40.813824, 14.338841" />
+    <point coord="40.810184, 14.336669" />
+    <point coord="40.810206, 14.336395" />
+    <point coord="40.810206, 14.336395" />
 
     <!-- <poi id="stazione_piazza_san_pasquale"/> -->
     <poi id="granatello"/>

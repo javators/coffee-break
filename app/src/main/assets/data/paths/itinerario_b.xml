@@ -7,30 +7,14 @@
     <length>1,7 km</length>
     <suitable_for>Famiglie, regazzi</suitable_for>
     <color>#E53935</color>
-    <point>
-        <coord>40.816819, 14.346031</coord>
-    </point>
-    <point>
-        <coord>40.817496, 14.345602</coord>
-    </point>
-    <point>
-        <coord>40.814119, 14.339110</coord>
-    </point>
-    <point>
-        <coord>40.814099, 14.338675</coord>
-    </point>
-    <point>
-        <coord>40.814521, 14.335955</coord>
-    </point>
-    <point>
-        <coord>40.816275, 14.333793</coord>
-    </point>
-    <point>
-        <coord>40.817314, 14.332017</coord>
-    </point>
-    <point>
-        <coord>40.815827, 14.330602</coord>
-    </point>
+    <point coord="40.816819, 14.346031" />
+    <point coord="40.817496, 14.345602" />
+    <point coord="40.814119, 14.339110" />
+    <point coord="40.814099, 14.338675" />
+    <point coord="40.814521, 14.335955" />
+    <point coord="40.816275, 14.333793" />
+    <point coord="40.817314, 14.332017" />
+    <point coord="40.815827, 14.330602" />
 
     <!-- <poi id="stazione_liberta"/> -->
     <!-- <poi id="birdys_bakery"/> -->
