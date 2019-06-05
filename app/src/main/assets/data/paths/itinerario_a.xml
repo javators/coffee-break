@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<path id="itinerario_a">
+    <name>Itinerario A</name>
+    <description>Dalla circumvesuviana di Bellavista al Museo di Pietrarsa</description>
+    <description_long>Questo percorso è comodo per chi arriva a Portici con i mezzi pubblici arrivando alla stazione di Portici Bellavista. </description_long>
+    <duration>32 min</duration>
+    <length>2,4 km</length>
+    <suitable_for>Famiglie, gruppi</suitable_for>
+    <color>#FF1976D2</color>
+    <point>
+        <coord>40.822058, 14.343807</coord>
+    </point>
+    <point>
+        <coord>40.820182, 14.344409</coord>
+    </point>
+    <point>
+        <coord>40.819605, 14.336864</coord>
+    </point>
+    <point>
+        <coord>40.818561, 14.332112</coord>
+    </point>
+    <point>
+        <coord>40.818092, 14.330709</coord>
+    </point>
+    <point>
+        <coord>40.819190, 14.328778</coord>
+    </point>
+    <point>
+        <coord>40.820812, 14.326858</coord>
+    </point>
+    <point>
+        <coord>40.821071, 14.326440</coord>
+    </point>
+    <point>
+        <coord>40.821912, 14.324582</coord>
+    </point>
+    <point>
+        <coord>40.822787, 14.322979</coord>
+    </point>
+    <point>
+        <coord>40.821827, 14.321670</coord>
+    </point>
+
+    <!--<poi id="la_terrazza" />-->
+    <!--<poi id="villa_consiglio" />-->
+    <poi id="villa_savonarola" />
+    <poi id="villa_aversa" />
+    <poi id="villa_laurolancellotti" />
+    <poi id="pietrarsa" /> <!-- TODO Cambiare in museo_pietrarsa -->
+    <!--<poi id="stazione_pietrarsa" />-->
+</path>
