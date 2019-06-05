@@ -71,7 +71,7 @@ public class PoiSquare implements Poi.Extra {
     @Override
     public void inflateView(ViewGroup vg) {
         LayoutInflater inflater = LayoutInflater.from(vg.getContext());
-        inflater.inflate(R.layout.extra_restaurant, vg);
+        inflater.inflate(R.layout.extra_square, vg);
 
         ((TextView) vg.findViewById(R.id.txtDescription)).setText(mDescriptionLong);
 

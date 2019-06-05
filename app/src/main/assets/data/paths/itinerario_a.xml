@@ -42,10 +42,10 @@
     </point>
 
     <!--<poi id="la_terrazza" />-->
-    <!--<poi id="villa_consiglio" />-->
+    <poi id="villa_consiglio" />
     <poi id="villa_savonarola" />
-    <poi id="villa_aversa" />
-    <poi id="villa_laurolancellotti" />
+    <!-- <poi id="villa_aversa" /> -->
+    <!-- <poi id="villa_laurolancellotti" /> -->
     <poi id="pietrarsa" /> <!-- TODO Cambiare in museo_pietrarsa -->
     <!--<poi id="stazione_pietrarsa" />-->
 </path>
