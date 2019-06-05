@@ -21,6 +21,7 @@
         <description_long></description_long>
         <opening_times></opening_times>
         <website></website>
+        <telephone_number></telephone_number>
         <image>img/museum.jpg</image>
 
         <!-- square -->
@@ -32,6 +33,7 @@
         <price_range></price_range>
         <opening_times></opening_times>
         <website></website>
+        <telephone_number></telephone_number>
         <image>img/bar.jpg</image>
 
         <!-- restaurant -->
@@ -39,12 +41,15 @@
         <price_range></price_range>
         <opening_times></opening_times>
         <website></website>
+        <telephone_number></telephone_number>
         <image>img/restaurant.jpg</image>
 
         <!-- hotel -->
         <description_long></description_long>
         <price_range></price_range>
         <website></website>
+        <rating></rating>
+        <telephone_number></telephone_number>
         <image>img/hotel.jpg</image>
 
 
@@ -62,6 +67,13 @@
         <description_long></description_long>
         <opening_times></opening_times>
 
+        <!-- entertainment-->
+        <description_long></description_long>
+        <price_range></price_range>
+        <opening_times></opening_times>
+        <website></website>
+        <telephone_number></telephone_number>
+        <image>img/entertainment.jpg</image>
 
     </extra>
 </poi>
