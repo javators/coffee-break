@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="granatello">
+<name>Porto del Granatello</name>
+<name_long>Porto Borbonico del Granatello</name_long>
+<description>Suggestivo porto Borbonico che si estende e si affaccia sul Mar Tirreno. </description>
+<suitable_for>tutti</suitable_for>
+<coord>40.80785, 14.33679</coord>
+<address>Porto del Granatello 80055 Portici NA</address>
+<category id="monument"/>
+<path id="itinerario_c" />
+<extra>
+    <description_long>Suggestivo porto Borbonico che si estende e si affaccia sul Mar Tirreno e le cui origini risalgono ai prosperi anni del Regno delle Due Sicilie. La storia dell’area del Granatello, così chiamata per la presenza di una piantagione di melograno che si estendeva tra Villa Menna ed il convento di San Pasquale, s’incrocia inevitabilmente con quella della Reggia di Portici: Carlo di Borbone, dopo aver commissionato l’edificazione della storica residenza, nel 1740 fece costruire un fortino, denominato “Fortino del Granatello”, per impedire gli attacchi esterni dal mare. In quel periodo, l’economia della città di Portici si basava per lo più sulla pesca, attività praticata sul vasto litorale. Nell'area del fortino, durante il Regno di Ferdinando IV, venne iniziata la costruzione dell'attuale porto turistico. In zona attualmente si concentra anche la movida porticese, grazie alla presenza di bar e locali. </description_long>
+    <opening_times>Sempre aperto</opening_times>
+    <website></website>
+    <image>img/.granatello.jpg</image>
+    <image>img/.granatello2.jpg</image>
+    <image>img/.granatello3.jpg</image>
+</extra>
+</poi>

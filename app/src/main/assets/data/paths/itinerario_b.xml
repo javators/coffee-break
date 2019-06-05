@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<path id="itinerario_b">
+    <name>Itinerario B</name>
+    <description>Dalla circumvesuviana di Via Libertà al mare</description>
+    <description_long>Questo percorso è comodo per chi decide di arrivare a Portici con i mezzi pubblici arrivando alla stazione di Via Libertà e vuole raggiungere il mare dopo una camminata tra i negozi</description_long>
+    <duration>2-4h</duration>
+    <length>1,7 km</length>
+    <suitable_for>Famiglie, regazzi</suitable_for>
+    <color>#E53935</color>
+    <point>
+        <coord>40.816819, 14.346031</coord>
+    </point>
+    <point>
+        <coord>40.817496, 14.345602</coord>
+    </point>
+    <point>
+        <coord>40.814119, 14.339110</coord>
+    </point>
+    <point>
+        <coord>40.814099, 14.338675</coord>
+    </point>
+    <point>
+        <coord>40.814521, 14.335955</coord>
+    </point>
+    <point>
+        <coord>40.816275, 14.333793</coord>
+    </point>
+    <point>
+        <coord>40.817314, 14.332017</coord>
+    </point>
+    <point>
+        <coord>40.815827, 14.330602</coord>
+    </point>
+
+    <!-- <poi id="stazione_liberta"/> -->
+    <!-- <poi id="birdys_bakery"/> -->
+    <!-- <poi id="fantasy_fruit"/> -->
+    <!-- <poi id="pizzeria_del_centro"/> -->
+    <poi id="sanciro"/> <!-- TODO Cambiare in chiesa/piazza_sanciro -->
+    <!-- <poi id="antica_gelateria_gallo"/> -->
+    <!-- <poi id="pilastro_delle_vittime_dell_eruzione"/> -->
+    <!-- <poi id="bar_la_conchiglia"/> -->
+    <!-- <poi id="kou_sushi"/> -->
+    <!-- <poi id="cinema_teatro_roma"/> -->
+    <!-- <poi id="escape_room_portici"/> -->
+    <!-- <poi id="lido_aurora"/> -->
+
+
+</path>

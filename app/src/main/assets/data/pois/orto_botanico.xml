@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="orto_botanico">
+    <name>Orto Botanico</name>
+    <name_long>Orto Botanico di Portici</name_long>
+    <description>Orto botanico della Facoltà di Agraria dell'Università di Napoli</description>
+    <suitable_for>-</suitable_for>
+    <coord>40.81133, 14.34256</coord>
+    <address>Via Università, 100, 80055 Portici NA</address>
+    <category id="monument"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+        <description_long>Orto botanico occupante 7.400 mq del parco della Reggia di Portici, creato per iniziativa di Nicola Antonio Pedicino. l’esposizione botanica è organizzata per distribuzione geografica e tipologie ambientali: vi si allevano conifere, flora del Mediterraneo, magnolie e piante provenienti dal Centro e Sud America, Australia, Sudafrica e di origine euroasiatica. La Serra Pedicino, restaurata nel 2000, ospita una collezione di piante epifite. Una struttura in pietra accoglie la Primula palinuri, endemica in Campania, Basilicata e Calabria.</description_long>
+        <opening_times>giorni feriali 9:30-13:30</opening_times>
+        <website>http://www.centromusa.it/it/orto-botanico-di-portici.html</website>
+        <image>img/orto2.jpg</image>
+        <image>img/orto.jpg</image>
+</extra>
+</poi>

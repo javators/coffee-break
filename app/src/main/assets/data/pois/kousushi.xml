@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="kousushi">
+    <name>Kou Sushi</name>
+    <name_long>Kou Sushi Portici</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81603, 14.3341</coord>
+    <address>Corso Giuseppe Garibaldi, 130, 80055 Portici NA</address>
+    <category id="restaurant"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+
+        <description_long></description_long>
+        <price_range>Medio</price_range>
+        <opening_times>12:30-15, 19:30-00</opening_times>
+        <website>http://www.kousushi.it/</website>
+        <image>img/kousushi.jpg</image>
+
+
+    </extra>
+</poi>

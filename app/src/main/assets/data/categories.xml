@@ -54,6 +54,12 @@
         <icon>ic_train_black_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiStation</managed_by>
     </category>
+    <category id="entertainment">
+        <name>Luoghi d'intrattenimento</name>
+        <name_singular>Luogo d'intrattenimento</name_singular>
+        <icon>ic_entertainment_black_24dp</icon>
+        <managed_by>it.edu.liceosilvestri.map2.extra.PoiRestaurant</managed_by>
+    </category>
 
 
     <!--Categoria di appartenenza del POI, es: Monument, Bar, Restaurant, Hotel, Museum, Square, Station, Park, Parking-->

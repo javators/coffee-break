@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="pizzeria_del_centro">
+    <name>Pizzeria del Centro</name>
+    <name_long>Pizzeria del Centro</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81594, 14.34222</coord>
+    <address>Via della Libertà, 121, 80055 Portici NA</address>
+    <category id="restaurant"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+
+        <description_long></description_long>
+        <price_range>Medio</price_range>
+        <opening_times>13-15, 19-00</opening_times>
+        <website>https://www.tripadvisor.it/Restaurant_Review-g1396187-d1924370-Reviews-Pizzeria_del_Centro-Portici_Province_of_Naples_Campania.html</website>
+        <image>img/pizzeriacentro.jpg</image>
+
+
+    </extra>
+</poi>

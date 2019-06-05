@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Map2</string>
+    <string name="app_name">APPortici</string>
     <string name="title_activity_prova_buttons">ProvaButtonsActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
@@ -19,4 +19,11 @@
     <string name="txt_nav_pois">Luoghi</string>
     <string name="txt_nav_credits">Crediti</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="portici_title">Benvenuto a Portici!</string>
+    <string name="portici_desc">Grazie per aver scaricato quest\'app. Qui potrai trovare informazioni sulla maggior parte dei punti di interesse della nostra città, e degli itinerari per visitarli. Ti consigiamo vivamente di visitare il Museo Ferroviario di Pietrarsa, museo della prima ferrovia italiana inaugurato nel 1839, la Reggia ed il Real Bosco di Portici.</string>
+
+    <string name="credits1">App sviluppata nell\'ambito del progetto MAPPiamo il Territorio 2 fesr-sgnaps/pons fesr-sgnaps/pons&#13;&#10;&#13;&#10;MAPPiamo il Territorio 2&#13;&#10;I Love Portici</string>
+    <string name="credits2">Si Ringraziano:&#13;&#10;L\'esperto ed ingegnere Umberto Toma;&#13;&#10;Gli studenti del corso: Vincenzo Casapulla, <!--Rosario D'Antonio, -->Simone Damasco, Alessio Giliberti, <!--Gabriele Mangiacapre, -->Andrea Marigliano, Ciro Marigliano, Giovanni Vitiello&#13;&#10;Il tutor interno: Fulvia Ambrosino</string>
+
 </resources>

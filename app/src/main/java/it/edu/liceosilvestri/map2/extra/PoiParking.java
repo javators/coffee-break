@@ -48,7 +48,7 @@ public class PoiParking implements Poi.Extra {
     @Override
     public void inflateView(ViewGroup vg) {
         LayoutInflater inflater = LayoutInflater.from(vg.getContext());
-        inflater.inflate(R.layout.extra_museum, vg);
+        inflater.inflate(R.layout.extra_parking, vg);
 
         ((TextView) vg.findViewById(R.id.txtOpeningTimes)).setText(mOpeningTimes);
         ((TextView) vg.findViewById(R.id.txtDescription)).setText(mDescriptionLong);

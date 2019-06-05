@@ -19,6 +19,8 @@ public class PoiHotel implements Poi.Extra {
     private String mDescriptionLong;
     private String mPriceRange;
     private String mWebsite;
+    private String mTelephoneNumber;
+    private String mRating;
     private String[] mImageArray;
 
     @Override
@@ -34,6 +36,8 @@ public class PoiHotel implements Poi.Extra {
             <description_long></description_long>
             <price_range></price_range>
             <website></website>
+            <rating></rating>
+            <telephone_number></telephone_number>
             <image>img/hotel.jpg</image>
         </extra>
         */
@@ -41,6 +45,8 @@ public class PoiHotel implements Poi.Extra {
         mDescriptionLong = extraNode.getElementsByTagName("description_long").item(0).getTextContent();
         mPriceRange = extraNode.getElementsByTagName("price_range").item(0).getTextContent();
         mWebsite = extraNode.getElementsByTagName("website").item(0).getTextContent();
+        mTelephoneNumber = extraNode.getElementsByTagName("telephone_number").item(0).getTextContent();
+        mRating = extraNode.getElementsByTagName("rating").item(0).getTextContent();
 
         NodeList nList = extraNode.getElementsByTagName("image");
         int k=0;
@@ -90,6 +96,8 @@ public class PoiHotel implements Poi.Extra {
         ((TextView) vg.findViewById(R.id.txtWebsite)).setText(mWebsite);
         ((TextView) vg.findViewById(R.id.txtPriceRange)).setText(mPriceRange);
         ((TextView) vg.findViewById(R.id.txtDescription)).setText(mDescriptionLong);
+        ((TextView) vg.findViewById(R.id.txtTelephoneNumber)).setText(mTelephoneNumber);
+        ((TextView) vg.findViewById(R.id.txtRating)).setText(mRating);
 
         Util.ImagePager ip = new Util.ImagePager(vg.getContext(), mImageArray);
         ViewPager vp = vg.findViewById(R.id.viewPager);

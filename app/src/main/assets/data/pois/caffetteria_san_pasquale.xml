@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="caffetteria_san_pasquale">
+    <name>Bar S Pasquale</name>
+    <name_long>Caffetteria San Pasquale</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.8096, 14.33651</coord>
+    <address>Piazza S. Pasquale, 6, 80055 Portici NA</address>
+    <category id="bar"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+        <description_long></description_long>
+        <price_range>Medio</price_range>
+        <opening_times>05-21:30</opening_times>
+        <website>https://caffetteria-san-pasquale.business.site/</website>
+        <image>img/sanpasquale.jpg</image>
+    </extra>
+</poi>

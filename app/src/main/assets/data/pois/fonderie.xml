@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="fonderie">
+    <name>Fonderie</name>
+    <name_long>Le Fonderie</name_long>
+    <description></description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81673, 14.33374</coord>
+    <address>Corso Giuseppe Garibaldi, 144A, 80055 Portici NA</address>
+    <category id="restaurant"/>
+    <path id="percorsoid1" />
+    <path id="percorsoid2" />
+    <extra>
+
+        <description_long></description_long>
+        <price_range>Medio</price_range>
+        <opening_times>19:30-02</opening_times>
+        <website>https://m.facebook.com/fonderie.portici/</website>
+        <image>img/fonderie.jpg</image>
+
+
+    </extra>
+</poi>
