@@ -34,6 +34,7 @@
             android:label="@string/title_activity_paths" />
         <activity
             android:name=".HomeActivity"
+            android:windowSoftInputMode="adjustPan"
             android:label="@string/title_activity_home" />
         <activity
             android:name=".PoiActivity"

@@ -31,21 +31,21 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button btn = findViewById(R.id.btnOpen);
-        btn.setOnClickListener(v -> {
-            String id = ((EditText) findViewById(R.id.editTextPoiId)).getText().toString();
-            Intent i = new Intent(getApplicationContext(), PoiActivity.class);
-            i.putExtra("id", id);
-            startActivity(i);
-        });
-
-        Button btn2 = findViewById(R.id.btnOpenPath);
-        btn2.setOnClickListener(v -> {
-            String id = ((EditText) findViewById(R.id.editTextPathId)).getText().toString();
-            Intent i = new Intent(getApplicationContext(), PathActivity.class);
-            i.putExtra("id", id);
-            startActivity(i);
-        });
+//        Button btn = findViewById(R.id.btnOpen);
+//        btn.setOnClickListener(v -> {
+//            String id = ((EditText) findViewById(R.id.editTextPoiId)).getText().toString();
+//            Intent i = new Intent(getApplicationContext(), PoiActivity.class);
+//            i.putExtra("id", id);
+//            startActivity(i);
+//        });
+//
+//        Button btn2 = findViewById(R.id.btnOpenPath);
+//        btn2.setOnClickListener(v -> {
+//            String id = ((EditText) findViewById(R.id.editTextPathId)).getText().toString();
+//            Intent i = new Intent(getApplicationContext(), PathActivity.class);
+//            i.putExtra("id", id);
+//            startActivity(i);
+//        });
 
         mPathsFound = new ArrayList<>();
         mPoisFound = new ArrayList<>();
