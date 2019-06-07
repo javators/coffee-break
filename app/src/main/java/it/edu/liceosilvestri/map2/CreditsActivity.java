@@ -1,14 +1,23 @@
 package it.edu.liceosilvestri.map2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 public class CreditsActivity extends AppCompatActivity {
+    private int mCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
+
+        findViewById(R.id.imageView4).setOnClickListener((view) -> {
+            if (mCount == 7)
+                startActivity(new Intent(getApplicationContext(), ValidatorActivity.class));
+            else
+                mCount++;
+        });
     }
 
 

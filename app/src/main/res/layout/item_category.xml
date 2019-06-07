@@ -38,7 +38,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/switchPoiCategoryVisible" />
+        app:layout_constraintTop_toBottomOf="@+id/switchPoiCategoryVisible" />
 
     <ImageView
         android:id="@+id/imgCategoryIcon"

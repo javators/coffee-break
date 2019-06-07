@@ -30,7 +30,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Lorem ipsum ecchite stra..."
+        android:text="Lorem ipsum"
         app:layout_constraintBottom_toTopOf="@+id/btnSplashStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

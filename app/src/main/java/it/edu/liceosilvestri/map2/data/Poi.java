@@ -174,7 +174,7 @@ public class Poi {
 
 
             mExtra.setPoi(this);
-            mExtra.loadFromXml((Element) extraNode);
+            mExtra.loadFromXml(extraNode);
 
 
 

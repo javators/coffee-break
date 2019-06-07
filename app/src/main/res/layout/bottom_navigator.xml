@@ -18,16 +18,16 @@
         android:id="@+id/txtNavHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/txt_nav_home"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnNavHome"
         app:layout_constraintStart_toStartOf="@+id/imgBtnNavHome"
-        app:layout_constraintTop_toTopOf="@+id/imgBtnNavHome" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnNavHome" />
 
     <ImageButton
         android:id="@+id/imgBtnNavHome"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/icon_dim"
+        android:layout_height="@dimen/icon_dim"
+        android:layout_marginTop="8dp"
         android:background="#00ffffff"
         android:padding="0dp"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnNavPaths"
@@ -40,17 +40,16 @@
         android:id="@+id/txtNavPaths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/txt_nav_paths"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnNavPaths"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/imgBtnNavPaths"
-        app:layout_constraintTop_toTopOf="@+id/imgBtnNavPaths" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnNavPaths" />
 
     <ImageButton
         android:id="@+id/imgBtnNavPaths"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/icon_dim"
+        android:layout_height="@dimen/icon_dim"
+        android:layout_marginTop="8dp"
         android:background="#00ffffff"
         android:padding="0dp"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnNavPois"
@@ -62,16 +61,16 @@
         android:id="@+id/txtNavPois"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/txt_nav_pois"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnNavPois"
         app:layout_constraintStart_toStartOf="@+id/imgBtnNavPois"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnNavPois" />
 
     <ImageButton
         android:id="@+id/imgBtnNavPois"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/icon_dim"
+        android:layout_height="@dimen/icon_dim"
+        android:layout_marginTop="8dp"
         android:background="#00ffffff"
         android:padding="0dp"
         app:layout_constraintEnd_toStartOf="@+id/imgBtnNavCredits"
@@ -83,16 +82,16 @@
         android:id="@+id/txtNavCredits"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:text="@string/txt_nav_credits"
         app:layout_constraintEnd_toEndOf="@+id/imgBtnNavCredits"
         app:layout_constraintStart_toStartOf="@+id/imgBtnNavCredits"
-        app:layout_constraintTop_toTopOf="@+id/imgBtnNavCredits" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBtnNavCredits" />
 
     <ImageButton
         android:id="@+id/imgBtnNavCredits"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/icon_dim"
+        android:layout_height="@dimen/icon_dim"
+        android:layout_marginTop="8dp"
         android:background="#00ffffff"
         android:padding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
