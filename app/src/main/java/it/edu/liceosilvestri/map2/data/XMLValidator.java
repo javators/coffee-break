@@ -111,6 +111,7 @@ public class XMLValidator {
                                     break;
                                 case "bar":
                                 case "restaurant":
+                                case "entertainment":
                                     errors += isValidTag(extraRoot, "description_long");
                                     errors += isValidTag(extraRoot, "price_range");
                                     errors += isValidTag(extraRoot, "opening_times");
@@ -154,7 +155,7 @@ public class XMLValidator {
 
                                     break;
                                 default:
-                                    return false;
+                                    throw new Exception("Poi Category is not valid.");
                             }
                         }
                     }
@@ -227,7 +228,7 @@ public class XMLValidator {
 
                     break;
                 default:
-                    return false;
+                    throw new Exception("Root tag is not valid.");
             }
 
             if (errors.equals(""))

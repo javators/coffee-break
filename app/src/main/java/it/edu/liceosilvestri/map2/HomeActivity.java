@@ -56,6 +56,8 @@ public class HomeActivity extends AppCompatActivity {
 
         Button btn3 = findViewById(R.id.btnSearch);
         btn3.setOnClickListener( v -> {
+            if (((EditText) findViewById(R.id.editTextSearch)).getText().toString().equals(""))
+                return;
 
             mPathsFound = new ArrayList<>();
             mPoisFound = new ArrayList<>();
