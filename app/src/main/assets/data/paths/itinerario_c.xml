@@ -18,14 +18,14 @@
 
     <!-- <poi id="stazione_piazza_san_pasquale"/> -->
     <poi id="granatello"/>
-    <!-- <poi id="caffetteria_san_pasquale"/> -->
+    <poi id="caffetteria_san_pasquale"/>
     <poi id="villa_comunale"/>
     <!-- <poi id="bosco_inferiore_di_portici"/> --> <!-- TODO creare su MyMaps -->
-    <!-- <poi id="teatro_comunale"/> -->
-    <poi id="sanciro"/> <!-- TODO Cambiare in chiesa/piazza_sanciro -->
-    <!-- <poi id="palazzo_mascabruno"/> -->
+    <poi id="teatro_comunale_de_filippo"/>
+    <poi id="chiesa_san_ciro"/>
+    <poi id="palazzo_mascabruno"/>
     <!-- <poi id="chiesa_sant_antonio"/> -->
     <poi id="reggia"/>
-    <!-- <poi id="orto_botanico_facolta_agraria"/> -->
+    <poi id="orto_botanico"/>
 
 </path>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<poi id="puntoid">
+<poi id="villa_comunale">
     <name>Villa Comunale</name>
     <name_long>Villa Comunale Portici</name_long>
     <description>Villa Comunale di Portici immersa nel verde</description>
@@ -9,7 +9,6 @@
     <category id="park"/>
     <path id="itinerario_c" />
     <extra>
-        <!-- park -->
         <description_long>Villa Comunale di Portici immersa nel verde nella quale è possibile passeggiare o riposare su qualche panchina ammirando la natura. Essa è situata di fronte al Bosco di Portici </description_long>
         <opening_times>8:00-20:00</opening_times>
         <image>img/villa_comunale.jpg</image>

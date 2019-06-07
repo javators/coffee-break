@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<poi id="pietrarsa">
+<poi id="museo_pietrarsa">
     <name>Pietrarsa</name>
     <name_long>Museo Nazionale Ferroviario di Pietrarsa</name_long>
     <description>Museo della prima ferrovia italiana</description>
@@ -12,6 +12,7 @@
         <description_long>Museo della prima ferrovia italiana, inaugurata il 3 ottobre 1839. Era lunga 7.411 metri e congiungeva Napoli a Portici, sulla stessa direttrice della linea Napoli-Salerno, che oggi costeggia l’area del Museo. Il tragitto fu percorso in 11 minuti da due convogli progettati dall’ingegnere Armand Bayard de la Vingtrie, su prototipo dell’inglese George Stephenson. Il Museo permette di intraprendere un affascinante viaggio nel tempo tra le locomotive e i treni che hanno unito l’Italia dal 1839 ai nostri giorni, in 180 anni di storia delle Ferrovie italiane: dal periodo del Regno dei Borboni, attraverso il Regno d’Italia e fino alla Repubblica.</description_long>
         <opening_times>Lunedì, Martedì, Mercoledì su prenotazione per grandi gruppi&#13;&#10;Giovedì 14:00-20:00&#13;&#10;Venerdì 9:00-16:30&#13;&#10;Sabato, domenica e festivi dalle ore 9:30 alle 19:30</opening_times>
         <website>http://www.museopietrarsa.it/</website>
+        <telephone_number>081 472003</telephone_number>
         <image>img/pietrarsa_ingresso.jpg</image>
         <image>img/pietrarsa1.jpg</image>
         <image>img/pietrarsa2.jpg</image>

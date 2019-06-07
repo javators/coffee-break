@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="caffetteria_san_pasquale">
-    <name>Bar S Pasquale</name>
+    <name>Bar S. Pasquale</name>
     <name_long>Caffetteria San Pasquale</name_long>
-    <description></description>
+    <description>Ottimo bar vicinissimo al porto del Granatello. Qualità e cortesia</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.8096, 14.33651</coord>
     <address>Piazza S. Pasquale, 6, 80055 Portici NA</address>
     <category id="bar"/>
-    <path id="percorsoid1" />
-    <path id="percorsoid2" />
+    <path id="itinerario_c" />
     <extra>
-        <description_long></description_long>
+        <description_long>Il locale si presenta bene ed offre una vasta gamma di prodotti di qualità. Ideale sia per una consumazione rapida che per una sosta più lunga, magari consumando un aperitivo con stuzzichini sempre freschi. Ottimo il caffè ed i cioccolatini alla grappa ed al rhum.</description_long>
         <price_range>Medio</price_range>
-        <opening_times>05-21:30</opening_times>
+        <opening_times>Lunedì - Sabato: 05:00-21:30</opening_times>
         <website>https://caffetteria-san-pasquale.business.site/</website>
+        <telephone_number>081 776 3234</telephone_number>
         <image>img/sanpasquale.jpg</image>
     </extra>
 </poi>
