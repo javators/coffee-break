@@ -52,10 +52,9 @@
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtWebsite" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
     <TextView
         android:id="@+id/txtDescription"
@@ -65,5 +64,5 @@
         android:text="Descrizione"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPager" />
+        app:layout_constraintTop_toBottomOf="@+id/txtWebsite" />
 </android.support.constraint.ConstraintLayout>
