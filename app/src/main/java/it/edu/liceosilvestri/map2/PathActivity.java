@@ -237,19 +237,18 @@ private void putDataOnMap() {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = convertView;
 
-            if(view==null) {
-                view = inflater.inflate(R.layout.item_poi_of_path , parent, false);
+            if (view == null)
+                view = inflater.inflate(R.layout.item_poi_of_path, parent, false);
 
-                String poiid = mPath.getPoiIdArray()[position];
-                Poi p = Pois.get(PathActivity.this).getPoiBy(poiid);
+            String poiid = mPath.getPoiIdArray()[position];
+            Poi p = Pois.get(PathActivity.this).getPoiBy(poiid);
 
-                ((TextView) view.findViewById(R.id.txtName)).setText("" + (position+1) + ". " + p.getNameLong());
+            ((TextView) view.findViewById(R.id.txtName)).setText((position+1) + ". " + p.getNameLong());
 
-                ImageView iv = view.findViewById(R.id.imgIcon);
-                iv.setImageResource(p.getCategory().getIconResourceId());
-            }
+            ImageView iv = view.findViewById(R.id.imgIcon);
+            iv.setImageResource(p.getCategory().getIconResourceId());
+
             return view;
-
         }
     }
 }

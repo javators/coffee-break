@@ -149,29 +149,28 @@ public class HomeActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = convertView;
 
-            if(view == null) {
+            if(view == null)
                 view = inflater.inflate(R.layout.item_search_result , parent, false);
 
-                if (position<mPathsFound.size()) {
+            if (position < mPathsFound.size()) {
 
-                    Path ph = mPathsFound.get(position);
+                Path ph = mPathsFound.get(position);
 
-                    ((TextView) view.findViewById(R.id.txtName)).setText(ph.getName());
+                ((TextView) view.findViewById(R.id.txtName)).setText(ph.getName());
 
-                    ImageView iv = view.findViewById(R.id.imgIcon);
-                    iv.setImageResource(R.drawable.ic_timeline_black_24dp);
-                }
-                else {
-                    Poi p = mPoisFound.get(position-mPathsFound.size());
-
-                    ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
-                    p.getCategory().getIconResourceId();
-
-                    ImageView iv = view.findViewById(R.id.imgIcon);
-                    iv.setImageResource(p.getCategory().getIconResourceId());
-                }
-
+                ImageView iv = view.findViewById(R.id.imgIcon);
+                iv.setImageResource(R.drawable.ic_timeline_black_24dp);
             }
+            else {
+                Poi p = mPoisFound.get(position-mPathsFound.size());
+
+                ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
+                p.getCategory().getIconResourceId();
+
+                ImageView iv = view.findViewById(R.id.imgIcon);
+                iv.setImageResource(p.getCategory().getIconResourceId());
+            }
+
             return view;
 
         }

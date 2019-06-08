@@ -227,31 +227,24 @@ public class PathsActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = convertView;
 
-            if(view==null) {
-
-                Path path = Paths.get(PathsActivity.this).getPathAt(position);
-
+            if (view == null)
                 view = inflater.inflate(R.layout.item_path , parent, false);
 
+            Path path = Paths.get(PathsActivity.this).getPathAt(position);
 
-                ((TextView) view.findViewById(R.id.txtName)).setText(path.getName());
-                ((TextView) view.findViewById(R.id.txtDescription)).setText(path.getDescription());
+            ((TextView) view.findViewById(R.id.txtName)).setText(path.getName());
+            ((TextView) view.findViewById(R.id.txtDescription)).setText(path.getDescription());
 
+            /*
+            ((TextView) findViewById(R.id.txtName)).setText(mPath.getName());
+            ((TextView) findViewById(R.id.txtDescriptionLong)).setText(mPath.getDescriptionLong());
+            ((TextView) findViewById(R.id.txtDuration)).setText(mPath.getDuration());
+            ((TextView) findViewById(R.id.txtLength)).setText(mPath.getLength());
+            ((TextView) findViewById(R.id.txtSuitableFor)).setText(mPath.getSuitableFor());
+            */
 
-
-                /*
-                ((TextView) findViewById(R.id.txtName)).setText(mPath.getName());
-                ((TextView) findViewById(R.id.txtDescriptionLong)).setText(mPath.getDescriptionLong());
-                ((TextView) findViewById(R.id.txtDuration)).setText(mPath.getDuration());
-                ((TextView) findViewById(R.id.txtLength)).setText(mPath.getLength());
-                ((TextView) findViewById(R.id.txtSuitableFor)).setText(mPath.getSuitableFor());
-
-                */
-
-
-                ImageView iv = view.findViewById(R.id.imgIcon);
-                iv.setColorFilter(path.getColor());
-            }
+            ImageView iv = view.findViewById(R.id.imgIcon);
+            iv.setColorFilter(path.getColor());
             return view;
 
         }
