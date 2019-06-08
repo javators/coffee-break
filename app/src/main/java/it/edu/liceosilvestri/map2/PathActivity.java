@@ -22,6 +22,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import it.edu.liceosilvestri.map2.data.MapLoadStatus;
 import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Paths;
 import it.edu.liceosilvestri.map2.data.Poi;
@@ -30,12 +31,8 @@ import it.edu.liceosilvestri.map2.data.Pois;
 public class PathActivity extends AppCompatActivity {
 
     private MapView mMapView;
-
     private GoogleMap mGmap;
-    private boolean mGlobalLayoutReady = false;
-    private boolean mMapReady = false;
-
-
+    private MapLoadStatus mMapStatus;
     private Path mPath;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
@@ -73,23 +70,21 @@ public class PathActivity extends AppCompatActivity {
 
             mMapView = findViewById(R.id.mapView);
             mMapView.onCreate(mapViewBundle);
-
+            mMapStatus = MapLoadStatus.getInitialStatus(savedInstanceState);
 
 
             mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
-                if (mMapReady)
-                    putDataOnMap();
 
-                mGlobalLayoutReady = true;
+                mMapStatus = mMapStatus.nextAfterLayoutReadyEvent();
+                checkPutDataOnMap();
+
             });
 
             mMapView.getMapAsync((GoogleMap gmap) -> {
 
                 mGmap = gmap;
-                if (mGlobalLayoutReady)
-                    putDataOnMap();
-
-                mMapReady = true;
+                mMapStatus = mMapStatus.nextAfterMapReadyEvent();
+                checkPutDataOnMap();
 
             });
 
@@ -108,56 +103,63 @@ public class PathActivity extends AppCompatActivity {
 
     }
 
-private void putDataOnMap() {
-
-    mGmap.getUiSettings().setZoomGesturesEnabled(true);
-    mGmap.getUiSettings().setZoomControlsEnabled(true);
-
-    LatLngBounds bounds = mPath.getBounds().getRectangle();
-    mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 200));
-
-
-    PolylineOptions poly = new PolylineOptions();
-
-    for (Path.Point pt : mPath.getPointArray())
-        poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
-
-    poly.clickable(false);
-    poly.color(mPath.getColor());
-
-    Polyline pl = mGmap.addPolyline(poly);
-
-
-    for (int i=0; i< mPath.getPoiIdArray().length; i++) {
-        String poiid = mPath.getPoiIdArray()[i];
-        Poi p =Pois.get(this).getPoiBy(poiid);
-        if (p != null) {
-            MarkerOptions mop = p.getGoogleMarker();
-            Marker m = mGmap.addMarker(mop);
-            m.setTitle("" + (i+1) + ". " + m.getTitle());
-            m.setTag(poiid);
+    private void checkPutDataOnMap() {
+        if (mMapStatus.canLoad()) {
+            putDataOnMap();
+            mMapStatus = mMapStatus.nextAfterLoaded();
         }
     }
 
+    private void putDataOnMap() {
 
-    //LatLng erc = new LatLng(40.818, 14.335);
-    //mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
+        mGmap.getUiSettings().setZoomGesturesEnabled(true);
+        mGmap.getUiSettings().setZoomControlsEnabled(true);
+
+        LatLngBounds bounds = mPath.getBounds().getRectangle();
+        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 200));
 
 
-    mGmap.setOnInfoWindowClickListener((mark)->{
-        String poiid = (String) mark.getTag();
-        Intent i = new Intent(PathActivity.this, PoiActivity.class);
-        i.putExtra("id", poiid);
-        PathActivity.this.startActivity(i);
-    });
+        PolylineOptions poly = new PolylineOptions();
 
-    /*
-    mGmap.setOnMarkerClickListener((mark)->{
-        return false; //true: evento consumato -> non mostra titolo e snippet
-    });
-    */
+        for (Path.Point pt : mPath.getPointArray())
+            poly.add(new LatLng(pt.getCoordLat(), pt.getCoordLng()));
 
-}
+        poly.clickable(false);
+        poly.color(mPath.getColor());
+
+        Polyline pl = mGmap.addPolyline(poly);
+
+
+        for (int i=0; i< mPath.getPoiIdArray().length; i++) {
+            String poiid = mPath.getPoiIdArray()[i];
+            Poi p =Pois.get(this).getPoiBy(poiid);
+            if (p != null) {
+                MarkerOptions mop = p.getGoogleMarker();
+                Marker m = mGmap.addMarker(mop);
+                m.setTitle("" + (i+1) + ". " + m.getTitle());
+                m.setTag(poiid);
+            }
+        }
+
+
+        //LatLng erc = new LatLng(40.818, 14.335);
+        //mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
+
+
+        mGmap.setOnInfoWindowClickListener((mark)->{
+            String poiid = (String) mark.getTag();
+            Intent i = new Intent(PathActivity.this, PoiActivity.class);
+            i.putExtra("id", poiid);
+            PathActivity.this.startActivity(i);
+        });
+
+        /*
+        mGmap.setOnMarkerClickListener((mark)->{
+            return false; //true: evento consumato -> non mostra titolo e snippet
+        });
+        */
+
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -170,6 +172,8 @@ private void putDataOnMap() {
         }
 
         mMapView.onSaveInstanceState(mapViewBundle);
+        mMapStatus.saveStatus(mapViewBundle);
+
     }
     @Override
     protected void onResume() {

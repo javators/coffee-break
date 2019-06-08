@@ -17,7 +17,6 @@ import android.widget.TextView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -27,16 +26,15 @@ import java.util.Map;
 
 import it.edu.liceosilvestri.map2.data.Categories;
 import it.edu.liceosilvestri.map2.data.Category;
+import it.edu.liceosilvestri.map2.data.MapLoadStatus;
 import it.edu.liceosilvestri.map2.data.Poi;
 import it.edu.liceosilvestri.map2.data.Pois;
 
 public class PoisActivity extends AppCompatActivity {
 
     private MapView mMapView;
-
     private GoogleMap mGmap;
-    private boolean mGlobalLayoutReady = false;
-    private boolean mMapReady = false;
+    private MapLoadStatus mMapStatus;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -56,25 +54,24 @@ public class PoisActivity extends AppCompatActivity {
 
         mMapView = findViewById(R.id.mapView);
         mMapView.onCreate(mapViewBundle);
-
+        mMapStatus = MapLoadStatus.getInitialStatus(savedInstanceState);
 
         final Pois pois = Pois.get(getApplicationContext());
         final HashMap<Poi, Marker> map = new HashMap<>();
 
-        mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
-            if (mMapReady)
-                putDataOnMap(map);
 
-            mGlobalLayoutReady = true;
+        mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
+
+            mMapStatus = mMapStatus.nextAfterLayoutReadyEvent();
+            checkPutDataOnMap(map);
+
         });
 
         mMapView.getMapAsync((GoogleMap gmap) -> {
 
             mGmap = gmap;
-            if (mGlobalLayoutReady)
-                putDataOnMap(map);
-
-            mMapReady = true;
+            mMapStatus = mMapStatus.nextAfterMapReadyEvent();
+            checkPutDataOnMap(map);
 
         });
 
@@ -101,6 +98,13 @@ public class PoisActivity extends AppCompatActivity {
 
             return true;
         });
+    }
+
+    private void checkPutDataOnMap(HashMap<Poi, Marker> map) {
+        if (mMapStatus.canLoad()) {
+            putDataOnMap(map);
+            mMapStatus = mMapStatus.nextAfterLoaded();
+        }
     }
 
     private void putDataOnMap(HashMap<Poi, Marker> map) {
@@ -130,21 +134,6 @@ public class PoisActivity extends AppCompatActivity {
     }
 
 
-    private LatLng getCenter() {
-        double lat = 0, lng = 0;
-
-        Pois pois = Pois.get(getApplicationContext());
-        for (Poi p : pois) {
-            lat += p.getCoordLat();
-            lng += p.getCoordLng();
-        }
-
-        lat /= pois.getLength();
-        lng /= pois.getLength();
-
-        return new LatLng(lat, lng);
-    }
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -156,7 +145,9 @@ public class PoisActivity extends AppCompatActivity {
         }
 
         mMapView.onSaveInstanceState(mapViewBundle);
+        mMapStatus.saveStatus(mapViewBundle);
     }
+
     @Override
     protected void onResume() {
         super.onResume();

@@ -20,18 +20,15 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import it.edu.liceosilvestri.map2.data.MapLoadStatus;
 import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Paths;
 
 public class PathsActivity extends AppCompatActivity {
 
     private MapView mMapView;
-
     private GoogleMap mGmap;
-    private boolean mGlobalLayoutReady = false;
-    private boolean mMapReady = false;
-
-
+    private MapLoadStatus mMapStatus;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -48,25 +45,23 @@ public class PathsActivity extends AppCompatActivity {
 
         mMapView = findViewById(R.id.mapView);
         mMapView.onCreate(mapViewBundle);
+        mMapStatus = MapLoadStatus.getInitialStatus(savedInstanceState);
 
 
         mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
-            if (mMapReady)
-                putDataOnMap();
 
-            mGlobalLayoutReady = true;
+            mMapStatus = mMapStatus.nextAfterLayoutReadyEvent();
+            checkPutDataOnMap();
+
         });
 
         mMapView.getMapAsync((GoogleMap gmap) -> {
 
             mGmap = gmap;
-            if (mGlobalLayoutReady)
-                putDataOnMap();
-
-            mMapReady = true;
+            mMapStatus = mMapStatus.nextAfterMapReadyEvent();
+            checkPutDataOnMap();
 
         });
-
 
         ListView lv = findViewById(R.id.listViewPaths);
         lv.setAdapter(this.new PathAdapter());
@@ -81,6 +76,12 @@ public class PathsActivity extends AppCompatActivity {
     }
 
 
+    private void checkPutDataOnMap() {
+        if (mMapStatus.canLoad()) {
+            putDataOnMap();
+            mMapStatus = mMapStatus.nextAfterLoaded();
+        }
+    }
 
     private void putDataOnMap () {
 
@@ -160,6 +161,8 @@ public class PathsActivity extends AppCompatActivity {
         }
 
         mMapView.onSaveInstanceState(mapViewBundle);
+        mMapStatus.saveStatus(mapViewBundle);
+
     }
     @Override
     protected void onResume() {

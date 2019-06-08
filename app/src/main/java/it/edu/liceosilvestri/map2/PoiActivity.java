@@ -94,7 +94,7 @@ public class PoiActivity extends AppCompatActivity {
                 mGmap = gmap;
 
                 MarkerOptions mop = poi.getGoogleMarker();
-                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 14));
+                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 16));
                 Marker m = mGmap.addMarker(mop);
 
                  /*
