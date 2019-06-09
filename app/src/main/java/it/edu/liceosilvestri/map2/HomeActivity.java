@@ -2,6 +2,7 @@ package it.edu.liceosilvestri.map2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -149,26 +150,26 @@ public class HomeActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             View view = convertView;
 
-            if(view == null)
+            if (view == null)
                 view = inflater.inflate(R.layout.item_search_result , parent, false);
 
             if (position < mPathsFound.size()) {
-
                 Path ph = mPathsFound.get(position);
 
                 ((TextView) view.findViewById(R.id.txtName)).setText(ph.getName());
 
                 ImageView iv = view.findViewById(R.id.imgIcon);
                 iv.setImageResource(R.drawable.ic_timeline_black_24dp);
+                iv.setColorFilter(ph.getColor());
             }
             else {
                 Poi p = mPoisFound.get(position-mPathsFound.size());
 
                 ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
-                p.getCategory().getIconResourceId();
 
                 ImageView iv = view.findViewById(R.id.imgIcon);
                 iv.setImageResource(p.getCategory().getIconResourceId());
+                iv.setColorFilter(Color.BLACK);
             }
 
             return view;

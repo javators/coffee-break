@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.Switch;
@@ -56,9 +55,7 @@ public class PoisActivity extends AppCompatActivity {
         mMapView.onCreate(mapViewBundle);
         mMapStatus = MapLoadStatus.getInitialStatus(savedInstanceState);
 
-        final Pois pois = Pois.get(getApplicationContext());
         final HashMap<Poi, Marker> map = new HashMap<>();
-
 
         mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
 
@@ -110,8 +107,6 @@ public class PoisActivity extends AppCompatActivity {
     private void putDataOnMap(HashMap<Poi, Marker> map) {
         mGmap.getUiSettings().setZoomGesturesEnabled(true);
         mGmap.getUiSettings().setZoomControlsEnabled(true);
-
-        MapView mapview = this.findViewById(R.id.mapView);
 
         LatLngBounds bounds = Pois.get(this).getBounds().getRectangle();
         mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 150));
@@ -189,12 +184,18 @@ public class PoisActivity extends AppCompatActivity {
     private class PoisAdapter extends BaseExpandableListAdapter {
         private final Context mContext;
         private final Categories mCategories;
-        private final Map<Poi, Marker> mMap;
+        private final Map<Poi, Marker> mMapMarker;
+        private final Map<Category, Boolean> mMapSwitch;
 
         public PoisAdapter(Context ctx, Map<Poi, Marker> map) {
             this.mContext = ctx;
             this.mCategories = Categories.get(ctx);
-            this.mMap = map;
+            this.mMapMarker = map;
+
+            this.mMapSwitch = new HashMap<>();
+            for (Category c : mCategories) {
+                mMapSwitch.put(c, true);
+            }
         }
 
         @Override
@@ -250,11 +251,14 @@ public class PoisActivity extends AppCompatActivity {
             iv.setImageResource(category.getIconResourceId());
 
             final String categoryId = getGroup(groupPosition).getId();
-            switchVisible.setChecked(true);
-            switchVisible.setOnCheckedChangeListener((CompoundButton cButton, boolean b) -> {
-                for (Poi p : mMap.keySet()) {
+            switchVisible.setChecked(mMapSwitch.get(category));
+            switchVisible.setOnClickListener((View v) -> {
+                boolean b = switchVisible.isChecked();
+                mMapSwitch.put(category, b);
+
+                for (Poi p : mMapMarker.keySet()) {
                     if (p.getCategoryId().equals(categoryId)) {
-                        mMap.get(p).setVisible(b);
+                        mMapMarker.get(p).setVisible(b);
                     }
                 }
             });
