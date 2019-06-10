@@ -109,7 +109,7 @@ public class BottomNavigator {
     }
 
     private void markItemSelected(ImageButton imgBtn, TextView textView) {
-        int color = ContextCompat.getColor(mCurrentActivity, R.color.colorHighlighting);
+        int color = ContextCompat.getColor(mCurrentActivity, R.color.colorPrimaryLight);
 
         imgBtn.setColorFilter(color);
         textView.setTextColor(color);
