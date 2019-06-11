@@ -10,20 +10,17 @@ import java.util.Iterator;
 
 public class Pois implements Iterable<Poi> {
 
-    private static Pois __pois;
+    private static Pois _instance;
     private Poi mPoiArray[];
     private HashMap<String, Poi> mPoiMap;
     private CoordinateGroup mBounds;
 
 
-    private Pois(Context ctx){
-
-    }
-
-    private void load(Context ctx) {
+    private void load() {
         int i;
         String files[];
 
+        Context ctx = AppDatabase.getContext();
         AssetManager am = ctx.getAssets();
         try {
 
@@ -57,13 +54,18 @@ public class Pois implements Iterable<Poi> {
 
     }
 
-    public static Pois get(Context ctx) {
-        if (__pois == null) {
-            __pois = new Pois(ctx);
-            __pois.load(ctx);
+    public static Pois get() {
+        Pois localInstance = _instance;
+        if (localInstance == null) {
+            synchronized(Pois.class) {
+                localInstance = _instance;
+                if (localInstance == null) {
+                    _instance = localInstance = new Pois();
+                    _instance.load();
+                }
+            }
         }
-
-        return __pois;
+        return localInstance;
     }
 
     public int getLength(){

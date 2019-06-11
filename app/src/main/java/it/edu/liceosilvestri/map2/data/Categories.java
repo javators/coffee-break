@@ -20,14 +20,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class Categories implements Iterable<Category> {
 
-    private static Categories __categories;
+    private static Categories _instance;
     private Category mCategoryArray[];
 
+    private void load() {
 
-    private Categories(Context ctx) {}
-
-    private void load(Context ctx) {
-
+        Context ctx = AppDatabase.getContext();
         AssetManager am = ctx.getAssets();
         try {
             InputStream is = am.open("data/categories.xml");
@@ -96,14 +94,20 @@ public class Categories implements Iterable<Category> {
 
     }
 
-    public static Categories get(Context ctx) {
-        if (__categories == null) {
-            __categories = new Categories(ctx);
-            __categories.load(ctx);
+    public static Categories get() {
+        Categories localInstance = _instance;
+        if (localInstance == null) {
+            synchronized(Categories.class) {
+                localInstance = _instance;
+                if (localInstance == null) {
+                    _instance = localInstance = new Categories();
+                    _instance.load();
+                }
+            }
         }
-
-        return __categories;
+        return localInstance;
     }
+
 
     public Category getCategoryAt(int index) {
         if (mCategoryArray != null && (index >= 0 && index < mCategoryArray.length))

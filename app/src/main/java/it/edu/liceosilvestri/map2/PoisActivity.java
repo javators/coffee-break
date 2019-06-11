@@ -17,8 +17,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -107,15 +107,17 @@ public class PoisActivity extends AppCompatActivity {
     private void putDataOnMap(HashMap<Poi, Marker> map) {
         mGmap.getUiSettings().setZoomGesturesEnabled(true);
         mGmap.getUiSettings().setZoomControlsEnabled(true);
+        mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
-        LatLngBounds bounds = Pois.get(this).getBounds().getRectangle();
+        LatLngBounds bounds = Pois.get().getBounds().getRectangle();
         mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 150));
 
-        for (Poi p : Pois.get(this)) {
-            MarkerOptions mop = p.getGoogleMarker();
-            Marker marker = mGmap.addMarker(mop);
-            marker.setTag(p.getId());
+        for (Poi p : Pois.get()) {
+            //MarkerOptions mop = p.getGoogleMarker();
+            //Marker marker = mGmap.addMarker(mop);
+            //marker.setTag(p.getId());
 
+            Marker marker = p.addMarkerToMap(mGmap, Poi.MapType.POIS, null);
             map.put(p, marker);
         }
 
@@ -189,7 +191,7 @@ public class PoisActivity extends AppCompatActivity {
 
         public PoisAdapter(Context ctx, Map<Poi, Marker> map) {
             this.mContext = ctx;
-            this.mCategories = Categories.get(ctx);
+            this.mCategories = Categories.get();
             this.mMapMarker = map;
 
             this.mMapSwitch = new HashMap<>();

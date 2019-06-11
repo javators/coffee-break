@@ -11,18 +11,15 @@ import java.util.Iterator;
 
 public class Paths implements Iterable<Path> {
 
-    private static Paths __paths;
+    private static Paths _instance;
     private Path mPathArray[];
 
     private CoordinateGroup mBounds;
 
-    private Paths(Context ctx){
-
-    }
-
-    private void load(Context ctx) {
+    private void load() {
         int i;
         String files[];
+        Context ctx = AppDatabase.getContext();
 
         AssetManager am = ctx.getAssets();
         try {
@@ -38,8 +35,8 @@ public class Paths implements Iterable<Path> {
                     int pos = s.indexOf(".");
                     if (pos > 0) {
                         String pathid = s.substring(0, pos);
-                        Path p = new Path(pathid, ctx);
-                        p.load(ctx);
+                        Path p = new Path(pathid);
+                        p.load();
                         mPathArray[i++] = p;
                         mBounds.addPoint(p.getBounds().getRectangle().southwest.latitude,  p.getBounds().getRectangle().southwest.longitude);
                         mBounds.addPoint(p.getBounds().getRectangle().northeast.latitude,  p.getBounds().getRectangle().northeast.longitude);
@@ -55,13 +52,18 @@ public class Paths implements Iterable<Path> {
 
     }
 
-    public static Paths get(Context ctx) {
-        if (__paths == null) {
-            __paths = new Paths(ctx);
-            __paths.load(ctx);
+    public static Paths get() {
+        Paths localInstance = _instance;
+        if (localInstance == null) {
+            synchronized(Paths.class) {
+                localInstance = _instance;
+                if (localInstance == null) {
+                    _instance = localInstance = new Paths();
+                    _instance.load();
+                }
+            }
         }
-
-        return __paths;
+        return localInstance;
     }
 
     public Path getPathAt(int index) {

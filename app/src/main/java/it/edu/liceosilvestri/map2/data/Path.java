@@ -38,7 +38,7 @@ public class Path {
     //private LatLngBounds mBounds;
 
 
-    Path(String id, Context ctx){
+    Path(String id){
         this.mId = id;
     }
     public String getId() {
@@ -91,8 +91,9 @@ public class Path {
         return mBounds;
     }
 
-    void load(Context ctx) {
+    void load() {
 
+        Context ctx = AppDatabase.getContext();
         AssetManager am = ctx.getAssets();
         try {
             InputStream is = am.open("data/paths/" + mId + ".xml");

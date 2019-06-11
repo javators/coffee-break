@@ -10,8 +10,8 @@ import android.widget.TextView;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Poi;
@@ -34,7 +34,7 @@ public class PoiActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
 
-        Poi poi = Pois.get(getApplicationContext()).getPoiBy(id);
+        Poi poi = Pois.get().getPoiBy(id);
 
         if (poi == null) {
             ((TextView) findViewById(R.id.txtName)).setText("Punto [" + id + "] non trovato");
@@ -92,10 +92,17 @@ public class PoiActivity extends AppCompatActivity {
             mMapView.getMapAsync(gmap -> {
 
                 mGmap = gmap;
+                mGmap.getUiSettings().setZoomGesturesEnabled(true);
+                mGmap.getUiSettings().setZoomControlsEnabled(true);
+                mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
-                MarkerOptions mop = poi.getGoogleMarker();
-                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(mop.getPosition(), 16));
-                Marker m = mGmap.addMarker(mop);
+                //MarkerOptions mop = poi.getGoogleMarker();
+
+                Marker m = poi.addMarkerToMap(mGmap, Poi.MapType.POI, null);
+
+                mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(m.getPosition(), 16));
+
+                //Marker m = mGmap.addMarker(mop);
 
                  /*
 

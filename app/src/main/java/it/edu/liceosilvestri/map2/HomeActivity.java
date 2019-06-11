@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import it.edu.liceosilvestri.map2.data.AppDatabase;
 import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Paths;
 import it.edu.liceosilvestri.map2.data.Poi;
@@ -31,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        //start the database
+        AppDatabase.get(this);
 
 //        Button btn = findViewById(R.id.btnOpen);
 //        btn.setOnClickListener(v -> {
@@ -64,11 +68,11 @@ public class HomeActivity extends AppCompatActivity {
             mPoisFound = new ArrayList<>();
 
             String txt = ((EditText) findViewById(R.id.editTextSearch)).getText().toString().toUpperCase();
-            for (Path ph : Paths.get(HomeActivity.this))
+            for (Path ph : Paths.get())
                 if (ph.getName().toUpperCase().contains(txt) || ph.getDescription().toUpperCase().contains(txt) || ph.getDescriptionLong().toUpperCase().contains(txt))
                     mPathsFound.add(ph);
 
-            for (Poi p : Pois.get(HomeActivity.this))
+            for (Poi p : Pois.get())
                 if (p.getNameLong().toUpperCase().contains(txt) || p.getDescription().toUpperCase().contains(txt))
                     mPoisFound.add(p);
 

@@ -17,6 +17,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -67,7 +68,7 @@ public class PathsActivity extends AppCompatActivity {
         lv.setAdapter(this.new PathAdapter());
 
         lv.setOnItemClickListener((adapterView, view, position, longid) -> {
-            String pathid = Paths.get(PathsActivity.this).getPathAt(position).getId();
+            String pathid = Paths.get().getPathAt(position).getId();
 
             Intent i = new Intent(getApplicationContext(), PathActivity.class);
             i.putExtra("id", pathid);
@@ -87,8 +88,9 @@ public class PathsActivity extends AppCompatActivity {
 
         mGmap.getUiSettings().setZoomGesturesEnabled(true);
         mGmap.getUiSettings().setZoomControlsEnabled(true);
+        mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
-        Paths paths = Paths.get(PathsActivity.this);
+        Paths paths = Paths.get();
 
         LatLngBounds bounds = paths.getBounds().getRectangle();
         mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
@@ -213,12 +215,12 @@ public class PathsActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return Paths.get(PathsActivity.this).getLength();
+            return Paths.get().getLength();
         }
 
         @Override
         public Object getItem(int position) {
-            return Paths.get(PathsActivity.this).getPathAt(position);
+            return Paths.get().getPathAt(position);
         }
 
         @Override
@@ -233,7 +235,7 @@ public class PathsActivity extends AppCompatActivity {
             if (view == null)
                 view = inflater.inflate(R.layout.item_path , parent, false);
 
-            Path path = Paths.get(PathsActivity.this).getPathAt(position);
+            Path path = Paths.get().getPathAt(position);
 
             ((TextView) view.findViewById(R.id.txtName)).setText(path.getName());
             ((TextView) view.findViewById(R.id.txtDescription)).setText(path.getDescription());

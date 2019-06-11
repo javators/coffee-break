@@ -17,8 +17,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
@@ -45,7 +45,7 @@ public class PathActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
 
-        mPath = Paths.get(getApplicationContext()).getPathBy(id);
+        mPath = Paths.get().getPathBy(id);
 
         if (mPath == null) {
             ((TextView) findViewById(R.id.txtName)).setText("Percorso [" + id + "] non trovato");
@@ -114,6 +114,7 @@ public class PathActivity extends AppCompatActivity {
 
         mGmap.getUiSettings().setZoomGesturesEnabled(true);
         mGmap.getUiSettings().setZoomControlsEnabled(true);
+        mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
         LatLngBounds bounds = mPath.getBounds().getRectangle();
         mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 200));
@@ -132,12 +133,17 @@ public class PathActivity extends AppCompatActivity {
 
         for (int i=0; i< mPath.getPoiIdArray().length; i++) {
             String poiid = mPath.getPoiIdArray()[i];
-            Poi p =Pois.get(this).getPoiBy(poiid);
+            Poi p =Pois.get().getPoiBy(poiid);
             if (p != null) {
-                MarkerOptions mop = p.getGoogleMarker();
-                Marker m = mGmap.addMarker(mop);
+
+                Marker m = p.addMarkerToMap(mGmap, Poi.MapType.PATH, ""+(i+1));
                 m.setTitle("" + (i+1) + ". " + m.getTitle());
-                m.setTag(poiid);
+
+                //MarkerOptions mop = p.getGoogleMarker(""+(i+1));
+
+                //Marker m = mGmap.addMarker(mop);
+                //m.setTitle("" + (i+1) + ". " + m.getTitle());
+                //m.setTag(poiid);
             }
         }
 
@@ -245,7 +251,7 @@ public class PathActivity extends AppCompatActivity {
                 view = inflater.inflate(R.layout.item_poi_of_path, parent, false);
 
             String poiid = mPath.getPoiIdArray()[position];
-            Poi p = Pois.get(PathActivity.this).getPoiBy(poiid);
+            Poi p = Pois.get().getPoiBy(poiid);
 
             ((TextView) view.findViewById(R.id.txtName)).setText((position+1) + ". " + p.getNameLong());
 

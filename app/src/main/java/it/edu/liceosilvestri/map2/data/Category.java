@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Category {
 
-    private Context mCtx;
     private String mId;
     private String mName;
     private String mNameSingular;
@@ -27,8 +26,7 @@ public class Category {
         this.mIconResourceId = ctx.getResources().getIdentifier(icon, "drawable", ctx.getPackageName());
 
         this.mManagedBy = managedBy;
-        this.mCtx = ctx;
-    }
+     }
 
     public String getId() {
         return mId;
@@ -56,7 +54,7 @@ public class Category {
 
     public List<Poi> getPois() {
         if (mPoiArray == null) {
-            Pois ps = Pois.get(mCtx);
+            Pois ps = Pois.get();
             mPoiArray = new ArrayList<>(ps.getLength());
             for (Poi p: ps) {
                 if (p.getCategoryId().equals(mId))

@@ -246,7 +246,7 @@ public class XMLValidator {
     }
 
     private static boolean isValidCategory(Context ctx, String category) {
-        Categories categories = Categories.get(ctx);
+        Categories categories = Categories.get();
 
         for (Category cat : categories) {
             if (cat.getId().equals(category))
