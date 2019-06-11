@@ -19,8 +19,14 @@
     <point coord="40.822787, 14.322979" />
     <point coord="40.821827, 14.321670" />
 
+    <!--<poi id="villa_assunta" />-->
+    <!--<poi id="villa_betty" />-->
+    <!--<poi id="villa_fernandes" />-->
+    <!--<poi id="chiesa_sacrocuore" />-->
     <!--<poi id="la_terrazza" />-->
     <poi id="villa_consiglio" />
+    <!--<poi id="villa_tina" />-->
+    <!--<poi id="villa_liberty" />-->
     <poi id="villa_savonarola" />
     <poi id="villa_aversa"/>
     <!-- <poi id="villa_laurolancellotti" /> -->
