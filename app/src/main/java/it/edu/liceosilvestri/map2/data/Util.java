@@ -118,7 +118,7 @@ public class Util {
         ImageView categoryImage = (ImageView) marker.findViewById(R.id.imgCategory);
         categoryImage.setImageResource(resource);
         ImageView markImage = (ImageView) marker.findViewById(R.id.imgMarker);
-        markImage.setImageResource(R.drawable.ic_custom_place_black_24dp);
+        markImage.setImageResource(R.drawable.ic_custom_place_24dp);
 
         TextView txt_name = (TextView)marker.findViewById(R.id.txtName);
         txt_name.setText(text);

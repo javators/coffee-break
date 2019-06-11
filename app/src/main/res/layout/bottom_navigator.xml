@@ -34,7 +34,7 @@
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_home_black_24dp" />
+        app:srcCompat="@drawable/ic_home_24dp" />
 
     <TextView
         android:id="@+id/txtNavPaths"
@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imgBtnNavPois"
         app:layout_constraintStart_toEndOf="@+id/imgBtnNavHome"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_timeline_black_24dp" />
+        app:srcCompat="@drawable/ic_timeline_24dp" />
 
     <TextView
         android:id="@+id/txtNavPois"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imgBtnNavCredits"
         app:layout_constraintStart_toEndOf="@+id/imgBtnNavPaths"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_location_on_black_24dp" />
+        app:srcCompat="@drawable/ic_location_on_24dp" />
 
     <TextView
         android:id="@+id/txtNavCredits"
@@ -97,7 +97,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgBtnNavPois"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_info_black_24dp" />
+        app:srcCompat="@drawable/ic_info_24dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline"
