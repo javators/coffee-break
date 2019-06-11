@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="cinema_teatro_roma">
+    <name>Cinema Roma</name>
+    <name_long>Cinema Teatro Roma</name_long>
+    <description>Cinema Teatro Monosala con 570 posti a sedere</description>
+    <suitable_for>tutti</suitable_for>
+    <coord>40.81667, 14.33526</coord>
+    <address>Via Roma, 55/65, 80055 Portici NA</address>
+    <category id="entertainment"/>
+    <path id="itinerario_b" />
+    <extra>
+        <description_long>Il "Cinema Teatro Roma" fù edificato nel 1935 in via Roma¸ nel cuore di Portici. E` una struttura imponente ma volutamente vintage¸ gestita da giovani in grado di soddisfare il più ampio pubblico¸ un ambiente accogliente¸ semplice e modesto¸ dai colori caldi e vivaci¸ senza rinunciare però a comfort e tecnologia. Un`unica sala¸ 570 posti a sedere con poltroncine in velluto divise tra platea e galleria¸ un maxi schermo di 11x6 mt, Proiettore Digitale 2k/4k ¸ Sistema Audio Dolby Digital Surround 5.1 con diffusori JBL e una giusta temperatura¸ caratteristiche che vi assicureranno un immersione totale nello spettacolo.</description_long>
+        <price_range>medio</price_range>
+        <opening_times>18:00</opening_times>
+        <website>https://www.cinemateatroroma.com/</website>
+        <telephone_number>081 472662</telephone_number>
+        <image>img/cinema.jpg</image>
+    </extra>
+</poi>
