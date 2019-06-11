@@ -52,7 +52,7 @@ public class PoiActivity extends AppCompatActivity {
             if (paths != null && paths.length > 0) {
                 for (Path ftpu : paths) {
                     ImageView ivi = new ImageView(getApplicationContext());
-                    ivi.setImageResource(R.drawable.ic_timeline_black_24dp);
+                    ivi.setImageResource(R.drawable.ic_timeline_24dp);
                     ivi.setColorFilter(ftpu.getColor());
                     ivi.setOnClickListener(vi -> {
                         String pathid = ftpu.getId();

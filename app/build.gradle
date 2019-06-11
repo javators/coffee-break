@@ -34,4 +34,5 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.1'
     implementation 'com.android.support:support-v4:27.1.1'
     implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.4'
 }

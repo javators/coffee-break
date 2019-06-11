@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="lido_aurora">
+    <name>Ex-lido Aurora</name>
+    <name_long>Passeggiata del Miglio D'oro</name_long>
+    <description>Passeggiata costeggiante il mare che collega San Giovanni a Teduccio a Napoli</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81465, 14.33103</coord>
+    <address>Viale I Camaggio, 18, 80055 Portici NA</address>
+    <category id="entertainment"/>
+    <path id="itinerario_b" />
+    <extra>
+        <description_long>Passeggiata costeggiante il mare che collega San Giovanni a Teduccio a Napoli, che attira sia amanti del paesaggio che sportivi intenti ad allenarsi nei pressi del mare. </description_long>
+        <price_range>-</price_range>
+        <opening_times>sempren aperto</opening_times>
+        <website>-</website>
+        <telephone_number>-</telephone_number>
+        <image>img/aurora.jpg</image>
+    </extra>
+</poi>

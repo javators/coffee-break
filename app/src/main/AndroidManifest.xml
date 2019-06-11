@@ -36,7 +36,8 @@
         <activity
             android:name=".PoiActivity"
             android:label="@string/title_activity_poi" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
