@@ -44,7 +44,7 @@ public class Poi {
     private String mAddress;
     private Extra mExtra;
     private MarkerOptions mMop;
-    private HashMap<String, Marker> mMarkers;
+    private HashMap<String, MarkerOptions> mMarkerOptions;
     private int mRelevance;
 
 
@@ -247,24 +247,22 @@ public class Poi {
 
     /* view methods */
     public Marker addMarkerToMap(GoogleMap gmap, MapType mapType, String inMarkerText) {
-        if (mMarkers == null)
-            mMarkers = new HashMap<>();
+        if (mMarkerOptions == null)
+            mMarkerOptions = new HashMap<>();
 
         MarkerStyle style = mapType.getStyle(mRelevance);
         String cacheid = style.makeCacheid(inMarkerText);
+        MarkerOptions mop;
 
-        if (mMarkers.containsKey(cacheid)) {
-            Marker m = (Marker) mMarkers.get(cacheid);
-            //resetta il titolo, che può essere stato modificato...
-            m.setTitle(mName);
-            return m;
+        if (mMarkerOptions.containsKey(cacheid)) {
+            mop = (MarkerOptions) mMarkerOptions.get(cacheid);
         }
         else {
             LatLng lalo = new LatLng(getCoordLat(), getCoordLng());
 
             Bitmap myicon = Util.createCustomMarkerWithText(style.getLayoutid(), this.getCategory().getIconResourceId(), inMarkerText);
 
-            MarkerOptions mop = new MarkerOptions()
+            mop = new MarkerOptions()
                     .position(lalo)
                     .icon(BitmapDescriptorFactory.fromBitmap(myicon))
                     //.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
@@ -272,25 +270,22 @@ public class Poi {
                     .snippet(mDescription)
                     .title(mName);
 
-
-            Marker m = gmap.addMarker(mop);
-            //m.setTitle("" + (i+1) + ". " + m.getTitle());
-            m.setTag(mId);
-
-            mMarkers.put(cacheid, m);
-            return m;
-
+            mMarkerOptions.put(cacheid, mop);
         }
+
+        Marker m = gmap.addMarker(mop);
+        m.setTag(mId);
+        return m;
     }
 
     /*
 
     public MarkerOptions getGoogleMarker() {
-        if (mMarkers == null)
-            mMarkers = new HashMap<>();
+        if (mMarkerOptions == null)
+            mMarkerOptions = new HashMap<>();
 
-        if (mMarkers.containsKey("_simple_"))
-            return (MarkerOptions) mMarkers.get("_simple_");
+        if (mMarkerOptions.containsKey("_simple_"))
+            return (MarkerOptions) mMarkerOptions.get("_simple_");
         else {
             LatLng lalo = new LatLng(getCoordLat(), getCoordLng());
 
@@ -301,18 +296,18 @@ public class Poi {
                     .snippet(mDescription)
                     .title(mName);
 
-            mMarkers.put("_simple_", mop);
+            mMarkerOptions.put("_simple_", mop);
             return mop;
         }
     }
 
 
     public MarkerOptions getGoogleMarker(String text) {
-        if (mMarkers == null)
-            mMarkers = new HashMap<>();
+        if (mMarkerOptions == null)
+            mMarkerOptions = new HashMap<>();
 
-        if (mMarkers.containsKey("_with_text_" + text))
-            return (MarkerOptions) mMarkers.get("_with_text_" + text);
+        if (mMarkerOptions.containsKey("_with_text_" + text))
+            return (MarkerOptions) mMarkerOptions.get("_with_text_" + text);
         else {
             LatLng lalo = new LatLng(getCoordLat(), getCoordLng());
 
@@ -327,7 +322,7 @@ public class Poi {
                     .title(mName);
 
 
-            mMarkers.put("_with_text_" + text, mop);
+            mMarkerOptions.put("_with_text_" + text, mop);
             return mop;
         }
     }
