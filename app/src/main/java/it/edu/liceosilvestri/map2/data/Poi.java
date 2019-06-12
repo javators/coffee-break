@@ -98,6 +98,10 @@ public class Poi {
         return mAddress;
     }
 
+    public int getRelevance() {
+        return mRelevance;
+    }
+
     public Extra getExtra() {
         return mExtra;
     }

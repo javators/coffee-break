@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -21,6 +22,9 @@ import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import it.edu.liceosilvestri.map2.data.MapLoadStatus;
 import it.edu.liceosilvestri.map2.data.Path;
@@ -34,6 +38,8 @@ public class PathActivity extends AppCompatActivity {
     private GoogleMap mGmap;
     private MapLoadStatus mMapStatus;
     private Path mPath;
+    private boolean mRelevanceAll;
+    private Map<Poi, Marker> mPoiToMarkerTable;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -41,6 +47,10 @@ public class PathActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_path);
+
+        //lo stato è salvato dal widget.
+        Switch sw = (Switch) findViewById(R.id.switchRelevanceAll);
+        mRelevanceAll = sw.isChecked();
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
@@ -99,8 +109,16 @@ public class PathActivity extends AppCompatActivity {
                 i.putExtra("id", poiid);
                 PathActivity.this.startActivity(i);
             });
+
+
+            sw.setOnClickListener(v -> changeMarkerVisibility(((Switch)v).isChecked()));
         }
 
+    }
+
+    private void changeMarkerVisibility(boolean checked) {
+        for (Poi p : mPoiToMarkerTable.keySet())
+            mPoiToMarkerTable.get(p).setVisible(checked || p.getRelevance()>1);
     }
 
     private void checkPutDataOnMap() {
@@ -131,13 +149,27 @@ public class PathActivity extends AppCompatActivity {
         Polyline pl = mGmap.addPolyline(poly);
 
 
+        int posInPath = 1;
+        mPoiToMarkerTable = new HashMap<>(mPath.getPoiIdArray().length);
+
         for (int i=0; i< mPath.getPoiIdArray().length; i++) {
             String poiid = mPath.getPoiIdArray()[i];
-            Poi p =Pois.get().getPoiBy(poiid);
+            Poi p = Pois.get().getPoiBy(poiid);
             if (p != null) {
 
-                Marker m = p.addMarkerToMap(mGmap, Poi.MapType.PATH, ""+(i+1));
-                m.setTitle("" + (i+1) + ". " + m.getTitle());
+
+                Marker m = p.addMarkerToMap(mGmap, Poi.MapType.PATH, "" + posInPath);
+
+                if (p.getRelevance() > 1) {
+                    //cambia il titolo
+                    m.setTitle("" + posInPath + ". " + m.getTitle());
+                    posInPath ++;
+                }
+                else
+                    m.setVisible(false);
+
+                mPoiToMarkerTable.put(p, m);
+
 
                 //MarkerOptions mop = p.getGoogleMarker(""+(i+1));
 

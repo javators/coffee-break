@@ -17,7 +17,7 @@
         android:textAlignment="viewStart"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/switchRelevanceAll"
         app:layout_constraintStart_toEndOf="@+id/imgPathIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,4 +132,14 @@
         app:constraint_referenced_ids="txtDuration,txtSuitableFor,txtLength"
         tools:layout_editor_absoluteX="411dp"
         tools:layout_editor_absoluteY="731dp" />
+
+    <Switch
+        android:id="@+id/switchRelevanceAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="Tutti  "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
