@@ -137,10 +137,11 @@ public class Poi {
             mCoord = root.getElementsByTagName("coord").item(0).getTextContent();
             mAddress = root.getElementsByTagName("address").item(0).getTextContent();
             mSuitableFor = root.getElementsByTagName("suitable_for").item(0).getTextContent();
-            mRelevance = 2;
             try {
                 mRelevance = Integer.parseInt(root.getElementsByTagName("relevance").item(0).getTextContent());
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                mRelevance = 2;
+            }
 
             Element cat = (Element) root.getElementsByTagName("category").item(0);
             mCategoryId = cat.getAttribute("id");
