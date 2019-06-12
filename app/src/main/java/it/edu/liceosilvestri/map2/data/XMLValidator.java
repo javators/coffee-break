@@ -68,6 +68,7 @@ public class XMLValidator {
                     errors += isValidCoord(root, "coord");
                     errors += isValidTag(root, "address");
                     errors += isValidTag(root, "suitable_for");
+                    errors += isValidRelevance(root, "relevance");
 
                     NodeList pathNodes = root.getElementsByTagName("path");
                     int notValidPaths = 0;
@@ -262,10 +263,10 @@ public class XMLValidator {
             Color.parseColor(color);
         }
         catch (NullPointerException e) {
-            return rootName + " " + capitalize(tag) + "is not present.\n";
+            return rootName + " " + capitalize(tag) + " is not present.\n";
         }
         catch (IllegalArgumentException e) {
-            return rootName + " " + capitalize(tag) + "is not valid.\n";
+            return rootName + " " + capitalize(tag) + " is not valid.\n";
         }
         return "";
     }
@@ -388,6 +389,24 @@ public class XMLValidator {
         catch (IOException e) {
             return false;
         }
+    }
+
+    private static String isValidRelevance(Element root, String tag) {
+        String rootName = capitalize(root.getTagName());
+        try {
+            String rel = root.getElementsByTagName(tag).item(0).getTextContent();
+            int x = Integer.parseInt(rel);
+
+            if (x < 1 || x > 3)
+                throw new IllegalArgumentException();
+        }
+        catch (NullPointerException e) {
+            return rootName + " " + capitalize(tag) + " is not present.\n";
+        }
+        catch (IllegalArgumentException e) {
+            return rootName + " " + capitalize(tag) + " is not valid.\n";
+        }
+        return "";
     }
 
     private static String isValidTag(Element root, String tag) {
