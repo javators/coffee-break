@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="fantasy_fruit">
+    <name>Fantasy Fruit</name>
+    <name_long>Fantasy Fruit</name_long>
+    <description>Chioschetto dove mangiare una macedonia, uno yogurt o un Frappè.</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81609, 14.34309</coord>
+    <address>Via della Libertà, 140, 80055 Portici NA</address>
+    <category id="bar"/>
+    <path id="itinerario_b" />
+
+    <extra>
+        <description_long>Chioschetto dove mangiare una macedonia, uno yogurt o un Frappè.</description_long>
+        <price_range>medio</price_range>
+        <opening_times>Lunedì-Sabato 10:00-02:00; Domenica 19:00-00:00 </opening_times>
+        <website>https://it-it.facebook.com/pages/Fantasy-Fruit-Cesare/197530100293817</website>
+        <telephone_number>-</telephone_number>
+        <image>img/ff.jpg</image>
+    </extra>
+</poi>
