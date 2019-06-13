@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="chiesasantantonio">
+    <name>C. Sant'Antonio</name>
+    <name_long>Chiesa Sant'Antonio</name_long>
+    <description>Una chiesa fatta da S.Francesco</description>
+    <suitable_for>famiglie, gruppi</suitable_for>
+    <coord>40.81198, 14.3415</coord>
+    <address>Via Università 74</address>
+    <category id="monument"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <path id="itinerario c" />
+    <extra>
+        <!-- monument -->
+        <description_long>La tradizione vuole che la Chiesa e convento siano stati fondati da S. Francesco, anche se ciò è confutata dal Wadding che afferma come il convento e la Chiesa siano state costruite ad opera del cavaliere napoletano Gualtiero Galeota su esplicita richiesta al papa Benedetto XII che con il Breve apostolico in data 1 marzo 1337, risponde positivamente alla richiesta del gentiluomo.
+            I frati furono cacciati a seguito della soppressione napoleonica prima ed italiana dopo, anche se essi non abbandonarono mai del tutto il luogo per la presenza del p. Salvatore Jovino, morto in concetto di santità, in qualità di rettore della Chiesa.
+            Il convento fu comprato, a seguito di grandi sacrifici da parte dei religiosi, che ebbero la gioia di riaverlo completamente nel 1934. Da quella data e per venti anni il convento ospitò il seminario teologico e dal 1954 al 1976 il seminario minore.
+            Dal 1980 la chiesa è diventata anche Parrocchia. Il convento dal 1982 al 1988 è stato sede della Curia provinciale, mentre dal 1991 vi è stato eretto il Centro regionale della M.I.</description_long>
+        <opening_times></opening_times>
+        <website></website>
+        <image>santantonio.jpg</image>
+
+
+    </extra>
+</poi>
