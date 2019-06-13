@@ -62,11 +62,12 @@ public class ValidatorActivity extends AppCompatActivity {
         });
 
         btnValidatePass.setOnClickListener((view) -> {
-            validate(spinnerFilename, rgPath);
             if (spinnerFilename.getSelectedItemPosition()+1 < spinnerFilename.getAdapter().getCount())
                 spinnerFilename.setSelection(spinnerFilename.getSelectedItemPosition()+1);
             else
                 spinnerFilename.setSelection(0);
+
+            validate(spinnerFilename, rgPath);
         });
     }
 

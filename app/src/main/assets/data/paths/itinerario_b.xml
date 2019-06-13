@@ -16,18 +16,16 @@
     <point coord="40.817314, 14.332017" />
     <point coord="40.815827, 14.330602" />
 
-    <!-- <poi id="stazione_liberta"/> -->
+    <poi id="stazione_liberta"/>
     <poi id="birdys_bakery"/>
-    <!-- <poi id="fantasy_fruit"/> -->
+    <!--<poi id="fantasy_fruit"/> -->
     <poi id="pizzeria_del_centro"/>
     <poi id="chiesa_san_ciro"/>
     <poi id="gelateria_gallo"/>
     <poi id="epitaffio_caduti"/>
-    <!-- <poi id="bar_la_conchiglia"/> -->
+    <poi id="bar_la_conchiglia"/>
     <poi id="kousushi"/>
-    <!-- <poi id="cinema_teatro_roma"/> -->
-    <!-- <poi id="escape_room_portici"/> -->
-    <!-- <poi id="lido_aurora"/> -->
-
-
+    <poi id="cinema_teatro_roma"/>
+    <poi id="escape_room_portici"/>
+    <poi id="lido_aurora"/>
 </path>

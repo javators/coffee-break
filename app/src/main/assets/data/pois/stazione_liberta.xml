@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="stazione_liberta">
+    <name>Stazione via Libertà</name>
+    <name_long>Stazione di Portici Via Libertà</name_long>
+    <description>Stazione di Via Libertà posta sulla linea Napoli – Poggiomarino</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.81687, 14.34603</coord>
+    <address>Via Alcide de Gasperi, 80055 Portici NA</address>
+    <category id="station"/>
+    <path id="itinerario_b" />
+    <extra>
+        <description_long>Stazione a 2 binari della ex Circumvesuviana, posta sulla linea Napoli – Poggiomarino, a servizio del comune di Portici. È stata aperta negli anni settanta del XX secolo, in concomitanza con i lavori di interramento della Circumvesuviana, sostituendo così la vecchia stazione.</description_long>
+        <website>https://www.eavsrl.it/</website>
+ </extra>
+</poi>

@@ -163,7 +163,7 @@ public class HomeActivity extends AppCompatActivity {
                 ((TextView) view.findViewById(R.id.txtName)).setText(ph.getName());
 
                 ImageView iv = view.findViewById(R.id.imgIcon);
-                iv.setImageResource(R.drawable.ic_timeline_black_24dp);
+                iv.setImageResource(R.drawable.ic_timeline_24dp);
                 iv.setColorFilter(ph.getColor());
             }
             else {

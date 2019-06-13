@@ -16,15 +16,16 @@
     <point coord="40.810206, 14.336395" />
     <point coord="40.810206, 14.336395" />
 
-    <!-- <poi id="stazione_piazza_san_pasquale"/> -->
+    <!--<poi id="stazione_piazza_san_pasquale"/> -->
     <poi id="granatello"/>
+    <poi id="convento_san_pasquale"/>
     <poi id="caffetteria_san_pasquale"/>
     <poi id="villa_comunale"/>
-    <!-- <poi id="bosco_inferiore_di_portici"/> --> <!-- TODO creare su MyMaps -->
+    <!--<poi id="bosco_inferiore_di_portici"/> --> <!-- TODO creare su MyMaps -->
     <poi id="teatro_comunale_de_filippo"/>
     <poi id="chiesa_san_ciro"/>
     <poi id="palazzo_mascabruno"/>
-    <!-- <poi id="chiesa_sant_antonio"/> -->
+    <!--<poi id="chiesa_sant_antonio"/> -->
     <poi id="reggia"/>
     <poi id="orto_botanico"/>
 
