@@ -144,7 +144,7 @@ public class Poi {
             try {
                 mRelevance = Integer.parseInt(root.getElementsByTagName("relevance").item(0).getTextContent());
             } catch (Exception e) {
-                mRelevance = 2;
+                mRelevance = 1;
             }
 
             Element cat = (Element) root.getElementsByTagName("category").item(0);

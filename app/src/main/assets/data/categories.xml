@@ -1,64 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <categories>
-    <category id="bar">
-        <name>Bar/Locali</name>
-        <name_singular>Bar/Locale</name_singular>
-        <icon>ic_bar_24dp</icon>
-        <managed_by>it.edu.liceosilvestri.map2.extra.PoiRestaurant</managed_by>
-    </category>
-    <category id="hotel">
-        <name>Hotel</name>
-        <name_singular>Hotel</name_singular>
-        <icon>ic_hotel_24dp</icon>
-        <managed_by>it.edu.liceosilvestri.map2.extra.PoiHotel</managed_by>
-    </category>
     <category id="monument">
         <name>Monumenti</name>
         <name_singular>Monumento</name_singular>
         <icon>ic_museum_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiMonument</managed_by>
+        <relevance>3</relevance>
     </category>
     <category id="museum">
         <name>Musei</name>
         <name_singular>Museo</name_singular>
         <icon>ic_museum_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiMuseum</managed_by>
-    </category>
-    <category id="parking">
-        <name>Parcheggi</name>
-        <name_singular>Parcheggio</name_singular>
-        <icon>ic_parking_24dp</icon>
-        <managed_by>it.edu.liceosilvestri.map2.extra.PoiParking</managed_by>
+        <relevance>3</relevance>
     </category>
     <category id="park">
         <name>Parchi</name>
         <name_singular>Parco</name_singular>
         <icon>ic_park_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiPark</managed_by>
+        <relevance>3</relevance>
     </category>
     <category id="square">
         <name>Piazze</name>
         <name_singular>Piazza</name_singular>
         <icon>ic_square_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiSquare</managed_by>
+        <relevance>2</relevance>
+    </category>
+    <category id="bar">
+        <name>Bar/Locali</name>
+        <name_singular>Bar/Locale</name_singular>
+        <icon>ic_bar_24dp</icon>
+        <managed_by>it.edu.liceosilvestri.map2.extra.PoiRestaurant</managed_by>
+        <relevance>1</relevance>
+    </category>
+    <category id="hotel">
+        <name>Hotel</name>
+        <name_singular>Hotel</name_singular>
+        <icon>ic_hotel_24dp</icon>
+        <managed_by>it.edu.liceosilvestri.map2.extra.PoiHotel</managed_by>
+        <relevance>2</relevance>
+    </category>
+    <category id="parking">
+        <name>Parcheggi</name>
+        <name_singular>Parcheggio</name_singular>
+        <icon>ic_parking_24dp</icon>
+        <managed_by>it.edu.liceosilvestri.map2.extra.PoiParking</managed_by>
+        <relevance>1</relevance>
     </category>
     <category id="restaurant">
         <name>Ristoranti</name>
         <name_singular>Ristorante</name_singular>
         <icon>ic_restaurant_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiRestaurant</managed_by>
+        <relevance>1</relevance>
     </category>
     <category id="station">
         <name>Stazioni</name>
         <name_singular>Stazione</name_singular>
         <icon>ic_train_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiStation</managed_by>
+        <relevance>1</relevance>
     </category>
     <category id="entertainment">
         <name>Luoghi d'intrattenimento</name>
         <name_singular>Luogo d'intrattenimento</name_singular>
         <icon>ic_entertainment_24dp</icon>
         <managed_by>it.edu.liceosilvestri.map2.extra.PoiRestaurant</managed_by>
+        <relevance>1</relevance>
     </category>
 
 

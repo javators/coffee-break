@@ -119,6 +119,10 @@ public class PoisActivity extends AppCompatActivity {
 
             Marker marker = p.addMarkerToMap(mGmap, Poi.MapType.POIS, null);
             map.put(p, marker);
+
+            Category c = p.getCategory();
+            boolean visible = c.getRelevance()>1;
+            marker.setVisible(visible);
         }
 
         mGmap.setOnInfoWindowClickListener((Marker marker) -> {
@@ -196,7 +200,8 @@ public class PoisActivity extends AppCompatActivity {
 
             this.mMapSwitch = new HashMap<>();
             for (Category c : mCategories) {
-                mMapSwitch.put(c, true);
+                boolean visible = c.getRelevance()>1;
+                mMapSwitch.put(c, visible);
             }
         }
 
@@ -276,7 +281,11 @@ public class PoisActivity extends AppCompatActivity {
             }
 
             TextView tvName = rowView.findViewById(R.id.txtPoiItemName);
-            tvName.setText(getChild(groupPosition, childPosition).getName());
+            Poi p = getChild(groupPosition, childPosition);
+            String name = p.getName() + "  ";
+            for (int i=0; i<p.getRelevance(); i++)
+                name = name + "*";
+            tvName.setText(name);
 
             return rowView;
         }

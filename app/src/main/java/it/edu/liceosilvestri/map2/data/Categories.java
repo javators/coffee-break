@@ -74,10 +74,9 @@ public class Categories implements Iterable<Category> {
                         String nameSingular = eElement.getElementsByTagName("name_singular").item(0).getTextContent();
                         String icon = eElement.getElementsByTagName("icon").item(0).getTextContent();
                         String managedBy = eElement.getElementsByTagName("managed_by").item(0).getTextContent();
+                        int relevance = Integer.parseInt(eElement.getElementsByTagName("relevance").item(0).getTextContent());
 
-
-
-                        Category cat = new Category(ctx, id, name, nameSingular, icon, managedBy);
+                        Category cat = new Category(ctx, id, name, nameSingular, icon, managedBy, relevance);
 
                         mCategoryArray[k++] = cat;
                     }
