@@ -18,6 +18,7 @@
 
     <!--<poi id="stazione_piazza_san_pasquale"/> -->
     <poi id="granatello"/>
+    <poi id="convento_san_pasquale"/>
     <poi id="caffetteria_san_pasquale"/>
     <poi id="villa_comunale"/>
     <!--<poi id="bosco_inferiore_di_portici"/> --> <!-- TODO creare su MyMaps -->

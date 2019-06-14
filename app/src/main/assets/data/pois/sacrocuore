@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="sacrocuore">
+    <name>C. Sacro Cuore</name>
+    <name_long>Chiesa del Sacro Cuore</name_long>
+    <description></description>
+    <suitable_for>famiglie, gruppi</suitable_for>
+    <coord>40.81982, 14.34032</coord>
+    <address>Via Armando Diaz, 132</address>
+    <category id="monument"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <path id="itinerario a" />
+
+    <extra>
+<!-- monument -->
+<description_long></description_long>
+<opening_times></opening_times>
+<website>http://www.sacrocuoreportici.it/</website>
+<image>chiesasacrocuore.jpg</image>
+
+
+</extra>
+    </poi>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="terrazza">
+    <name>Terrazza</name>
+    <name_long>Terrazza</name_long>
+    <description>Descrizione breve che compare sulle mappe</description>
+    <suitable_for>famiglie, gruppi</suitable_for>
+    <coord>40.81976, 14.33756</coord>
+    <address>Via Re Vittorio Emanuele II, 2</address>
+    <category id="bar"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <path id="a" />
+    <extra>
+
+        <!-- bar -->
+        <description_long></description_long>
+        <price_range>high</price_range>
+        <opening_times>
+            mercoledì	07:30–14, 16–03
+        giovedì	07:30–14, 16–03
+        venerdì	07:30–14, 16–03
+        sabato	07:30–14, 16–03
+        domenica	07:30–14, 16–00
+        lunedì	Chiuso
+        martedì	07:30–14, 16–03></opening_times>
+        <website></website>
+        <telephone_number>081 476340</telephone_number>
+        <image>terrazza.jpg</image>
+
+    </extra>
+</poi>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="staizionepietrarsa">
+    <name>S. Pietrarsa</name>
+    <name_long>Stazione Pietrarsa</name_long>
+    <description>Stazione Trenitalia</description>
+    <suitable_for>famiglie, gruppi</suitable_for>
+    <coord>40.8219, 14.32158</coord>
+    <address>Via Pietrarsa</address>
+    <category id="station"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <path id="a" />
+
+    <extra>  <!-- station -->
+        <description_long>a fermata dispone di un fabbricato viaggiatori facente anche da casa cantoniera per l'adiacente passaggio a livello, di due binari passanti per il traffico passeggeri più un terzo tronco: questo era a servizio dell'adiacente OGR Pietrarsa (di origine borbonica e nato come opificio a servizio della prima linea ferroviaria italiana, ovvero la Napoli-Portici del 1839) al quale vi si accedeva attraverso un cancello, normalmente chiuso, seguito da una piattaforma a settore di circonferenza la quale, a sua volta, metteva in comunicazione col binario che collegava, e che ancora collega, con il fascio binari interno all'officina. Tale tronchino serve saltuariamente al museo nazionale ferroviario, nato dalla riconversione della vecchia Officina. A servizio dei binari vi sono due banchine unite da un sottopassaggio.</description_long>
+        <website>https://www.trenitalia.com/</website>
+    </extra>
+</poi>

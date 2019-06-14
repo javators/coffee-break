@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="villaassunta">
+    <name>Villa Assunta</name>
+    <name_long>Villa Assunta</name_long>
+    <description</description>
+    <suitable_for>famiglie, gruppi</suitable_for>
+    <coord>40.81976, 14.32795</coord>
+    <address>Via Diaz,166</address>
+    <category id="monument"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <path id="itinerario a" />
+
+    <extra>
+    <!-- monument -->
+    <description_long></description_long>
+    <opening_times></opening_times>
+    <website></website>
+    <image>villassunta.jpg</image>
+
+    </extra>
+</poi>
