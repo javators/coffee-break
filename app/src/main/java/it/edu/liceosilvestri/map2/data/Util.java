@@ -3,17 +3,21 @@ package it.edu.liceosilvestri.map2.data;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.support.annotation.DrawableRes;
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -51,13 +55,6 @@ public class Util {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             View view = LayoutInflater.from(context).inflate(R.layout.item_image, null);
-
-            /*
-            for (String filename : mImageArray) {
-                ImageView imageView = view.findViewById(R.id.image);
-                Util.loadAssetIntoImageView(imageView, filename);
-            }
-            */
 
             String filename = mImageArray[position];
             ImageView imageView = view.findViewById(R.id.image);
@@ -121,7 +118,8 @@ public class Util {
         markImage.setImageResource(R.drawable.ic_custom_place_24dp);
 
         TextView txt_name = (TextView)marker.findViewById(R.id.txtName);
-        txt_name.setText(text);
+        if (txt_name != null)
+            txt_name.setText(text);
 
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
@@ -139,4 +137,72 @@ public class Util {
     }
 
 
+    public static int dpToPx(int dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    public static int pxToDp(int px) {
+        return (int) (px / Resources.getSystem().getDisplayMetrics().density);
+    }
+
+
+
+    public static class ImageScroller {
+
+        private final ViewPager mViewPager;
+        private final LinearLayout mLinearLayout;
+        private String[] mImageArray;
+
+        public ImageScroller(ViewPager vp, LinearLayout ll, String[] images) {
+            mViewPager = vp;
+            mLinearLayout = ll;
+            mImageArray = images;
+
+            Util.ImagePager ip = new Util.ImagePager(vp.getContext(), mImageArray);
+
+            vp.setAdapter(ip);
+
+
+            if (images.length > 1) {
+                int size = dpToPx(30);
+
+                for (int i = 0; i < images.length; i++) {
+                    ImageView iv = new ImageView(vp.getContext());
+                    iv.setImageResource(R.drawable.ic_circle_black_24dp);
+                    iv.setPadding(3,0,3,0);
+                    mLinearLayout.addView(iv);
+                }
+
+                selectButton(0);
+
+                ViewPager.OnPageChangeListener opcl = new ViewPager.OnPageChangeListener() {
+                    @Override
+                    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                    }
+
+                    @Override
+                    public void onPageSelected(int position) {
+                        selectButton(position);
+                    }
+
+                    @Override
+                    public void onPageScrollStateChanged(int state) {
+                    }
+                };
+
+                vp.addOnPageChangeListener(opcl);
+
+            }
+
+        }
+
+        private void selectButton(int selected) {
+            for (int i = 0; i < mLinearLayout.getChildCount(); i++) {
+
+                ImageView iv = (ImageView) mLinearLayout.getChildAt(i);
+                String colorstr = (i == selected) ? "#ffff0000" : "#ffd0d0d0";
+                iv.setColorFilter(Color.parseColor(colorstr));
+            }
+          }
+    }
 }

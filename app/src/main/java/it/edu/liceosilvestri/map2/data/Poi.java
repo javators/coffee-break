@@ -228,8 +228,8 @@ public class Poi {
     }
 
     public enum MarkerStyle {
-        POI(R.layout.custom_marker_simple),
-        PATH_RELEVANT_WITH_TEXT(R.layout.custom_marker_with_text_inside),
+        POI(R.layout.custom_marker_poi),
+        PATH_RELEVANT_WITH_TEXT(R.layout.custom_marker_with_text),
         PATH(R.layout.custom_marker_simple),
         POIS_RELEVANT(R.layout.custom_marker_simple),
         POIS(R.layout.custom_marker_simple);
@@ -244,9 +244,9 @@ public class Poi {
         }
         public String makeCacheid(String text) {
             if (text == null)
-                return "" + this.ordinal();
+                return this.ordinal() + ".-" ;
             else
-                return this.ordinal() + text;
+                return this.ordinal() + "." + text;
         }
     }
 

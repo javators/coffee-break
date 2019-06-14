@@ -2,6 +2,7 @@ package it.edu.liceosilvestri.map2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,8 +40,11 @@ public class PathActivity extends AppCompatActivity {
     private GoogleMap mGmap;
     private MapLoadStatus mMapStatus;
     private Path mPath;
-    private boolean mRelevanceAll;
+    private boolean mShowAll;
     private Map<Poi, Marker> mPoiToMarkerTable;
+    private ArrayList<Poi> mRelevantPoisInPath;
+    private ArrayList<Poi> mAllPoisInPath;
+    private HashMap<Poi, Integer> mPoiOrdinalInPath;
 
     private static final String MAP_VIEW_BUNDLE_KEY = "MapViewBundleKey";
 
@@ -50,7 +55,7 @@ public class PathActivity extends AppCompatActivity {
 
         //lo stato è salvato dal widget.
         Switch sw = (Switch) findViewById(R.id.switchRelevanceAll);
-        mRelevanceAll = sw.isChecked();
+        mShowAll = sw.isChecked();
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
@@ -81,6 +86,23 @@ public class PathActivity extends AppCompatActivity {
             mMapView = findViewById(R.id.mapView);
             mMapView.onCreate(mapViewBundle);
             mMapStatus = MapLoadStatus.getInitialStatus(savedInstanceState);
+            int poicount = mPath.getPoiIdArray().length;
+            mRelevantPoisInPath = new ArrayList<>(poicount);
+            mAllPoisInPath = new ArrayList<>(poicount);
+            mPoiOrdinalInPath = new HashMap<>(poicount);
+            int ordinal = 1;
+
+            for (String poiid : mPath.getPoiIdArray()) {
+                Poi p = Pois.get().getPoiBy(poiid);
+                if (p != null) {
+                    mAllPoisInPath.add(p);
+                    if (p.getRelevance() > 1) {
+                        mRelevantPoisInPath.add(p);
+                        mPoiOrdinalInPath.put(p, ordinal++);
+                    }
+                }
+            }
+
 
 
             mMapView.getViewTreeObserver().addOnGlobalLayoutListener( () -> {
@@ -117,8 +139,14 @@ public class PathActivity extends AppCompatActivity {
     }
 
     private void changeMarkerVisibility(boolean checked) {
-        for (Poi p : mPoiToMarkerTable.keySet())
-            mPoiToMarkerTable.get(p).setVisible(checked || p.getRelevance()>1);
+        for (Poi p : mPoiToMarkerTable.keySet()) {
+            mPoiToMarkerTable.get(p).setVisible(checked || p.getRelevance() > 1);
+        }
+        mShowAll = checked;
+
+        ListView lv = findViewById(R.id.listViewPois);
+        BaseAdapter ba = (BaseAdapter) lv.getAdapter();
+        ba.notifyDataSetChanged();
     }
 
     private void checkPutDataOnMap() {
@@ -148,40 +176,23 @@ public class PathActivity extends AppCompatActivity {
 
         Polyline pl = mGmap.addPolyline(poly);
 
-
         int posInPath = 1;
         mPoiToMarkerTable = new HashMap<>(mPath.getPoiIdArray().length);
 
-        for (int i=0; i< mPath.getPoiIdArray().length; i++) {
-            String poiid = mPath.getPoiIdArray()[i];
-            Poi p = Pois.get().getPoiBy(poiid);
-            if (p != null) {
+        for (Poi p : mAllPoisInPath) {
+            Marker m = p.addMarkerToMap(mGmap, Poi.MapType.PATH, "" + posInPath);
 
-
-                Marker m = p.addMarkerToMap(mGmap, Poi.MapType.PATH, "" + posInPath);
-
-                if (p.getRelevance() > 1) {
-                    //cambia il titolo
-                    m.setTitle("" + posInPath + ". " + m.getTitle());
-                    posInPath ++;
-                }
-                else
-                    m.setVisible(false);
-
-                mPoiToMarkerTable.put(p, m);
-
-
-                //MarkerOptions mop = p.getGoogleMarker(""+(i+1));
-
-                //Marker m = mGmap.addMarker(mop);
-                //m.setTitle("" + (i+1) + ". " + m.getTitle());
-                //m.setTag(poiid);
+            if (p.getRelevance() > 1) {
+                //cambia il titolo
+                m.setTitle("" + posInPath + ". " + m.getTitle());
+                posInPath++;
             }
+            else
+                m.setVisible(false);
+
+            mPoiToMarkerTable.put(p, m);
+
         }
-
-
-        //LatLng erc = new LatLng(40.818, 14.335);
-        //mGmap.moveCamera(CameraUpdateFactory.newLatLngZoom(erc, 14));
 
 
         mGmap.setOnInfoWindowClickListener((mark)->{
@@ -262,12 +273,12 @@ public class PathActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return mPath.getPoiIdArray().length;
+            return mShowAll ? mAllPoisInPath.size() : mRelevantPoisInPath.size();
         }
 
         @Override
         public Object getItem(int position) {
-            return mPath.getPoiIdArray()[position];
+            return mShowAll ? mAllPoisInPath.get(position) : mRelevantPoisInPath.get(position);
         }
 
         @Override
@@ -282,13 +293,27 @@ public class PathActivity extends AppCompatActivity {
             if (view == null)
                 view = inflater.inflate(R.layout.item_poi_of_path, parent, false);
 
-            String poiid = mPath.getPoiIdArray()[position];
-            Poi p = Pois.get().getPoiBy(poiid);
+            Poi p = mShowAll ? mAllPoisInPath.get(position) : mRelevantPoisInPath.get(position);
 
-            ((TextView) view.findViewById(R.id.txtName)).setText((position+1) + ". " + p.getNameLong());
+            TextView tv = (TextView) view.findViewById(R.id.txtName);
+
+            String title;
+            if (p.getRelevance() > 1) {
+                //cambia il titolo
+                int ordinalPos = mPoiOrdinalInPath.get(p);
+                tv.setText("" + ordinalPos + ". " + p.getNameLong());
+                tv.setTypeface(null, Typeface.BOLD);
+                //tv.setTextColor(Color.BLACK);
+
+            }
+            else {
+                tv.setText("    " + p.getNameLong());
+                tv.setTypeface(null, Typeface.ITALIC);
+            }
 
             ImageView iv = view.findViewById(R.id.imgIcon);
             iv.setImageResource(p.getCategory().getIconResourceId());
+
 
             return view;
         }

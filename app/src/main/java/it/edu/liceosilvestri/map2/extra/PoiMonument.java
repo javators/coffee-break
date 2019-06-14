@@ -3,6 +3,7 @@ package it.edu.liceosilvestri.map2.extra;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Element;
@@ -21,6 +22,7 @@ public class PoiMonument implements Poi.Extra {
     private String mOpeningTimes;
     private String mWebsite;
     private String[] mImageArray;
+    Util.ImageScroller mImageScroller;
 
     @Override
     public void setPoi(Poi p) {
@@ -93,9 +95,11 @@ public class PoiMonument implements Poi.Extra {
         ((TextView) vg.findViewById(R.id.txtWebsite)).setText(mWebsite);
         ((TextView) vg.findViewById(R.id.txtDescription)).setText(mDescriptionLong);
 
-        Util.ImagePager ip = new Util.ImagePager(vg.getContext(), mImageArray);
+
         ViewPager vp = vg.findViewById(R.id.viewPager);
-        vp.setAdapter(ip);
+        LinearLayout ll = vg.findViewById(R.id.linearPosIndicator);
+
+        mImageScroller = new Util.ImageScroller(vp, ll, mImageArray);
 
       }
 
