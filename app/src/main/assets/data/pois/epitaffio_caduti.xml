@@ -5,15 +5,14 @@
     <description>Epitaffio Eruzione 1631</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.814640, 14.335790</coord>
-    <address>Corso Giuseppe Garibaldi, 60, 80055 Portici NA</address>
-    <category id="monument"/>
+    <address>Corso Giuseppe Garibaldi, 60</address>
+    <relevance>2</relevance>
+    <category id="monument" />
     <path id="itinerario_b" />
     <extra>
-
-        <description_long>La grande eruzione del 1631 che modificò nel corso di circa tre giorni l\'intera morfologia orografica del territorio ebbe un impatto talmente devastante da essere paragonata sotto alcuni aspetti alla grande eruzione del 79d.C.&#13;&#10;Un immenso fiume fangoso rapidissimo, che in poche ore guadagnò il mare respingendolo per oltre 500 metri. In alcuni punti la linea di costa divenne avanzata verso sud di un chilometro. In una fase precoce si sovrapposero i flussi lavici che generarono a Portici il promontorio detto Granateletto ed a Torre del Greco la scogliera della Scala.&#13;&#10;A commentare il nefasto evento per il quale si ebbero migliaia di vite umane, ingentissimi danni agli allevamenti ed incalcolabili disastri patrimoniali, vennero edificati due monumenti distinti. Il primo venne posto a Torre del Greco e l\'altro a Portici. Entrambi lungo la strada Regia delle due Sicilie ebbero il compito di ricordare al passante il tremendo episodio che tanto dolore e tanta distruzione produsse in quella terra.&#13;&#10;oggi quelle due lapidi sono ancora sui luoghi originali della storia. Oggi ancora intimano al viandante di soffermarsi e di meditare sulla drande devastazione di quell\'anno: il 1631</description_long>
+        <description_long>La grande eruzione del 1631 che modificò nel corso di circa tre giorni l\'intera morfologia orografica del territorio ebbe un impatto talmente devastante da essere paragonata sotto alcuni aspetti alla grande eruzione del 79 d.C.\nUn immenso fiume fangoso rapidissimo, che in poche ore guadagnò il mare respingendolo per oltre 500 metri. In alcuni punti la linea di costa divenne avanzata verso sud di un chilometro. In una fase precoce si sovrapposero i flussi lavici che generarono a Portici il promontorio detto Granateletto ed a Torre del Greco la scogliera della Scala.\nA commentare il nefasto evento per il quale si ebbero migliaia di vite umane, ingentissimi danni agli allevamenti ed incalcolabili disastri patrimoniali, vennero edificati due monumenti distinti. Il primo venne posto a Torre del Greco e l\'altro a Portici. Entrambi lungo la strada Regia delle due Sicilie ebbero il compito di ricordare al passante il tremendo episodio che tanto dolore e tanta distruzione produsse in quella terra.\noggi quelle due lapidi sono ancora sui luoghi originali della storia. Oggi ancora intimano al viandante di soffermarsi e di meditare sulla drande devastazione di quell\'anno: il 1631.</description_long>
         <opening_times>-</opening_times>
         <website>http://www.vesuvioweb.com/it/2012/01/l-epitaffio-di-portici-ricorda-leruzione-del-1631/</website>
         <image>img/epitaffio_caduti.jpg</image>
-
     </extra>
 </poi>

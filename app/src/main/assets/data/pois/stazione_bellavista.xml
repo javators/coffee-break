@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="stazione_bellavista">
+    <name>Stazione Bellavista</name>
+    <name_long>Stazione di Portici Bellavista</name_long>
+    <description>Stazione di Bellavista posta sulla linea Napoli – Poggiomarino</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.822039, 14.343688</coord>
+    <address>Via IV Novembre</address>
+    <relevance>2</relevance>
+    <category id="station" />
+    <path id="itinerario_a" />
+    <extra>
+        <description_long>Stazione a 2 binari della ex Circumvesuviana, posta sulla linea Napoli – Poggiomarino, a servizio del comune di Portici. Fu inaugurata nel 1927, su progetto dell'ingegnere Carlo Avena in sostituzione della precedente stazione di Portici, posta poche centinaia di metri più a sud.</description_long>
+        <website>https://www.eavsrl.it/</website>
+    </extra>
+</poi>

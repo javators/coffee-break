@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="villa_comunale">
     <name>Villa Comunale</name>
-    <name_long>Villa Comunale Portici</name_long>
+    <name_long>Villa Comunale di Portici</name_long>
     <description>Villa Comunale di Portici immersa nel verde</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81114, 14.33703</coord>
-    <address>Corso Umberto I, Portici, NA</address>
-    <category id="park"/>
+    <address>Corso Umberto I, 46</address>
+    <relevance>2</relevance>
+    <category id="park" />
     <path id="itinerario_c" />
     <extra>
-        <description_long>Villa Comunale di Portici immersa nel verde nella quale è possibile passeggiare o riposare su qualche panchina ammirando la natura. Essa è situata di fronte al Bosco di Portici </description_long>
+        <description_long>Villa Comunale di Portici immersa nel verde nella quale è possibile passeggiare o riposare su qualche panchina ammirando la natura. Essa è situata di fronte al Bosco di Portici.</description_long>
         <opening_times>8:00-20:00</opening_times>
         <image>img/villa_comunale.jpg</image>
     </extra>

@@ -2,20 +2,19 @@
 <poi id="kousushi">
     <name>Kou Sushi</name>
     <name_long>Kou Sushi Portici</name_long>
-    <description>Ottimo ristorante Giapponese a Portici</description>
+    <description>Ottimo ristorante giapponese</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81603, 14.3341</coord>
-    <address>Corso Giuseppe Garibaldi, 130, 80055 Portici NA</address>
-    <category id="restaurant"/>
+    <address>Corso Giuseppe Garibaldi, 130</address>
+    <relevance>1</relevance>
+    <category id="restaurant" />
     <path id="itinerario_b" />
     <extra>
-
-        <description_long>Ottima qualità del cibo. Buona la preparazione. Gentili ed efficienti i camerieri. Il prezzo è in linea con il prodotto, forse un po' distante dalle tariffe degli altri 'all you can eat.</description_long>
+        <description_long>Ottima qualità del cibo. Buona la preparazione. Gentili ed efficienti i camerieri. Il prezzo è in linea con il prodotto, forse un po' distante dalle tariffe degli altri All You Can Eat.</description_long>
         <price_range>Medio</price_range>
-        <opening_times>Martedì - Domenica: 12:30-15:30, 19:30-00:00 </opening_times>
+        <opening_times>Martedì-Domenica 12:30-15:30/19:30-00:00 </opening_times>
         <website>http://www.kousushi.it/</website>
-        <telephone_number>081 1809 8073</telephone_number>
+        <telephone_number>+39 081 18098073</telephone_number>
         <image>img/kousushi.jpg</image>
-
     </extra>
 </poi>

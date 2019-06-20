@@ -3,15 +3,16 @@
     <name>Palazzo Mascabruno</name>
     <name_long>Palazzo Mascabruno</name_long>
     <description>Palazzo settecentesco della Reggia di Portici</description>
-    <suitable_for>-</suitable_for>
+    <suitable_for>Tutti</suitable_for>
     <coord>40.81272, 14.34038</coord>
-    <address>Via Università, 50, 80055 Portici NA</address>
-    <category id="monument"/>
+    <address>Via Università, 50</address>
+    <relevance>1</relevance>
+    <category id="monument" />
     <path id="itinerario_c" />
     <extra>
-        <description_long>Palazzo, settecentesco, venne acquistato dai Borbone per incorporare il suo vasto giardino nella riserva di caccia della Reggia di Portici. Carlo III di Borbone decise di trasformare l'edificio ed adibirlo alla funzione di "Regie Scuderie". I lavori ebbero luogo fra il 1740 e, sicuramente, non oltre il 1754, subendo varie interruzioni per il ritrovamento di reperti archeologici. L'architetto fu Tommaso Saluzzi Purtroppo tutti i decori della facciata sono andati distrutti</description_long>
-        <opening_times>-</opening_times>
+        <description_long>Questo palazzo, costruito nel Settecento, venne acquistato dai Borbone per incorporare il suo vasto giardino nella riserva di caccia della Reggia di Portici. Carlo III di Borbone decise di trasformare l'edificio ed adibirlo alla funzione di "Regie Scuderie". I lavori ebbero luogo fra il 1740 e, sicuramente, non oltre il 1754, subendo varie interruzioni per il ritrovamento di reperti archeologici. L'architetto fu Tommaso Saluzzi Purtroppo tutti i decori della facciata sono andati distrutti.</description_long>
+        <opening_times>Palazzo privato</opening_times>
         <website>https://www.comune.portici.na.it/old/ambiente-e-igiene-urbana/ambiente/38-la-citta/5092-palazzo-mascabruno</website>
-        <image>img/palazzo_m.jpg</image>
+        <image>img/palazzo_mascabruno.jpg</image>
     </extra>
 </poi>

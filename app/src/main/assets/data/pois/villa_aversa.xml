@@ -5,12 +5,13 @@
     <description>Villa vesuviana del Miglio d'Oro</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.819769, 14.327941</coord>
-    <address>Corso Giuseppe Garibaldi, 223 Portici (NA)</address>
-    <category id="monument"/>
+    <address>Corso Giuseppe Garibaldi, 223</address>
+    <relevance>2</relevance>
+    <category id="monument" />
     <path id="itinerario_a" />
     <extra>
-        <description_long>La villa, costruita agli inizi dell'Ottocento, ha, purtroppo subito diverse manomissioni, a causa di scriteriati interventi di restauro e ad un bombardamento in occasione della Seconda Guerra Mondiale.&#10;&#13;La facciata si caratterizza per la sobria partizione dello spazio operata per mezzo di lesene lineari incrociate da una cornice in prossimità del primo piano.&#10;&#13;Le finestre sono iscritte in una cornice sobria con chiave di volta a sbalzo e si aprono su degli sporti rastremati.&#10;&#13;Il portale, andato distrutto, è sostituito da un'apertura anonima.&#10;&#13;Degni di nota sono i padiglioni a pagoda nel parco e la terrazza sul mare. </description_long>
-        <opening_times>Aperto su prenotazione</opening_times>
+        <description_long>La villa, costruita agli inizi dell'Ottocento, ha purtroppo subito diverse manomissioni, a causa di scriteriati interventi di restauro e ad un bombardamento in occasione della Seconda Guerra Mondiale.\nLa facciata si caratterizza per la sobria partizione dello spazio operata per mezzo di lesene lineari incrociate da una cornice in prossimità del primo piano.\nLe finestre sono iscritte in una cornice sobria con chiave di volta a sbalzo e si aprono su degli sporti rastremati.\nIl portale, andato distrutto, è sostituito da un'apertura anonima.\nDegni di nota sono i padiglioni a pagoda nel parco e la terrazza sul mare.</description_long>
+        <opening_times>Palazzo privato</opening_times>
         <website>http://rete.comuni-italiani.it/wiki/Portici/Villa_Aversa</website>
         <image>img/villa_aversa.jpg</image>
         <image>img/villa_aversa2.jpg</image>

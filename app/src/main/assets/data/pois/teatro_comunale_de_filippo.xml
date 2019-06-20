@@ -5,16 +5,16 @@
     <description>La storia del teatro napoletano, una perla nel cuore di Napoli</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81217, 14.33779</coord>
-    <address>Corso Umberto 80055 Portici NA</address>
-    <category id="entertainment"/>
+    <address>Corso Umberto I, 44/b</address>
+    <relevance>1</relevance>
+    <category id="entertainment" />
     <path id="itinerario_c" />
     <extra>
-        <description_long>Ex locale cinematografico. Accessibilità discreta e parcheggi in zona con ausilio delle strisce blu</description_long>
+        <description_long>Ex locale cinematografico. Accessibilità discreta e parcheggi in zona con ausilio delle strisce blu.</description_long>
         <price_range>Medio</price_range>
         <opening_times>-</opening_times> <!-- TODO Mannaggia a tutto, non riesco a trovarli -Bec -->
-        <website>http://www.napolitoday.it/eventi/location/teatro-comunale-i-de-filippo/</website>
-        <telephone_number>081 7862111</telephone_number>
+        <website>http://www.napolitoday.it/eventi/location/teatro-comunale-i-de-filippo</website>
+        <telephone_number>+39 081 7862111</telephone_number>
         <image>img/teatro_de_filippo.jpg</image>
-
     </extra>
 </poi>

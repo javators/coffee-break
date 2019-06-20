@@ -5,28 +5,38 @@
     <description_long>Questo percorso permette una passeggiata tra il verde e la storia di Portici partendo dal mare</description_long>
     <duration>3-5h</duration>
     <length>1,2 km</length>
-    <suitable_for>Famiglie, regazzi</suitable_for>
+    <suitable_for>Famiglie, ragazzi</suitable_for>
     <color>#4CAF50</color>
-    <point coord="40.811483, 14.342699" />
-    <point coord="40.812404, 14.340906" />
-    <point coord="40.813021, 14.340084" />
-    <point coord="40.813973, 14.339462" />
-    <point coord="40.813824, 14.338841" />
-    <point coord="40.810184, 14.336669" />
-    <point coord="40.810206, 14.336395" />
-    <point coord="40.810206, 14.336395" />
+    <point coord="40.808524, 14.335799" />
+    <point coord="40.808523, 14.336092" />
+    <point coord="40.809778, 14.336380" />
+    <point coord="40.809776, 14.336442" />
+    <point coord="40.809930, 14.336420" />
+    <point coord="40.810205, 14.336720" />
+    <point coord="40.813927, 14.338929" />
+    <point coord="40.813967, 14.339427" />
+    <point coord="40.813844, 14.339610" />
+    <point coord="40.813554, 14.339704" />
+    <point coord="40.813297, 14.339855" />
+    <point coord="40.812997, 14.340104" />
+    <point coord="40.812388, 14.340922" />
+    <point coord="40.812054, 14.341599" />
+    <point coord="40.811680, 14.342380" />
+    <point coord="40.811391, 14.342879" />
+    <point coord="40.811001, 14.343415" />
+    <point coord="40.811193, 14.343645" />
 
-    <!--<poi id="stazione_piazza_san_pasquale"/> -->
-    <poi id="granatello"/>
-    <poi id="convento_san_pasquale"/>
-    <poi id="caffetteria_san_pasquale"/>
-    <poi id="villa_comunale"/>
-    <!--<poi id="bosco_inferiore_di_portici"/> --> <!-- TODO creare su MyMaps -->
-    <poi id="teatro_comunale_de_filippo"/>
-    <poi id="chiesa_san_ciro"/>
-    <poi id="palazzo_mascabruno"/>
-    <!--<poi id="chiesa_sant_antonio"/> -->
-    <poi id="reggia"/>
-    <poi id="orto_botanico"/>
+    <poi id="stazione_piazza_san_pasquale" />
+    <poi id="granatello" />
+    <poi id="chiesa_san_pasquale" />
+    <poi id="bar_san_pasquale" />
+    <poi id="villa_comunale" />
+    <poi id="real_bosco" />
+    <poi id="teatro_comunale_de_filippo" />
+    <poi id="chiesa_san_ciro" />
+    <poi id="palazzo_mascabruno" />
+    <poi id="chiesa_sant_antonio" />
+    <poi id="reggia" />
+    <poi id="orto_botanico" />
 
 </path>

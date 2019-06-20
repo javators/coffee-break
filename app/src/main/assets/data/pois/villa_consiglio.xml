@@ -3,14 +3,15 @@
     <name>Villa Consiglio</name>
     <name_long>Parco Urbano Villa Consiglio</name_long>
     <description>Parco adatto ai bambini</description>
-    <suitable_for>bambini, famiglie</suitable_for>
+    <suitable_for>Bambini, famiglie</suitable_for>
     <coord>40.8193, 14.33579</coord>
-    <address>Via Armando Diaz, 72/a, 80055 Portici NA</address>
-    <category id="park"/>
+    <address>Via Armando Diaz, 72/a</address>
+    <relevance>1</relevance>
+    <category id="park" />
     <path id="itinerario_a" />
     <extra>
-        <description_long>Parco con molte giostre per bambini. E' presente inoltre un chioschetto per acquistare uno snack o una bevanda e rilassarsi circondati dal verde</description_long>
-        <opening_times>Lunedì-Sabato 9:00-13:00/16:00-20:00; Domenica 9:00-13:00 </opening_times>
+        <description_long>Parco con molte giostre per bambini. È presente inoltre un chioschetto per acquistare uno snack o una bevanda e rilassarsi circondati dal verde.</description_long>
+        <opening_times>Lunedì-Sabato 9:00-13:00/16:00-20:00; Domenica 9:00-13:00</opening_times>
         <image>img/villa_consiglio.jpg</image>
     </extra>
 </poi>

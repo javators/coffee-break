@@ -5,27 +5,42 @@
     <description_long>Questo percorso è comodo per chi decide di arrivare a Portici con i mezzi pubblici arrivando alla stazione di Via Libertà e vuole raggiungere il mare dopo una camminata tra i negozi</description_long>
     <duration>2-4h</duration>
     <length>1,7 km</length>
-    <suitable_for>Famiglie, regazzi</suitable_for>
+    <suitable_for>Famiglie, ragazzi</suitable_for>
     <color>#E53935</color>
-    <point coord="40.816819, 14.346031" />
-    <point coord="40.817496, 14.345602" />
-    <point coord="40.814119, 14.339110" />
-    <point coord="40.814099, 14.338675" />
-    <point coord="40.814521, 14.335955" />
-    <point coord="40.816275, 14.333793" />
-    <point coord="40.817314, 14.332017" />
-    <point coord="40.815827, 14.330602" />
+    <point coord="40.816809, 14.346151" />
+    <point coord="40.816779, 14.346070" />
+    <point coord="40.816862, 14.346011" />
+    <point coord="40.817000, 14.345987" />
+    <point coord="40.817511, 14.345607" />
+    <point coord="40.814124, 14.339079" />
+    <point coord="40.814179, 14.338967" />
+    <point coord="40.814158, 14.338841" />
+    <point coord="40.814122, 14.338230" />
+    <point coord="40.814269, 14.336766" />
+    <point coord="40.814549, 14.335835" />
+    <point coord="40.816207, 14.333853" />
+    <point coord="40.816988, 14.332586" />
+    <point coord="40.817317, 14.332011" />
+    <point coord="40.815845, 14.330627" />
+    <point coord="40.815812, 14.330593" />
+    <point coord="40.815725, 14.330694" />
+    <point coord="40.815713, 14.330661" />
+    <point coord="40.815587, 14.330738" />
+    <point coord="40.815564, 14.330760" />
+    <point coord="40.815397, 14.330566" />
+    <point coord="40.815301, 14.330443" />
+    <point coord="40.814640, 14.331003" />
 
-    <poi id="stazione_liberta"/>
-    <poi id="birdys_bakery"/>
-    <!--<poi id="fantasy_fruit"/> -->
-    <poi id="pizzeria_del_centro"/>
-    <poi id="chiesa_san_ciro"/>
-    <poi id="gelateria_gallo"/>
-    <poi id="epitaffio_caduti"/>
-    <poi id="bar_la_conchiglia"/>
-    <poi id="kousushi"/>
-    <poi id="cinema_teatro_roma"/>
-    <poi id="escape_room_portici"/>
-    <poi id="lido_aurora"/>
+    <poi id="stazione_via_liberta" />
+    <poi id="birdys_bakery" />
+    <poi id="fantasy_fruit" />
+    <poi id="pizzeria_del_centro" />
+    <poi id="chiesa_san_ciro" />
+    <poi id="gelateria_gallo" />
+    <poi id="epitaffio_caduti" />
+    <poi id="bar_la_conchiglia" />
+    <poi id="kousushi" />
+    <poi id="cinema_teatro_roma" />
+    <poi id="escape_room" />
+    <poi id="lido_aurora" />
 </path>

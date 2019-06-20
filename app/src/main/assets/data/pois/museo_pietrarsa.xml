@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="museo_pietrarsa">
-    <name>Pietrarsa</name>
+    <name>Museo di Pietrarsa</name>
     <name_long>Museo Nazionale Ferroviario di Pietrarsa</name_long>
     <description>Museo della prima ferrovia italiana</description>
-    <suitable_for>tutti</suitable_for>
+    <suitable_for>Tutti</suitable_for>
     <coord>40.82177, 14.32133</coord>
-    <address>Via Pietrarsa, 80146 Napoli NA</address>
-    <category id="museum"/>
+    <address>Via Pietrarsa, 80146 Napoli</address>
+    <relevance>3</relevance>
+    <category id="museum" />
     <path id="itinerario_a" />
     <extra>
         <description_long>Museo della prima ferrovia italiana, inaugurata il 3 ottobre 1839. Era lunga 7.411 metri e congiungeva Napoli a Portici, sulla stessa direttrice della linea Napoli-Salerno, che oggi costeggia l’area del Museo. Il tragitto fu percorso in 11 minuti da due convogli progettati dall’ingegnere Armand Bayard de la Vingtrie, su prototipo dell’inglese George Stephenson. Il Museo permette di intraprendere un affascinante viaggio nel tempo tra le locomotive e i treni che hanno unito l’Italia dal 1839 ai nostri giorni, in 180 anni di storia delle Ferrovie italiane: dal periodo del Regno dei Borboni, attraverso il Regno d’Italia e fino alla Repubblica.</description_long>
-        <opening_times>Lunedì, Martedì, Mercoledì su prenotazione per grandi gruppi&#13;&#10;Giovedì 14:00-20:00&#13;&#10;Venerdì 9:00-16:30&#13;&#10;Sabato, domenica e festivi dalle ore 9:30 alle 19:30</opening_times>
+        <opening_times>Lunedì-Mercoledì su prenotazione per grandi gruppi; Giovedì 14:00-20:00; Venerdì 9:00-16:30; Sabato, Domenica e festivi dalle ore 9:30 alle 19:30</opening_times>
         <website>http://www.museopietrarsa.it/</website>
-        <telephone_number>081 472003</telephone_number>
-        <image>img/pietrarsa_ingresso.jpg</image>
-        <image>img/pietrarsa1.jpg</image>
-        <image>img/pietrarsa2.jpg</image>
-        <image>img/pietrarsa3.jpg</image>
-        <image>img/pietrarsa4.jpg</image>
-        <image>img/pietrarsa5.jpg</image>
+        <telephone_number>+39 081 472003</telephone_number>
+        <image>img/museo_pietrarsa.jpg</image>
+        <image>img/museo_pietrarsa1.jpg</image>
+        <image>img/museo_pietrarsa2.jpg</image>
+        <image>img/museo_pietrarsa3.jpg</image>
+        <image>img/museo_pietrarsa4.jpg</image>
+        <image>img/museo_pietrarsa5.jpg</image>
     </extra>
 </poi>

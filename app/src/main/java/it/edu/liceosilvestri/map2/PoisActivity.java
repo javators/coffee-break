@@ -259,6 +259,7 @@ public class PoisActivity extends AppCompatActivity {
 
             final String categoryId = getGroup(groupPosition).getId();
             switchVisible.setChecked(mMapSwitch.get(category));
+            switchVisible.jumpDrawablesToCurrentState();
             switchVisible.setOnClickListener((View v) -> {
                 boolean b = switchVisible.isChecked();
                 mMapSwitch.put(category, b);

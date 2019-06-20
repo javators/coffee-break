@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="bar_la_terrazza">
+    <name>Bar La Terrazza</name>
+    <name_long>Bar La Terrazza</name_long>
+    <description>Bar di tendenza tra i ragazzi</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.819760, 14.337560</coord>
+    <address>Via Re Vittorio Emanuele II, 2</address>
+    <relevance>1</relevance>
+    <category id="bar" />
+    <path id="itinerario_a" />
+    <extra>
+        <description_long>Bar di tendenza tra i ragazzi.</description_long>
+        <price_range>Alto</price_range>
+        <opening_times>Martedì-Domenica 07:30–14:00/16:00–03:00</opening_times>
+        <website>https://www.tripadvisor.it/Restaurant_Review-g1396187-d4586281-Reviews-Terrazza_di_Ottocento_Napoletano-Portici_Province_of_Naples_Campania.html</website>
+        <telephone_number>+39 081 476340</telephone_number>
+        <image>img/bar_la_terrazza.jpg</image>
+    </extra>
+</poi>
