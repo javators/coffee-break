@@ -166,7 +166,7 @@ public class PathActivity extends AppCompatActivity {
         mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
         LatLngBounds bounds = mPath.getBounds().getRectangle();
-        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 200));
+        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
 
 
         PolylineOptions poly = new PolylineOptions();

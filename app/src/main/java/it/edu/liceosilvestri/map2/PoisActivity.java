@@ -114,7 +114,7 @@ public class PoisActivity extends AppCompatActivity {
         mGmap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.no_business_style_json));
 
         LatLngBounds bounds = Pois.get().getBounds().getRectangle();
-        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 150));
+        mGmap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
 
         for (Poi p : Pois.get()) {
             //MarkerOptions mop = p.getGoogleMarker();
