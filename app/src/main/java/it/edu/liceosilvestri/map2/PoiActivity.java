@@ -41,6 +41,10 @@ public class PoiActivity extends AppCompatActivity {
         }
         else {
 
+            BarAction mybar = new BarAction(this);
+            mybar.startWorking(null, 0, true);
+
+
             ((TextView) findViewById(R.id.txtName)).setText(poi.getNameLong());
             ((TextView) findViewById(R.id.txtAddress)).setText(poi.getAddress());
 

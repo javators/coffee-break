@@ -52,6 +52,10 @@ public class HomeActivity extends AppCompatActivity {
 //            startActivity(i);
 //        });
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking("APPortici", 0, false);
+
+
         mPathsFound = new ArrayList<>();
         mPoisFound = new ArrayList<>();
 
@@ -162,7 +166,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 ((TextView) view.findViewById(R.id.txtName)).setText(ph.getName());
 
-                ImageView iv = view.findViewById(R.id.imgIcon);
+                ImageView iv = view.findViewById(R.id.imgBarIcon);
                 iv.setImageResource(R.drawable.ic_timeline_24dp);
                 iv.setColorFilter(ph.getColor());
             }
@@ -171,7 +175,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 ((TextView) view.findViewById(R.id.txtName)).setText(p.getNameLong());
 
-                ImageView iv = view.findViewById(R.id.imgIcon);
+                ImageView iv = view.findViewById(R.id.imgBarIcon);
                 iv.setImageResource(p.getCategory().getIconResourceId());
                 iv.setColorFilter(Color.BLACK);
             }

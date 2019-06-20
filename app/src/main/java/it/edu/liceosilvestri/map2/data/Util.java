@@ -164,12 +164,14 @@ public class Util {
 
 
             if (images.length > 1) {
-                int size = dpToPx(30);
+                int size = dpToPx(15);
 
                 for (int i = 0; i < images.length; i++) {
                     ImageView iv = new ImageView(vp.getContext());
                     iv.setImageResource(R.drawable.ic_circle_black_24dp);
-                    iv.setPadding(3,0,3,0);
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(size, size);
+                    iv.setLayoutParams(lp);
+                    iv.setPadding(size/5,0,size/5,size/5);
                     mLinearLayout.addView(iv);
                 }
 

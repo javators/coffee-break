@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#ffc0c0c0"
+    android:foregroundTint="#ffc0c0c0">
+
+    <ImageView
+        android:id="@+id/imgBarIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_custom_place_24dp" />
+
+    <TextView
+        android:id="@+id/txtBarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:autoSizeTextType="uniform"
+        android:text="Titolo"
+        android:textSize="18sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBarIcon"
+        app:layout_constraintEnd_toStartOf="@+id/imgBarMap"
+        app:layout_constraintStart_toEndOf="@+id/imgBarIcon"
+        app:layout_constraintTop_toTopOf="@+id/imgBarIcon" />
+
+    <ImageButton
+        android:id="@+id/imgBarMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="#ffffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/txtBarTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtBarTitle"
+        app:srcCompat="@drawable/ic_location_on_24dp" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffe0e0e0"
+        android:backgroundTint="#ffe0e0e0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBarTitle" />
+</android.support.constraint.ConstraintLayout>

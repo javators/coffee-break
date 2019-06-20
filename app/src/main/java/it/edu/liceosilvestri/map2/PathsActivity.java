@@ -38,6 +38,9 @@ public class PathsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paths);
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking(null, 0, true);
+
 
         Bundle mapViewBundle = null;
         if (savedInstanceState != null) {
@@ -248,7 +251,7 @@ public class PathsActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.txtSuitableFor)).setText(mPath.getSuitableFor());
             */
 
-            ImageView iv = view.findViewById(R.id.imgIcon);
+            ImageView iv = view.findViewById(R.id.imgBarIcon);
             iv.setColorFilter(path.getColor());
             return view;
 

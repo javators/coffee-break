@@ -53,6 +53,9 @@ public class PathActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_path);
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking(null, 0, true);
+
         //lo stato è salvato dal widget.
         Switch sw = (Switch) findViewById(R.id.switchRelevanceAll);
         mShowAll = sw.isChecked();
@@ -311,7 +314,7 @@ public class PathActivity extends AppCompatActivity {
                 tv.setTypeface(null, Typeface.ITALIC);
             }
 
-            ImageView iv = view.findViewById(R.id.imgIcon);
+            ImageView iv = view.findViewById(R.id.imgBarIcon);
             iv.setImageResource(p.getCategory().getIconResourceId());
 
 

@@ -43,6 +43,10 @@ public class PoisActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pois);
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking(null, 0, true);
+
+
         ExpandableListView expListView = findViewById(R.id.expListViewPois);
 
 
