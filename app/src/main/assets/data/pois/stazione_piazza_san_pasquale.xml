@@ -5,8 +5,9 @@
     <description>Fermata ferroviaria posta sulla linea Napoli-Salerno gestita da RFI</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.80994, 14.33604</coord>
-    <address>Piazza San Pasquale 80055 Portici NA</address>
-    <category id="station"/>
+    <address>Piazza San Pasquale</address>
+    <relevance>2</relevance>
+    <category id="station" />
     <path id="itinerario_c" />
     <extra>
         <description_long>La stazione di Portici-Ercolano è una fermata ferroviaria posta sulla linea Napoli-Salerno gestita da RFI. Ubicata sulla costa del comune di Portici, di fronte al porticciolo del Granatello, porta anche il nome di Ercolano poiché serve anche l'omonima città, il cui centro si trova a poca distanza da essa.</description_long>

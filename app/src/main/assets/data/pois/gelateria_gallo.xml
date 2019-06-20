@@ -2,21 +2,19 @@
 <poi id="gelateria_gallo">
     <name>Gelateria Gallo</name>
     <name_long>Antica Gelateria Gallo</name_long>
-    <description>>Gelateria piccola ma con gelato senza eguali.</description>
+    <description>>Gelateria piccola ma con gelato senza eguali</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81432, 14.33721</coord>
-    <address>Corso Giuseppe Garibaldi, 34, 80055 Portici NA</address>
-    <category id="bar"/>
+    <address>Corso Giuseppe Garibaldi, 34</address>
+    <relevance>2</relevance>
+    <category id="bar" />
     <path id="itinerario_b" />
-
     <extra>
-
         <description_long>Gelateria piccola ma ben fornita. Il gelato è di un gustoso senza eguali. Diventerà la vostra tappa estiva per eccellenza. Consigliamo di provare il frappè, è squisito!</description_long>
         <price_range>Medio</price_range>
-        <opening_times>Lunedì - Venerdì: 10:15-13:30, 15:30-00:00&#13;&#10;Sabato: 10:30–13:30, 15:30–01&#13;&#10;Domenica: 10:15–14:00, 16:00–00:00</opening_times>
+        <opening_times>Lunedì-Venerdì 10:15-13:30/15:30-00:00; Sabato 10:30–13:30/15:30–01:00; Domenica 10:15–14:00/16:00–00:00</opening_times>
         <website>http://www.gelateriagallo.it/</website>
-        <telephone_number>081 475942</telephone_number>
-        <image>img/gelateriagallo.jpg</image>
-
+        <telephone_number>+39 081 475942</telephone_number>
+        <image>img/gelateria_gallo.jpg</image>
     </extra>
 </poi>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="villa_lauro_lancellotti">
+    <name>Villa Lauro Lancellotti</name>
+    <name_long>Villa Lauro Lancellotti</name_long>
+    <description>Villa vesuviana del Miglio d'Oro in parte crollata</description>
+    <suitable_for>Tutti</suitable_for>
+    <coord>40.82018, 14.32748</coord>
+    <address>Corso Giuseppe Garibaldi, 229</address>
+    <relevance>1</relevance>
+    <category id="monument" />
+    <path id="itinerario_a" />
+    <extra>
+        <description_long>La villa prospetta lungo il corso Garibaldi, essa si eleva su un piano compreso il pian terreno e il mezzanino. La facciata è tripartita, la parte centrale è caratterizzata dagli effetti del bugnato rustico; il pian terreno presenta tre portali, quello maggiore a tutto sesto, mentre i laterali sono alti fino all'imposta dell'arco del principale e sormontati da due medaglioni scolpiti che poggiano sulla piattabanda dell'ingresso. Dall'ingresso si dipartono quattro mensole bugnate che reggono il balcone centrale. Al piano nobile si presenta con un schema simile al pian terreno, l'apertura centrale, con sovrapporta in stucco e terminante con timpano triangolare, è la maggiore e due laterali concave con piattabanda. L'esterno è caratterizzato dalla facciata posteriore che affaccia sul giardino, l'apparato decorativo è più elaborato di quello principale; rimanda agli stilemi decorativi del Fuga. Al centro della terrazza al piano nobile è presente un padiglione di ordine ionico a timpani triangolari; ai lati sono presenti due rampe di scale che raccordano il piano nobile con il giardino, il quale si estende fino al mare. Alla fine di quest'ultimo c'è un padiglione che fungeva da luogo di accesso alla spiaggia. Il piano superiore della villa presenta un salone decorato con otto scenette di vita cinese, realizzato alla fine del Settecento da un artista non ancora individuato con certezza.</description_long>
+        <opening_times>Palazzo privato</opening_times>
+        <website>-</website>
+        <image>img/villa_lauro_lancellotti.jpg</image>
+    </extra>
+</poi>

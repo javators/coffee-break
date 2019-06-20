@@ -5,15 +5,16 @@
     <description>Cinema Teatro Monosala con 570 posti a sedere</description>
     <suitable_for>tutti</suitable_for>
     <coord>40.81667, 14.33526</coord>
-    <address>Via Roma, 55/65, 80055 Portici NA</address>
-    <category id="entertainment"/>
+    <address>Via Roma, 57-65</address>
+    <category id="entertainment" />
+    <relevance>1</relevance>
     <path id="itinerario_b" />
     <extra>
-        <description_long>Il "Cinema Teatro Roma" fù edificato nel 1935 in via Roma¸ nel cuore di Portici. E` una struttura imponente ma volutamente vintage¸ gestita da giovani in grado di soddisfare il più ampio pubblico¸ un ambiente accogliente¸ semplice e modesto¸ dai colori caldi e vivaci¸ senza rinunciare però a comfort e tecnologia. Un`unica sala¸ 570 posti a sedere con poltroncine in velluto divise tra platea e galleria¸ un maxi schermo di 11x6 mt, Proiettore Digitale 2k/4k ¸ Sistema Audio Dolby Digital Surround 5.1 con diffusori JBL e una giusta temperatura¸ caratteristiche che vi assicureranno un immersione totale nello spettacolo.</description_long>
-        <price_range>medio</price_range>
+        <description_long>Il Cinema Teatro Roma fu edificato nel 1935 in via Roma¸ nel cuore di Portici. È una struttura imponente ma volutamente vintage, gestita da giovani in grado di soddisfare il più ampio pubblico, con un ambiente accogliente, semplice e modesto, dai colori caldi e vivaci senza rinunciare però a comfort e tecnologia. Un`unica sala con 570 posti a sedere con poltroncine in velluto divise tra platea e galleria¸ un maxi schermo di 11x6 mt, Proiettore Digitale 2k/4k, Sistema Audio Dolby Digital Surround 5.1 con diffusori JBL e una giusta temperatura¸ caratteristiche che vi assicureranno un immersione totale nello spettacolo.</description_long>
+        <price_range>Medio</price_range>
         <opening_times>18:00</opening_times>
         <website>https://www.cinemateatroroma.com/</website>
-        <telephone_number>081 472662</telephone_number>
-        <image>img/cinema.jpg</image>
+        <telephone_number>+39 081 472662</telephone_number>
+        <image>img/cinema_roma.jpg</image>
     </extra>
 </poi>

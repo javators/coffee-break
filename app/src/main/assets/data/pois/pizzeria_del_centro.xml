@@ -2,20 +2,19 @@
 <poi id="pizzeria_del_centro">
     <name>Pizzeria del Centro</name>
     <name_long>Pizzeria del Centro</name_long>
-    <description>Da anni la pizza piú buona di tutta Portici e dintorni</description>
+    <description>Una delle pizzerie migliori del circondario</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81594, 14.34222</coord>
-    <address>Via della Libertà, 121, 80055 Portici NA</address>
-    <category id="restaurant"/>
+    <address>Via della Libertà, 121</address>
+    <relevance>1</relevance>
+    <category id="restaurant" />
     <path id="itinerario_b" />
     <extra>
-
-        <description_long>Da anni la pizza piú buona di tutta Portici e dintorni. Splendida accoglienza, servizio celere, ottimo cibo e disponibile anche il servizio da asporto</description_long>
+        <description_long>Splendida accoglienza, servizio celere, ottimo cibo e disponibile anche il servizio da asporto.</description_long>
         <price_range>Medio</price_range>
-        <opening_times>Tutti i giorni: 13:00-15:00, 19:00-00:00</opening_times>
+        <opening_times>Lunedì-Domenica 13:00-15:00/19:00-00:00</opening_times>
         <website>https://www.tripadvisor.it/Restaurant_Review-g1396187-d1924370-Reviews-Pizzeria_del_Centro-Portici_Province_of_Naples_Campania.html</website>
-        <telephone_number>081 776 3099</telephone_number>
-        <image>img/pizzeriacentro.jpg</image>
-
+        <telephone_number>+39 081 7763099</telephone_number>
+        <image>img/pizzeria_del_centro.jpg</image>
     </extra>
 </poi>

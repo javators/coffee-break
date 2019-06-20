@@ -7,7 +7,10 @@
     <length>2,4 km</length>
     <suitable_for>Famiglie, gruppi</suitable_for>
     <color>#FF1976D2</color>
-    <point coord="40.822058, 14.343807" />
+    <point coord="40.822039, 14.343688" />
+    <point coord="40.822056, 14.343792" />
+    <point coord="40.821655, 14.343901" />
+    <point coord="40.820709, 14.344321" />
     <point coord="40.820182, 14.344409" />
     <point coord="40.819605, 14.336864" />
     <point coord="40.818561, 14.332112" />
@@ -18,18 +21,20 @@
     <point coord="40.821912, 14.324582" />
     <point coord="40.822787, 14.322979" />
     <point coord="40.821827, 14.321670" />
+    <point coord="40.821903, 14.321586" />
 
-    <!--<poi id="villa_assunta" />-->
+    <poi id="stazione_bellavista" />
+    <poi id="villa_assunta" />
     <!--<poi id="villa_betty" />-->
     <!--<poi id="villa_fernandes" />-->
-    <!--<poi id="chiesa_sacrocuore" />-->
-    <!--<poi id="la_terrazza" />-->
+    <poi id="chiesa_sacrocuore" />
+    <poi id="bar_la_terrazza" />
     <poi id="villa_consiglio" />
     <!--<poi id="villa_tina" />-->
     <!--<poi id="villa_liberty" />-->
     <poi id="villa_savonarola" />
     <poi id="villa_aversa"/>
-    <!-- <poi id="villa_laurolancellotti" /> -->
+    <poi id="villa_lauro_lancellotti" />
     <poi id="museo_pietrarsa" />
-    <!--<poi id="stazione_pietrarsa" />-->
+    <poi id="stazione_pietrarsa" />
 </path>

@@ -5,17 +5,16 @@
     <description>Un bel locale con del buon cibo</description>
     <suitable_for>Famiglie, gruppi</suitable_for>
     <coord>40.81673, 14.33374</coord>
-    <address>Corso Giuseppe Garibaldi, 144A, 80055 Portici NA</address>
-    <category id="restaurant"/>
+    <address>Corso Giuseppe Garibaldi, 144A</address>
+    <relevance>1</relevance>
+    <category id="restaurant" />
     <path id="itinerario_b" />
     <extra>
-
-        <description_long>Il locale è molto bello, un po'complicato parcheggiare. Il servizio è veloce, ed i cibo di buona qualità.</description_long>
+        <description_long>Il locale è molto bello, un po' complicato parcheggiare. Il servizio è veloce, ed il cibo di buona qualità.</description_long>
         <price_range>Medio</price_range>
-        <opening_times>Martedì - Venerdì: 19:30-02:00&#13;&#10;Sabato: 19:30-03:00&#13;&#10;Domenica: 19:30-00:00</opening_times>
-        <website>https://m.facebook.com/fonderie.portici/</website>
-        <telephone_number>081 274815</telephone_number>
+        <opening_times>Martedì-Venerdì 19:30-02:00; Sabato 19:30-03:00; Domenica 19:30-00:00</opening_times>
+        <website>https://it.facebook.com/fonderie.portici</website>
+        <telephone_number>+39 081 274815</telephone_number>
         <image>img/fonderie.jpg</image>
-
     </extra>
 </poi>

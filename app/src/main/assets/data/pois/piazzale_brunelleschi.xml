@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<poi id="piazzalebrunelleschi">
-    <name>P. Brunelleschi</name>
+<poi id="piazzale_brunelleschi">
+    <name>P.le Brunelleschi</name>
     <name_long>Piazzale Brunelleschi</name_long>
     <description></description>
-    <suitable_for>famiglie,gruppi</suitable_for>
+    <suitable_for>Famiglie, gruppi</suitable_for>
     <coord>40.81691, 14.34052</coord>
-    <address>80055 Portici NA</address>
-    <category id="square"/><!--Categoria di appartenenza del POI, es: monument, bar, restaurant, hotel, museum, square, station, park, parking-->
+    <address>Piazzale Brunelleschi</address>
+    <relevance>1</relevance>
+    <category id="square" />
     <extra>
-        <!-- square -->
         <description_long></description_long>
-        <image>piazzalebrunelleschi.jpg</image>
+        <image>img/piazzale_brunelleschi.jpg</image>
     </extra>
 </poi>

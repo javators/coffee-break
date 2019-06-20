@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="escape_room">
+    <name>Escape Room Portici</name>
+    <name_long>Escape Room In Time Portici</name_long>
+    <description>L'Escape Room è un avventura in cui i giocatori sono chiusi in una stanza ed è necessario utilizzare elementi della stanza per risolvere enigmi ed uscire.</description>
+    <suitable_for>Gruppi</suitable_for>
+    <coord>40.81593, 14.33074</coord>
+    <address>Primo Viale Camaggio, 23</address>
+    <relevance>1</relevance>
+    <category id="entertainment" />
+    <path id="itinerario_b" />
+    <extra>
+        <description_long>È un gioco di logica nel quale i concorrenti, una volta rinchiusi in una stanza allestita a tema, devono cercare una via d'uscita utilizzando ogni elemento della struttura e risolvendo codici, enigmi, rompicapo e indovinelli. Per poter completare con successo il gioco, i partecipanti - che solitamente variano da 2 a 10 persone - devono organizzare la fuga entro un limite di tempo prestabilito, di solito di 60 minuti. L'obiettivo dell'avventura è quello di stimolare la mente, l’intuito, la logica e, non da ultimo, il team building: la collaborazione tra tutti i partecipanti è un fattore indispensabile per risolvere gli enigmi e completare con successo il gioco.</description_long>
+        <price_range>Medio</price_range>
+        <opening_times>17:00</opening_times>
+        <website>https://it.facebook.com/EscapeRoomInTimePortici/</website>
+        <telephone_number>+39 331 7863739</telephone_number>
+        <image>img/escape_room.jpg</image>
+    </extra>
+</poi>

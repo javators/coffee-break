@@ -5,17 +5,16 @@
     <description>Un'ottima bakery dove passare il tempo con gli amici</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.81729, 14.34499</coord>
-    <address>Via della Libertà, 195, 80055 Portici NA</address>
-    <category id="bar"/>
+    <address>Via della Libertà, 195</address>
+    <relevance>1</relevance>
+    <category id="bar" />
     <path id="itinerario_b" />
     <extra>
-
         <description_long>Un'ottima bakery dove passare il tempo con gli amici. L'ambiente è molto rilassante e la sweet color palette è un piacere per gli occhi. Il menù è molto variegato e offre diverse pietanze dal dolce al salato. Propone anche alternative veggie.</description_long>
         <price_range>Alto</price_range>
-        <opening_times>Lunedì - Giovedì 07:00–00:00&#13;&#10;Venerdì e Sabato 07:00–02:00&#13;&#10;Domenica 08:00–01:00;</opening_times>
+        <opening_times>Lunedì-Giovedì 07:00–00:00; Venerdì e Sabato 07:00–02:00; Domenica 08:00–01:00;</opening_times>
         <website>http://www.birdysbakery.com/</website>
-        <telephone_number>081 776 4873</telephone_number>
-        <image>img/birdysbakery.png</image>
-
+        <telephone_number>+39 081 7764873</telephone_number>
+        <image>img/birdys_bakery.png</image>
     </extra>
 </poi>

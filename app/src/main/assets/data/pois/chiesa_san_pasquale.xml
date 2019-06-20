@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<poi id="chiesa_san_pasquale">
+    <name>Chiesa di S. Pasquale</name>
+    <name_long>Chiesa di San Pasquale</name_long>
+    <description>Chiesa con ben 300 anni di storia e convento annesso</description>
+    <suitable_for>Credenti</suitable_for>
+    <coord>40.81024, 14.33628</coord>
+    <address>Piazza S. Pasquale, 13</address>
+    <relevance>2</relevance>
+    <category id="monument" />
+    <path id="itinerario_c" />
+    <extra>
+        <description_long>La chiesa ha 300 anni di storia e reca tutti i segni dell’usura del tempo, degli agenti atmosferici, soprattutto dell’azione erosiva del mare.</description_long>
+        <opening_times>Lunedì-Venerdì: S. Messa ore 19:00; Sabato-Domenica: S.S. Messe ore 7:30/10:00/11:30/19:00</opening_times>
+        <website>http://www.sanpasqualeportici.it/</website>
+        <image>img/chiesa_san_pasquale.jpg</image>
+    </extra>
+</poi>
