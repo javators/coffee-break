@@ -14,6 +14,9 @@ public class CreditsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking(null, 0, false);
+
         findViewById(R.id.imageView4).setOnClickListener((view) -> {
             if (mCount == 7)
                 startActivity(new Intent(getApplicationContext(), ValidatorActivity.class));

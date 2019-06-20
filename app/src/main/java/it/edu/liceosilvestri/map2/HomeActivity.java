@@ -53,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
 //        });
 
         BarAction mybar = new BarAction(this);
-        mybar.startWorking("APPortici", 0, false);
+        mybar.startWorking(null, 0, false);
 
 
         mPathsFound = new ArrayList<>();

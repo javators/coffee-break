@@ -22,6 +22,9 @@ public class ValidatorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_validator);
 
+        BarAction mybar = new BarAction(this);
+        mybar.startWorking(null, 0, false);
+
         Spinner spinnerFilename = findViewById(R.id.spinnerFilename);
         RadioGroup rgPath = findViewById(R.id.radioGroupValidator);
         Button btnValidate = findViewById(R.id.btnValidator);
