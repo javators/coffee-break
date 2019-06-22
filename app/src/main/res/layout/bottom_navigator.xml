@@ -6,7 +6,7 @@
     android:backgroundTint="@color/colorPrimary">
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/dividerBottomNav"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
@@ -100,7 +100,7 @@
         app:srcCompat="@drawable/ic_info_24dp" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/guidelineBottomNav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

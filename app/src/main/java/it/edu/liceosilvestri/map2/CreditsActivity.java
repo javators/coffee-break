@@ -17,7 +17,7 @@ public class CreditsActivity extends AppCompatActivity {
         BarAction mybar = new BarAction(this);
         mybar.startWorking(null, 0, false);
 
-        findViewById(R.id.imageView4).setOnClickListener((view) -> {
+        findViewById(R.id.imgPortici).setOnClickListener((view) -> {
             if (mCount == 7)
                 startActivity(new Intent(getApplicationContext(), ValidatorActivity.class));
             else
@@ -25,7 +25,7 @@ public class CreditsActivity extends AppCompatActivity {
         });
 
         String text = getString(R.string.credits2);
-        ((TextView) findViewById(R.id.textView7)).setText(Html.fromHtml(text));
+        ((TextView) findViewById(R.id.txtCredits2)).setText(Html.fromHtml(text));
     }
 
 

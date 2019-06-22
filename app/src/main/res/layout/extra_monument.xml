@@ -6,14 +6,14 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtOpeningTimesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apertura:"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/txtOpeningTimes"
+        app:layout_constraintEnd_toEndOf="@+id/txtWebsiteLabel"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/txtOpeningTimes"
@@ -23,11 +23,11 @@
         android:text="Orario start-end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/txtOpeningTimesLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtWebsiteLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sito Web:"
@@ -45,18 +45,8 @@
         android:autoLink="web"
         android:text="http://"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/txtWebsiteLabel"
         app:layout_constraintTop_toBottomOf="@+id/txtOpeningTimes" />
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:scrollIndicators="left|right"
-        android:scrollbarAlwaysDrawHorizontalTrack="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearPosIndicator" />
 
     <TextView
         android:id="@+id/txtDescription"
@@ -77,4 +67,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtDescription"></LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scrollIndicators="left|right"
+        android:scrollbarAlwaysDrawHorizontalTrack="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearPosIndicator" />
+
 </android.support.constraint.ConstraintLayout>

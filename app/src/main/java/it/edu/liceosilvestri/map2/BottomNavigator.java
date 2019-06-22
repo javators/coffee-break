@@ -33,7 +33,7 @@ public class BottomNavigator {
     }
 
     private void setClickArea() {
-        Guideline gl = mCurrentActivity.findViewById(R.id.guideline);
+        Guideline gl = mCurrentActivity.findViewById(R.id.guidelineBottomNav);
         View parent = (View) mCurrentActivity.findViewById(R.id.imgBtnNavHome).getParent();
 
         parent.post(new EditTouchArea(gl, parent));

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <poi id="lido_aurora">
     <name>Ex-Lido Aurora</name>
-    <name_long>Passeggiata del Miglio D'oro</name_long>
+    <name_long>Passeggiata del Miglio D'Oro</name_long>
     <description>Passeggiata costeggiante il mare che collega San Giovanni a Teduccio a Napoli</description>
     <suitable_for>Tutti</suitable_for>
     <coord>40.814640, 14.331003</coord>

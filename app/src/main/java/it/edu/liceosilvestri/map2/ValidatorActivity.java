@@ -90,8 +90,8 @@ public class ValidatorActivity extends AppCompatActivity {
         }
 
         String res = XMLValidator.validateXML(getApplicationContext(), path, filename);
-        TextView tvTitle = findViewById(R.id.textViewValidatorTitle);
-        TextView tvRes   = findViewById(R.id.textViewValidatorRes);
+        TextView tvTitle = findViewById(R.id.txtValidatorFile);
+        TextView tvRes   = findViewById(R.id.txtValidatorRes);
 
         if (res.equals("")) {
             tvTitle.setText("["  + filename + "]\nT'appost fra!");

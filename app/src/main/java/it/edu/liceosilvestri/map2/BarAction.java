@@ -1,6 +1,5 @@
 package it.edu.liceosilvestri.map2;
 
-import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Guideline;
 import android.support.v7.app.ActionBar;
@@ -10,6 +9,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.devs.vectorchildfinder.VectorChildFinder;
 
 import it.edu.liceosilvestri.map2.data.Util;
 
@@ -54,31 +55,44 @@ public class BarAction {
             title = mCurrentActivity.getString(R.string.app_name);
 
         mTitle.setText(title);
-        mTitle.setTextColor(Color.BLACK);
+        mTitle.setTextColor(mCurrentActivity.getColor(R.color.actionBarTitle));
+        int iconColor = mCurrentActivity.getColor(R.color.actionBarIcons);
+
+        VectorChildFinder vector = new VectorChildFinder(mCurrentActivity, R.drawable.ic_map_off_24dp, mMapButton);
+        vector.findPathByName("map").setFillColor(iconColor);
+        vector.findPathByName("rect").setFillColor(iconColor);
 
         if (showMapSwitcher) {
 
-            Guideline mv = (Guideline) mCurrentActivity.findViewById(R.id.guideline3);
+            Guideline mv = mCurrentActivity.findViewById(R.id.guidelineMapView);
             ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) mv.getLayoutParams();
             float initialMapGuidelinePercent = params.guidePercent;
 
             mMapButton.setOnClickListener(v -> {
+                View btmNavigator = mCurrentActivity.findViewById(R.id.include);
+                int navTop = btmNavigator.getTop();
+                float parentHeight = ((View) btmNavigator.getParent()).getHeight();
 
                 if (params.guidePercent == initialMapGuidelinePercent) {
-                    params.guidePercent = 0.9f;
-                    this.mMapButton.setColorFilter(Color.LTGRAY);
+                    params.guidePercent = navTop/parentHeight;
+                    this.mMapButton.setImageResource(R.drawable.ic_map_on_24dp);
+                    this.mMapButton.setColorFilter(iconColor);
                 }
                 else {
                     params.guidePercent = initialMapGuidelinePercent;
-                    this.mMapButton.setColorFilter(Color.BLACK);
+                    this.mMapButton.setColorFilter(null);
+                    //Non c'è il setImageResource, poiché è implicito nel costruttore sottostante
+                    VectorChildFinder vec = new VectorChildFinder(mCurrentActivity, R.drawable.ic_map_off_24dp, mMapButton);
+                    vec.findPathByName("map").setFillColor(iconColor);
+                    vec.findPathByName("rect").setFillColor(iconColor);
                 }
 
                 mv.setLayoutParams(params);
 
-                          });
+            });
         }
         else
-            mMapButton.setVisibility(View.GONE);
+            mMapButton.setVisibility(View.INVISIBLE);
 
     }
 

@@ -6,7 +6,7 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/txtWebsiteLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sito Web:"
@@ -24,7 +24,7 @@
         android:autoLink="web"
         android:text="http://"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/txtWebsiteLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v4.view.ViewPager
