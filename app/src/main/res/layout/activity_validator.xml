@@ -7,7 +7,7 @@
     tools:context=".ValidatorActivity">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/txtValidatorTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -26,10 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/editTextFilename"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerFilename"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8">
+        app:layout_constraintTop_toBottomOf="@+id/txtValidatorTitle">
 
         <RadioButton
             android:id="@+id/radioButtonPaths"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toTopOf="@+id/radioGroupValidator" />
 
     <View
-        android:id="@+id/view2"
+        android:id="@+id/dividerValidator"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btnValidator" />
 
     <TextView
-        android:id="@+id/textViewValidatorTitle"
+        android:id="@+id/txtValidatorFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -81,10 +81,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/dividerValidator" />
 
     <TextView
-        android:id="@+id/textViewValidatorRes"
+        android:id="@+id/txtValidatorRes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -95,7 +95,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewValidatorTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/txtValidatorFile" />
 
     <Button
         android:id="@+id/btnValidator"

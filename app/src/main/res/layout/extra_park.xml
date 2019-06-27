@@ -6,7 +6,7 @@
 
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtOpeningTimesLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Apertura:"
@@ -23,7 +23,7 @@
         android:text="Orario start-end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/txtOpeningTimesLabel"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v4.view.ViewPager
@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/linearPosIndicator" />
 
     <TextView
         android:id="@+id/txtDescription"
@@ -45,5 +45,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOpeningTimes" />
+    <LinearLayout
+        android:id="@+id/linearPosIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription"></LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

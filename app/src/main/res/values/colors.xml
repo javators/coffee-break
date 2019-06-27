@@ -8,4 +8,8 @@
     <color name="colorPrimaryDark">#001970</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorHighlighting">#FFAA00</color>
+
+    <color name="actionBarBackground">@android:color/white</color>
+    <color name="actionBarTitle">@android:color/black</color>
+    <color name="actionBarIcons">@android:color/black</color>
 </resources>

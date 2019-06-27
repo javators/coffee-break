@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textAPPortici"
+        android:id="@+id/txtAPPortici"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="APPortici"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/txtSplash1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="L'APP turistica per esplorare Portici"
@@ -56,10 +56,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textAPPortici" />
+        app:layout_constraintTop_toBottomOf="@+id/txtAPPortici" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/txtSplash2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -68,10 +68,10 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSplash1" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/txtSplash3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="del corso PON MAPPiamo 2 - a.s. 2018/19"
@@ -79,5 +79,5 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSplash2" />
 </android.support.constraint.ConstraintLayout>
