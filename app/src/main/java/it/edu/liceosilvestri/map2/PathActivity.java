@@ -128,7 +128,8 @@ public class PathActivity extends AppCompatActivity {
             lv.setAdapter(this.new PoiAdapter());
 
             lv.setOnItemClickListener((adapterView, view, position, longid) -> {
-                String poiid = mPath.getPoiIdArray()[position];
+                Poi p = mShowAll ? mAllPoisInPath.get(position) : mRelevantPoisInPath.get(position);
+                String poiid = p.getId();
 
                 Intent i = new Intent(getApplicationContext(), PoiActivity.class);
                 i.putExtra("id", poiid);
