@@ -2,6 +2,7 @@ package it.edu.liceosilvestri.map2;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -299,6 +300,10 @@ public class PathActivity extends AppCompatActivity {
 
             Poi p = mShowAll ? mAllPoisInPath.get(position) : mRelevantPoisInPath.get(position);
 
+
+            ImageView iv = view.findViewById(R.id.imgBarIcon);
+            iv.setImageResource(p.getCategory().getIconResourceId());
+
             TextView tv = (TextView) view.findViewById(R.id.txtName);
 
             String title;
@@ -307,16 +312,22 @@ public class PathActivity extends AppCompatActivity {
                 int ordinalPos = mPoiOrdinalInPath.get(p);
                 tv.setText("" + ordinalPos + ". " + p.getNameLong());
                 tv.setTypeface(null, Typeface.BOLD);
-                //tv.setTextColor(Color.BLACK);
+                iv.setColorFilter(Color.BLACK);
+
+                //ConstraintLayout.LayoutParams lp = (ConstraintLayout.LayoutParams) iv.getLayoutParams();
+                //lp.leftMargin = Util.dpToPx(8);
 
             }
             else {
                 tv.setText("    " + p.getNameLong());
                 tv.setTypeface(null, Typeface.ITALIC);
+                iv.setColorFilter(Color.LTGRAY);
+
+                //ConstraintLayout.LayoutParams lp = (ConstraintLayout.LayoutParams) iv.getLayoutParams();
+                //lp.leftMargin = Util.dpToPx(16);
             }
 
-            ImageView iv = view.findViewById(R.id.imgBarIcon);
-            iv.setImageResource(p.getCategory().getIconResourceId());
+
 
 
             return view;

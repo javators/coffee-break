@@ -22,6 +22,7 @@ import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Paths;
 import it.edu.liceosilvestri.map2.data.Poi;
 import it.edu.liceosilvestri.map2.data.Pois;
+import it.edu.liceosilvestri.map2.data.Util;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -65,6 +66,9 @@ public class HomeActivity extends AppCompatActivity {
 
         Button btn3 = findViewById(R.id.btnSearch);
         btn3.setOnClickListener( v -> {
+
+            Util.hideSoftKeyboard(HomeActivity.this);
+
             if (((EditText) findViewById(R.id.editTextSearch)).getText().toString().equals(""))
                 return;
 

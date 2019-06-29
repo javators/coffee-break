@@ -16,6 +16,7 @@ import com.google.android.gms.maps.model.Marker;
 import it.edu.liceosilvestri.map2.data.Path;
 import it.edu.liceosilvestri.map2.data.Poi;
 import it.edu.liceosilvestri.map2.data.Pois;
+import it.edu.liceosilvestri.map2.data.Util;
 
 public class PoiActivity extends AppCompatActivity {
 
@@ -58,25 +59,16 @@ public class PoiActivity extends AppCompatActivity {
                     ImageView ivi = new ImageView(getApplicationContext());
                     ivi.setImageResource(R.drawable.ic_timeline_24dp);
                     ivi.setColorFilter(ftpu.getColor());
+                    ivi.setAdjustViewBounds(true);
+                    //ivi.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                    ivi.setLayoutParams(new LinearLayout.LayoutParams(Util.dpToPx(24), Util.dpToPx(24)));
                     ivi.setOnClickListener(vi -> {
                         String pathid = ftpu.getId();
                         Intent i = new Intent(this, PathActivity.class);
                         i.putExtra("id", pathid);
                         startActivity(i);
                     });
-                    /*
-                    Button but = new Button(getApplicationContext());
-                    but.setText(ftpu.getName());
 
-                    but.setOnClickListener(vi -> {
-                        String pathid = ftpu.getId();
-                        Intent i = new Intent(this, PathActivity.class);
-                        i.putExtra("id", pathid);
-                        startActivity(i);
-                    });
-
-                    linla.addView(but);
-                    */
                     linla.addView(ivi);
                 }
             }

@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -145,7 +146,10 @@ public class Util {
         return (int) (px / Resources.getSystem().getDisplayMetrics().density);
     }
 
-
+    public static void hideSoftKeyboard(Activity a) {
+        InputMethodManager imm = (InputMethodManager) a.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(a.getCurrentFocus().getWindowToken(), 0);
+    }
 
     public static class ImageScroller {
 
